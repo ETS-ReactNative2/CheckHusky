@@ -1,10 +1,10 @@
 import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import ExampleScreen from 'App/Containers/Example/ExampleScreen'
-import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
-import LoginScreenContainer from 'App/Containers/LoginScreen/LoginScreenContainer'
-import ProfileTabContainer from 'App/Containers/ProfileTab/ProfileTabContainer'
-import AboutUsTabContainer from 'App/Containers/AboutUsTab/AboutUsTabContainer'
+import ExampleScreen from './../Containers/Example/ExampleScreen'
+import SplashScreen from './../Containers/SplashScreen/SplashScreen'
+import LoginScreenContainer from './../Containers/LoginScreen/LoginScreenContainer'
+import ProfileTabContainer from './../Containers/ProfileTab/ProfileTabContainer'
+import AboutUsTabContainer from './../Containers/AboutUsTab/AboutUsTabContainer'
 
 const TabNavigator = createBottomTabNavigator({
   ProfileTab: ProfileTabContainer,
@@ -29,7 +29,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     // By default the application will show the splash screen
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'HomeTab',
     // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
     headerMode: 'none',
   }

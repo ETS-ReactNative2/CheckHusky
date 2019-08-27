@@ -2,7 +2,7 @@ import React from 'react';
 import GoogleSignInComponent from './GoogleSignInComponent';
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import UserDataActions from 'App/Stores/UserData/Actions'
+import UserDataActions from './../../Stores/UserData/Actions'
 
 class GoogleSignInContainer extends React.Component {
   render() {

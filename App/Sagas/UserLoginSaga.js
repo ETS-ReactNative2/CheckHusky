@@ -1,6 +1,6 @@
 import { put, call } from 'redux-saga/effects'
-import UserData from 'App/Stores/UserData/Actions'
-import {loginWithGoogle} from 'App/Services/googleAuth'
+import UserData from './../Stores/UserData/Actions'
+import {loginWithGoogle} from './../Services/googleAuth'
 
 export function* userLogin(Action) {
     if(Action.USER_LOGIN!=null){

@@ -2,11 +2,11 @@ import React from 'react'
 import { Platform, Text, ScrollView, View, Button, ActivityIndicator, Image } from 'react-native'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import ExampleActions from 'App/Stores/Example/Actions'
-import NavigationService from 'App/Services/NavigationService'
-import { liveInEurope } from 'App/Stores/Example/Selectors'
+import ExampleActions from './../../Stores/Example/Actions'
+import NavigationService from './../../Services/NavigationService'
+import { liveInEurope } from './../../Stores/Example/Selectors'
 import Style from './ExampleScreenStyle'
-import { Images } from 'App/Theme'
+import { Images } from './../../Theme'
 
 /**
  * This is an example of a container component.

@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import styles from './SplashScreenStyle'
 import { connect } from 'react-redux'
-import NavigationService from "App/Services/NavigationService";
+import NavigationService from "./../../Services/NavigationService";
 
 class SplashScreen extends React.Component {
   constructor(props) {

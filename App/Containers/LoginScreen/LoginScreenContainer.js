@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import UserDataActions from 'App/Stores/UserData/Actions'
+import UserDataActions from './../../Stores/UserData/Actions'
 import LoginScreenComponent from './LoginScreenComponent';
 
 class LoginScreenContainer extends React.Component {

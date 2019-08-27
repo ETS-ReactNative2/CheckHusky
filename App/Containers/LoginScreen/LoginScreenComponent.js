@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationService from "App/Services/NavigationService";
+import NavigationService from "../../Services/NavigationService";
 import {
   ScrollView,
   TextInput,
