@@ -2,19 +2,22 @@ import { INITIAL_STATE } from './InitialState'
 import { createReducer } from 'reduxsauce'
 import { UserActionTypes } from './Actions'
 
-export const userLogin = (state) => {
-    console.log("userLogin state",state)
+export const userLogin = (state,action) => {
+    console.log("userLogin reducer",action)
     return ({
   ...state,
   userData: {},
   userErrorMessage: null,
 })}
 
-export const userLoginSuccess = (state, { userData }) => ({
-  ...state,
-  userData: userData,
-  userErrorMessage: null,
-})
+export const userLoginSuccess = (state,action) => {
+  console.log("userLogin success saga" , action)
+  return ({
+    ...state,
+    userData: action.userData,
+    userErrorMessage: null,
+  })
+}
 
 export const userLoginFailure = (state, { errorMessage }) => ({
   ...state,

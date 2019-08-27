@@ -7,7 +7,8 @@ import {
   Text,
   View
 } from "react-native";
-import GoogleSignInContainer from "./../GoogleAuth/GoogleSignInContainer";
+import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
+import AppleSignInContainer from "../AppleAuth/AppleSignInComponent";
 import styles from './styles';
 
 export default class LoginScreenComponent extends React.Component<props> {
@@ -87,6 +88,9 @@ export default class LoginScreenComponent extends React.Component<props> {
           <View>
             <GoogleSignInContainer/>
           </View>
+          <View>
+            <AppleSignInContainer/>
+          </View>
         </View>
       </ScrollView>
     );
@@ -94,6 +98,7 @@ export default class LoginScreenComponent extends React.Component<props> {
   _onSubmit() {
     const { email, password } = this.state;
     let user = { email: email, password: password };
+    console.log('user component--->',user)
     this.props.userLogin(user);
   }
 }
