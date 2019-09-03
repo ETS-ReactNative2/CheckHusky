@@ -30,12 +30,12 @@ export default class AppleSignInComponent extends React.Component {
 
   render() {
     return (
-        <View style={styles.buttonStyle}>
+      <View style={styles.buttonStyle}>
         <TouchableOpacity
             onPress={() => this.signIn()} >
             <Text style={styles.textStyle}>Login With Apple</Text>
         </TouchableOpacity>
-    </View>
+      </View>
     );
   }
 }

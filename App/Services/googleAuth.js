@@ -1,6 +1,5 @@
 import {
     GoogleSignin,
-    statusCodes,
 } from "react-native-google-signin";
 
 GoogleSignin.configure({
@@ -11,11 +10,6 @@ GoogleSignin.configure({
 });
 
 export async function loginWithGoogle() {
-    try {
-        await GoogleSignin.hasPlayServices();
-        return GoogleSignin.signIn();
-       } 
-        catch (error) {
-         console.log('_signIn error', error);
-      }
+  await GoogleSignin.hasPlayServices();
+  return GoogleSignin.signIn();
 }

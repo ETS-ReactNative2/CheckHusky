@@ -1,10 +1,10 @@
 import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation'
 
-import ExampleScreen from './../Containers/Example/ExampleScreen'
-import SplashScreen from './../Containers/SplashScreen/SplashScreen'
-import LoginScreenContainer from './../Containers/LoginScreen/LoginScreenContainer'
-import ProfileTabContainer from './../Containers/ProfileTab/ProfileTabContainer'
-import AboutUsTabContainer from './../Containers/AboutUsTab/AboutUsTabContainer'
+import ExampleScreen from '../Components/Example/ExampleScreen'
+import SplashScreen from '../Components/SplashScreen/SplashScreen'
+import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer'
+import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer'
+import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer'
 
 const TabNavigator = createBottomTabNavigator({
   ProfileTab: ProfileTabContainer,

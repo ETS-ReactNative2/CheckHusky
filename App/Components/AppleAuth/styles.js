@@ -13,6 +13,5 @@ export default StyleSheet.create({
         height: 48,
         alignSelf:'stretch',
         marginHorizontal: 50,
-        marginVertical: 40
       }
 })
