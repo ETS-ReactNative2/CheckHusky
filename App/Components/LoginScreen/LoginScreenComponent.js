@@ -1,5 +1,4 @@
 import React from "react";
-import NavigationService from "../../Services/NavigationService";
 import {
   ScrollView,
   TextInput,
@@ -9,6 +8,8 @@ import {
 } from "react-native";
 import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
 import AppleSignInContainer from "../AppleAuth/AppleSignInComponent";
+import Validators from '../../Utils/Validators'
+import showToast from '../../Utils/showToast'
 import styles from './styles';
 
 export default class LoginScreenComponent extends React.Component<props> {
@@ -97,8 +98,17 @@ export default class LoginScreenComponent extends React.Component<props> {
   }
   _onSubmit() {
     const { email, password } = this.state;
-    let user = { email: email, password: password };
-    console.log('user component--->',user)
-    this.props.userLogin(user);
+    if (Validators.isEmpty(email)) {
+			showToast("Email is empty");
+		} else if (!Validators.validEmail(email)) {
+			showToast("Email is invalid");
+		} else if (Validators.isEmpty(password)) {
+			showToast("Password is empty");
+		} else if (!Validators.isValidPassword(password)) {
+			showToast("Password is invalid");
+		} else {
+      let user = { name: email, password: password };
+      this.props.userLogin(user);
+		}
   }
 }

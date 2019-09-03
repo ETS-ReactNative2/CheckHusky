@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { PropTypes } from 'prop-types'
-import UserDataActions from './../../Stores/UserData/Actions'
+import * as UserLoginActions from './../../Actions/userLoginActions'
 import LoginScreenComponent from './LoginScreenComponent';
+import NavigationService from './../../Services/NavigationService'
 
 class LoginScreenContainer extends React.Component {
+  componentDidUpdate(prevProps){
+    if(this.props != prevProps && this.props.userData) {
+      NavigationService.navigateAndReset('HomeTab')
+    }
+  }
+
   render() {
     return (
         <LoginScreenComponent {...this.props}/>
@@ -12,17 +18,13 @@ class LoginScreenContainer extends React.Component {
   }
 }
 
-LoginScreenContainer.propTypes = {
-}
-
 const mapStateToProps = (state) => ({
-  userData: state.userData.userData,
+  userData: state.UserLoginReducer.user,
 })
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (user) => {
-    console.log(user);
-    return dispatch(UserDataActions.userLogin(user))
+    return dispatch(UserLoginActions.userLogin(user))
   },
 })
 

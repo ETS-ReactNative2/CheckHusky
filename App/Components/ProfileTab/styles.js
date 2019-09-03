@@ -7,7 +7,6 @@ export default StyleSheet.create({
     ...ApplicationStyles.screen.container,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
   },
   title: {
     ...Fonts.style.h2,
@@ -19,4 +18,20 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginBottom: 5,
   },
+  subsContainer: {
+    margin:20,
+    height: 55,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    marginTop: 22,
+  },
+  subsText: {
+    color: 'white',
+    fontSize: 16,
+    textAlign: 'center',
+  },
+  nameContainer: {
+    margin:20,
+    flexDirection: 'row',
+  }
 })

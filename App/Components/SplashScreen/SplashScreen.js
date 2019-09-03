@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import styles from './SplashScreenStyle'
 import { connect } from 'react-redux'
 import NavigationService from "./../../Services/NavigationService";
+import * as UserLoginActions from './../../Actions/userLoginActions'
 
 class SplashScreen extends React.Component {
   constructor(props) {
@@ -12,18 +13,8 @@ class SplashScreen extends React.Component {
  
   render() {
     return (
-        // this.props.userData!=null || this.props.userData!=undefined ?
-        //  this._navigateToHome()
-        //  :
-        // <View style={styles.container}>
-        //   <View style={styles.logo}>
-        //     {/* You will probably want to insert your logo here */}
-        //     <Text>LOGO</Text>
-        //   </View>
-        // </View>
         <View style={styles.container}>
           <View style={styles.logo}>
-            {/* You will probably want to insert your logo here */}
             <Text onPress={this._navigateToHome}>LOGO</Text>
           </View>
         </View>
@@ -31,12 +22,12 @@ class SplashScreen extends React.Component {
   }
 }
 const mapStateToProps = (state) => ({
-  userData: state.userData.userData,
+  userData: state.UserLoginReducer.user,
 })
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (user) => {
-    return dispatch(UserDataActions.userLogin(user))
+    return dispatch(UserLoginActions.userLogin(user))
   },
 })
 

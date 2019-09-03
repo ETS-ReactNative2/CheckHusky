@@ -13,3 +13,7 @@ export async function loginWithGoogle() {
   await GoogleSignin.hasPlayServices();
   return GoogleSignin.signIn();
 }
+
+export async function signOut() {
+  GoogleSignin.signOut();
+}

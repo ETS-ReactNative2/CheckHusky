@@ -4,13 +4,13 @@ import AppNavigator from '../../Navigators/AppNavigator'
 import { View, SafeAreaView } from 'react-native'
 import styles from './RootScreenStyle'
 import { connect } from 'react-redux'
-import StartupActions from '../../Stores/Startup/Actions'
+import * as StartupActions from '../../Actions/startUpActions'
 import { PropTypes } from 'prop-types'
 
 class RootScreen extends Component {
   componentDidMount() {
     // Run the startup saga when the application is starting
-    this.props.startup()
+    this.props.startUp()
   }
 
   render() {
@@ -30,13 +30,13 @@ class RootScreen extends Component {
 }
 
 RootScreen.propTypes = {
-  startup: PropTypes.func,
+  startUp: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = (dispatch) => ({
-  startup: () => dispatch(StartupActions.startup()),
+  startUp: () => dispatch(StartupActions.startUp()),
 })
 
 export default connect(

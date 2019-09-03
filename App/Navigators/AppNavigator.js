@@ -1,39 +1,23 @@
 import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation'
-
-import ExampleScreen from '../Components/Example/ExampleScreen'
 import SplashScreen from '../Components/SplashScreen/SplashScreen'
 import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer'
 import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer'
 import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer'
 
 const TabNavigator = createBottomTabNavigator({
-  ProfileTab: ProfileTabContainer,
-  AboutUsTab: AboutUsTabContainer,
+  ProfileTab: {screen : ProfileTabContainer },
+  AboutUsTab: {screen : AboutUsTabContainer },
 });
 
-/**
- * The root screen contains the application's navigation.
- *
- * @see https://reactnavigation.org/docs/en/hello-react-navigation.html#creating-a-stack-navigator
- */
 const StackNavigator = createStackNavigator(
   {
-    // Create the application routes here (the key is the route name, the value is the target screen)
-    // See https://reactnavigation.org/docs/en/stack-navigator.html#routeconfigs
-    SplashScreen: SplashScreen,
-    // The main application screen is our "ExampleScreen". Feel free to replace it with your
-    // own screen and remove the example.
-    MainScreen: ExampleScreen,
-    LoginScreen: LoginScreenContainer,
-    HomeTab : TabNavigator
+    SplashScreen: {screen : SplashScreen},
+    LoginScreen: {screen : LoginScreenContainer},
+    HomeTab : {screen : TabNavigator}
   },
   {
-    // By default the application will show the splash screen
-    initialRouteName: 'HomeTab',
-    // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
+    initialRouteName: 'SplashScreen',
     headerMode: 'none',
   }
 );
-
-
 export default createAppContainer(StackNavigator)

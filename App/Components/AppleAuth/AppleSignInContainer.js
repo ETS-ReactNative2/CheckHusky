@@ -2,7 +2,7 @@ import React from 'react';
 import AppleSignInContainer from './AppleSignInContainer';
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
-import UserDataActions from './../../Stores/UserData/Actions'
+import * as UserLoginActions from './../../Actions/userLoginActions'
 
 class AppleSignInContainer extends React.Component {
   render() {
@@ -17,11 +17,11 @@ AppleSignInContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  //userData: state.userData.userData,
+  userData: state.UserLoginReducer.user,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  //userLogin: () => dispatch(UserDataActions.userLogin()),
+  userLogin: () => dispatch(UserLoginActions.userLogin()),
 })
 
 export default connect(
