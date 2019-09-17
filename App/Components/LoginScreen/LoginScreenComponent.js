@@ -95,7 +95,7 @@ export default class LoginScreenComponent extends React.Component<props> {
           <View>
             <TouchableOpacity
               style={styles.subsContainer}
-              onPress={() => console.log('ok')}
+              onPress={() => console.log('pressed')}
             >
               <Text style={styles.subsText}>Change Language</Text>
             </TouchableOpacity>
