@@ -3,5 +3,5 @@
  */
 
 export default {
-  logo: require('App/Assets/Images/logo_systango.png'),
-}
+  logo: require('./../Assets/Images/logo_systango.png'),
+};

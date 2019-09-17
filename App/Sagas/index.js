@@ -1,19 +1,12 @@
-import { takeLatest, all } from 'redux-saga/effects'
-import { ExampleTypes } from 'App/Stores/Example/Actions'
-import { StartupTypes } from 'App/Stores/Startup/Actions'
-import { UserActionTypes } from 'App/Stores/UserData/Actions'
-import { fetchUser } from './ExampleSaga'
-import { startup } from './StartupSaga'
-import { userLogin } from './UserLoginSaga';
+import { takeLatest, all } from 'redux-saga/effects';
+import { startup } from './StartupSaga';
+import { userLogin, userLogout } from './UserLoginSaga';
+import * as CONST from '../Utils/Constants';
+
 export default function* root() {
   yield all([
-    /**
-     * @see https://redux-saga.js.org/docs/basics/UsingSagaHelpers.html
-     */
-    // Run the startup saga when the application starts
-    takeLatest(StartupTypes.STARTUP, startup),
-    // Call `fetchUser()` when a `FETCH_USER` action is triggered
-    takeLatest(ExampleTypes.FETCH_USER, fetchUser),
-    takeLatest(UserActionTypes.USER_LOGIN, userLogin),
-  ])
+    takeLatest(CONST.START_UP, startup),
+    takeLatest(CONST.USER_LOGIN, userLogin),
+    takeLatest(CONST.USER_LOGOUT, userLogout),
+  ]);
 }

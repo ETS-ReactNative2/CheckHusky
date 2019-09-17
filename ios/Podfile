@@ -32,7 +32,9 @@ target 'SysBoilerplateRN' do
   #pod 'RNLoginWithApple', :podspec => '../node_modules/react-native-apple-login/RNLoginWithApple.podspec'
   #pod 'RNLoginWithApple', :podspec => '../' + 'RNLoginWithApple.podspec'
   
-  pod 'RNCAppleAuthentication', :path => '../node_modules/@react-native-community/apple-authentication'
+  #pod 'RNCAppleAuthentication', :path => '../node_modules/@react-native-community/apple-authentication'
+
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
 
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths
