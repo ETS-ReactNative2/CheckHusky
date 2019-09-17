@@ -37,3 +37,13 @@ export function* userLogout() {
     yield put(UserLoginActions.userLogoutFailure(error));
   }
 }
+
+export function* userLogout() {
+  try {
+    yield call(signOut);
+    yield put(UserLoginActions.userLogoutSuccess());
+  }
+  catch(error){
+    yield put(UserLoginActions.userLogoutFailure(error));
+  }
+}
