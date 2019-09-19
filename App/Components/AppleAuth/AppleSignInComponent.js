@@ -4,7 +4,6 @@ import {
   NativeModules,
   requireNativeComponent
 } from 'react-native';
-import styles from './styles';
 const { RNCAppleAuthentication } = NativeModules;
 const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
 
@@ -13,6 +12,21 @@ export default class AppleSignInComponent extends React.Component {
     super(props);
     this.state = {
     };
+  }
+
+   signIn() {
+    SignInWithApple.requestAsync({
+      requestedScopes: [
+          SignInWithApple.Scope.FULL_NAME,
+          SignInWithApple.Scope.EMAIL,
+      ]
+      }).then(credentials => {
+          // Handle successful authenticated
+          console.log('credentials',credentials)
+      }).catch(error => {
+          // Handle authentication errors
+          console.log('error',error)
+      })
   }
 
   render() {

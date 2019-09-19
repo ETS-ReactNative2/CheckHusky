@@ -29,11 +29,13 @@ export function* userLogin(action) {
   }
 }
 
+
 export function* userLogout() {
   try {
     yield call(signOut);
     yield put(UserLoginActions.userLogoutSuccess());
-  } catch (error) {
+  }
+  catch(error){
     yield put(UserLoginActions.userLogoutFailure(error));
   }
 }
