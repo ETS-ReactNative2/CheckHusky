@@ -1,8 +1,12 @@
 import React from 'react';
 import {
-  Text, View, TouchableOpacity
+  Text, View, TouchableOpacity,
+  NativeModules,
+  requireNativeComponent
 } from 'react-native';
 import styles from './styles';
+const { RNCAppleAuthentication } = NativeModules;
+const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
 
 export default class AppleSignInComponent extends React.Component {
   constructor(props) {
@@ -13,13 +17,20 @@ export default class AppleSignInComponent extends React.Component {
 
   render() {
     return (
-      <View style={styles.buttonStyle}>
-        <TouchableOpacity
-          onPress={() => console.log('ok')}
-        >
-          <Text style={styles.textStyle}>Login With Apple</Text>
-        </TouchableOpacity>
+      <View>
+        <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={this.signIn} />
       </View>
     );
   }
+
+  signIn = async () => {
+    try {
+      const result = await RNCAppleAuthentication.requestAsync({
+        scopes: [RNCAppleAuthentication.Scope.FULL_NAME, RNCAppleAuthentication.Scope.EMAIL],
+      });
+      console.warn(result);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 }

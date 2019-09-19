@@ -19,6 +19,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* SysBoilerplateRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SysBoilerplateRNTests.m */; };
 		47F6C49EFF03D4384FC44347 /* libPods-SysBoilerplateRN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */; };
 		60A518604A9D17A691D6DE05 /* libPods-SysBoilerplateRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F48A50AA0ECFF71756614E2 /* libPods-SysBoilerplateRNTests.a */; };
+		6660DC4D233381B60095DF31 /* RNCAppleAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6660DC49233381B60095DF31 /* RNCAppleAuthentication.m */; };
+		6660DC4E233381B60095DF31 /* RNCSignInWithAppleButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6660DC4A233381B60095DF31 /* RNCSignInWithAppleButtonManager.m */; };
+		6660DC4F233381B70095DF31 /* RNCSignInWithAppleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6660DC4C233381B60095DF31 /* RNCSignInWithAppleButton.m */; };
 		6C5296C4230E7CAD009C7872 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */; };
 		6C5975E1230E9A4200274AEE /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */; };
 		6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */; };
@@ -192,6 +195,13 @@
 		2D02E4901E0B4A5D006451C7 /* SysBoilerplateRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SysBoilerplateRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6138725822F96D2F003291BC /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6660DC34233380B00095DF31 /* SysBoilerplateRN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SysBoilerplateRN-Bridging-Header.h"; sourceTree = "<group>"; };
+		6660DC48233381B60095DF31 /* RNCSignInWithAppleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCSignInWithAppleButton.h; sourceTree = "<group>"; };
+		6660DC49233381B60095DF31 /* RNCAppleAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCAppleAuthentication.m; sourceTree = "<group>"; };
+		6660DC4A233381B60095DF31 /* RNCSignInWithAppleButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCSignInWithAppleButtonManager.m; sourceTree = "<group>"; };
+		6660DC4B233381B60095DF31 /* RNCAppleAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCAppleAuthentication.h; sourceTree = "<group>"; };
+		6660DC4C233381B60095DF31 /* RNCSignInWithAppleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCSignInWithAppleButton.m; sourceTree = "<group>"; };
+		6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SysBoilerplateRN.entitlements; path = SysBoilerplateRN/SysBoilerplateRN.entitlements; sourceTree = "<group>"; };
 		6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5296F8230E7D68009C7872 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +281,12 @@
 		13B07FAE1A68108700A75B9A /* SysBoilerplateRN */ = {
 			isa = PBXGroup;
 			children = (
+				6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */,
+				6660DC4B233381B60095DF31 /* RNCAppleAuthentication.h */,
+				6660DC49233381B60095DF31 /* RNCAppleAuthentication.m */,
+				6660DC48233381B60095DF31 /* RNCSignInWithAppleButton.h */,
+				6660DC4C233381B60095DF31 /* RNCSignInWithAppleButton.m */,
+				6660DC4A233381B60095DF31 /* RNCSignInWithAppleButtonManager.m */,
 				6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -368,6 +384,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6660DC34233380B00095DF31 /* SysBoilerplateRN-Bridging-Header.h */,
 				13B07FAE1A68108700A75B9A /* SysBoilerplateRN */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SysBoilerplateRNTests */,
@@ -892,8 +909,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6660DC4E233381B60095DF31 /* RNCSignInWithAppleButtonManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				6660DC4D233381B60095DF31 /* RNCAppleAuthentication.m in Sources */,
+				6660DC4F233381B70095DF31 /* RNCSignInWithAppleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1010,7 @@
 			baseConfigurationReference = 7FDCFA45FB79F353C8702418 /* Pods-SysBoilerplateRN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SysBoilerplateRN/SysBoilerplateRN.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1014,6 +1035,7 @@
 			baseConfigurationReference = AB261D0D1DAA801D11E1A803 /* Pods-SysBoilerplateRN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SysBoilerplateRN/SysBoilerplateRN.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
