@@ -1,10 +1,9 @@
 import React from 'react';
 import AboutUsTabComponent from './AboutUsTabComponent';
 
-export default class AboutUsTabContainer extends React.Component {
-  render() {
+const AboutUsTabContainer = (props) => {
     return (
-        <AboutUsTabComponent/>
+        <AboutUsTabComponent props={props} />
     )
-  }
 }
+export default AboutUsTabContainer

@@ -7,26 +7,8 @@ import {
 const { RNCAppleAuthentication } = NativeModules;
 const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
 
-export default class AppleSignInComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  render() {
-    return (
-      <View>
-      {
-        Platform.OS=='ios'?
-          <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={this.signIn} />
-        : null
-      }
-    </View>
-    );
-  }
-
-  signIn = async () => {
+export default function AppleSignInComponent({props}){
+  const signIn = async () => {
     try {
       const result = await RNCAppleAuthentication.requestAsync({
         scopes: [RNCAppleAuthentication.Scope.FULL_NAME, RNCAppleAuthentication.Scope.EMAIL],
@@ -36,4 +18,13 @@ export default class AppleSignInComponent extends React.Component {
       console.error(err);
     }
   };
+    return (
+      <View>
+        {
+          Platform.OS=='ios'?
+            <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={signIn} />
+          : null
+        }
+      </View>
+    );
 }

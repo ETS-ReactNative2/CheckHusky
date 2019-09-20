@@ -4,12 +4,10 @@ import { PropTypes } from 'prop-types'
 import AppleSignInComponent from './AppleSignInComponent';
 import * as UserLoginActions from "../../Actions/userLoginActions";
 
-class AppleSignInContainer extends React.Component {
-  render() {
+const AppleSignInContainer = (props) => {
     return (
-      <AppleSignInComponent {...this.props} />
+      <AppleSignInComponent props={props} />
     );
-  }
 }
 
 AppleSignInContainer.propTypes = {

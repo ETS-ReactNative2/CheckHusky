@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useCallback} from 'react';
 import {
   ScrollView,
   TextInput,
@@ -6,29 +6,42 @@ import {
   Text,
   View
 } from 'react-native';
-import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
-import AppleSignInContainer from '../AppleAuth/AppleSignInComponent';
-import Validators from '../../Utils/Validators';
-import showToast from '../../Utils/showToast';
-import styles from './styles';
 import {
+  LoginManager,
   LoginButton,
   AccessToken,
   GraphRequest,
   GraphRequestManager,
 } from 'react-native-fbsdk';
+import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
+import AppleSignInContainer from '../AppleAuth/AppleSignInComponent';
+import Validators from '../../Utils/Validators';
+import showToast from '../../Utils/showToast';
+import styles from './styles';
 
-export default class LoginScreenComponent extends React.Component<props> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
-  }
+export default function LoginScreenComponent({ props }){
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const onSubmit = useCallback(
+    () => {
+      if (Validators.isEmpty(email)) {
+        showToast('Email is empty');
+      } else if (!Validators.validEmail(email)) {
+        showToast('Email is invalid');
+      } else if (Validators.isEmpty(password)) {
+        showToast('Password is empty');
+      } else if (!Validators.isValidPassword(password)) {
+        showToast('Password is invalid');
+      } else {
+        const user = { name: email, password };
+        props.userLogin(user);
+      }
+    },
+    [email,password],
+  );
 
-  get_Response_Info = (error, result) => {
+  const get_Response_Info = (error, result) => {
     if (error) {
       //Alert for the Error
       Alert.alert('Error fetching data: ' + error.toString());
@@ -37,13 +50,8 @@ export default class LoginScreenComponent extends React.Component<props> {
       alert(JSON.stringify(result));
     }
   };
- 
-  onLogout = () => {
-    //Clear the state after logout
-  }
 
-  render() {
-    return (
+  return (
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.signInContainers}>
           <Text style={styles.title}>Login Component</Text>
@@ -53,19 +61,18 @@ export default class LoginScreenComponent extends React.Component<props> {
                 underlineColorAndroid="transparent"
                 returnKeyType="next"
                 placeholder="Email"
-                value={this.state.email}
+                value={email}
                 autoCapitalize="none"
-                ref={(component) => (this.email = component)}
-                onChangeText={(email) => this.setState({ email })}
+                onChangeText={(email) => setEmail(email)}
                 keyboardType="email-address"
                 style={styles.emailInput}
               />
             </View>
-            {this.state.email !== '' && (
+            {email !== '' && (
               <View style={styles.crossIconContainer}>
                 <TouchableOpacity
                   onPress={() => {
-                    this.setState({ email: '' });
+                    setEmail('');
                   }}
                   style={[styles.crossIcon]}
                 >
@@ -80,19 +87,18 @@ export default class LoginScreenComponent extends React.Component<props> {
                 underlineColorAndroid="transparent"
                 returnKeyType="next"
                 placeholder="Password"
-                value={this.state.password}
+                value={password}
                 autoCapitalize="none"
                 secureTextEntry
-                ref={(component) => (this.password = component)}
-                onChangeText={(password) => this.setState({ password })}
+                onChangeText={(password) => setPassword(password)}
                 style={styles.emailInput}
               />
             </View>
-            {this.state.password !== '' && (
+            {password !== '' && (
               <View style={styles.crossIconContainer}>
                 <TouchableOpacity
                   onPress={() => {
-                    this.setState({ password: '' });
+                    setPassword('');
                   }}
                   style={[styles.crossIcon]}
                 >
@@ -103,7 +109,7 @@ export default class LoginScreenComponent extends React.Component<props> {
           </View>
           <TouchableOpacity
             style={styles.subsContainer}
-            onPress={() => this._onSubmit()}
+            onPress={() => onSubmit()}
           >
             <Text style={styles.subsText}>SUBMIT</Text>
           </TouchableOpacity>
@@ -113,7 +119,6 @@ export default class LoginScreenComponent extends React.Component<props> {
           <View>
             <AppleSignInContainer />
           </View>
-
           <View style = {{alignItems : 'center'}}>
           <LoginButton
           readPermissions={['public_profile']}
@@ -131,14 +136,14 @@ export default class LoginScreenComponent extends React.Component<props> {
                 const processRequest = new GraphRequest(
                   '/me?fields=name,picture.type(large)',
                   null,
-                  this.get_Response_Info
+                  get_Response_Info
                 );
                 // Start the graph request.
                 new GraphRequestManager().addRequest(processRequest).start();
               });
             }
           }}
-          onLogoutFinished={this.onLogout}
+          onLogoutFinished={LoginManager.logOut}
         />
 
           </View>
@@ -153,21 +158,4 @@ export default class LoginScreenComponent extends React.Component<props> {
         </View>
       </ScrollView>
     );
-  }
-
-  _onSubmit() {
-    const { email, password } = this.state;
-    if (Validators.isEmpty(email)) {
-      showToast('Email is empty');
-    } else if (!Validators.validEmail(email)) {
-      showToast('Email is invalid');
-    } else if (Validators.isEmpty(password)) {
-      showToast('Password is empty');
-    } else if (!Validators.isValidPassword(password)) {
-      showToast('Password is invalid');
-    } else {
-      const user = { name: email, password };
-      this.props.userLogin(user);
-    }
-  }
 }

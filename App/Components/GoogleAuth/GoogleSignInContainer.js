@@ -4,12 +4,10 @@ import { PropTypes } from 'prop-types'
 import GoogleSignInComponent from './GoogleSignInComponent';
 import * as UserLoginActions from "../../Actions/userLoginActions";
 
-class GoogleSignInContainer extends React.Component {
-  render() {
+const GoogleSignInContainer = (props) => {
     return (
-      <GoogleSignInComponent {...this.props} />
+      <GoogleSignInComponent props={props} />
     );
-  }
 }
 
 GoogleSignInContainer.propTypes = {

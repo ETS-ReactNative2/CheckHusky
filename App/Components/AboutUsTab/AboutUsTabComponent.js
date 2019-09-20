@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Style from './styles';
 
-export default class AboutUsTabComponent extends React.Component {
-    render() {
+export default function AboutUsTabComponent({props}){
+
         return (
             <View style={Style.container}>
                 <Text>
@@ -11,5 +11,4 @@ export default class AboutUsTabComponent extends React.Component {
                 </Text>
             </View>
         )
-      }
-}
+    }

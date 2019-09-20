@@ -1,21 +1,21 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import * as CONST from '../../Utils/Constants';
 import NavigationService from '../../Services/NavigationService';
 import styles from './styles';
 
-export default class ProfileTabContainer extends React.Component {
-  logout() {
-    this.props.userLogout();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props != prevProps && this.props.message == CONST.USER_LOGGED_OUT_SUCCESSFULLY) {
-      NavigationService.navigateAndReset('LoginScreen');
+export default function ProfileTabComponent({props}){
+  const { prevProps}  = props;
+  useEffect(() => {
+    if(props != prevProps && props.message == CONST.USER_LOGGED_OUT_SUCCESSFULLY) {
+      NavigationService.navigateAndReset('LoginScreen')
     }
+  }, [prevProps, props]);
+
+  const logout=()=>{
+    props.userLogout();
   }
 
-  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
@@ -26,16 +26,15 @@ export default class ProfileTabContainer extends React.Component {
             {'Name :  '}
           </Text>
           <Text style={styles.text}>
-            {this.props.userData && this.props.userData.name}
+            {props.userData && props.userData.name}
           </Text>
         </View>
         <TouchableOpacity
           style={styles.subsContainer}
-          onPress={() => this.logout()}
+          onPress={() => logout()}
         >
           <Text style={styles.subsText}>Logout</Text>
         </TouchableOpacity>
       </View>
     );
-  }
 }

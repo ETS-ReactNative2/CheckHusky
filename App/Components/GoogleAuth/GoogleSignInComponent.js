@@ -6,25 +6,18 @@ import {
 import Style from './styles';
 import styles from './styles';
 
-export default class GoogleSignInComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+export default function GoogleSignInComponent({props}){
 
-  _signIn = async () => {
-    this.props.userLogin();
+  const signIn = async () => {
+    props.userLogin();
   };
 
-  render() {
     return (
       <GoogleSigninButton
         style={styles.buttonStyle}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
-        onPress={this._signIn}
+        onPress={signIn}
       />
     );
-  }
 }
