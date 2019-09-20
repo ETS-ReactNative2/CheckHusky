@@ -195,7 +195,6 @@
 		2D02E4901E0B4A5D006451C7 /* SysBoilerplateRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SysBoilerplateRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6138725822F96D2F003291BC /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6660DC34233380B00095DF31 /* SysBoilerplateRN-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SysBoilerplateRN-Bridging-Header.h"; sourceTree = "<group>"; };
 		6660DC48233381B60095DF31 /* RNCSignInWithAppleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCSignInWithAppleButton.h; sourceTree = "<group>"; };
 		6660DC49233381B60095DF31 /* RNCAppleAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCAppleAuthentication.m; sourceTree = "<group>"; };
 		6660DC4A233381B60095DF31 /* RNCSignInWithAppleButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCSignInWithAppleButtonManager.m; sourceTree = "<group>"; };
@@ -384,7 +383,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				6660DC34233380B00095DF31 /* SysBoilerplateRN-Bridging-Header.h */,
 				13B07FAE1A68108700A75B9A /* SysBoilerplateRN */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SysBoilerplateRNTests */,
