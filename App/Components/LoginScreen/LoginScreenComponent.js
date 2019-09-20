@@ -11,6 +11,12 @@ import AppleSignInContainer from '../AppleAuth/AppleSignInComponent';
 import Validators from '../../Utils/Validators';
 import showToast from '../../Utils/showToast';
 import styles from './styles';
+import {
+  LoginButton,
+  AccessToken,
+  GraphRequest,
+  GraphRequestManager,
+} from 'react-native-fbsdk';
 
 export default class LoginScreenComponent extends React.Component<props> {
   constructor(props) {
@@ -19,6 +25,21 @@ export default class LoginScreenComponent extends React.Component<props> {
       email: '',
       password: ''
     };
+  }
+
+
+  get_Response_Info = (error, result) => {
+    if (error) {
+      //Alert for the Error
+      Alert.alert('Error fetching data: ' + error.toString());
+    } else {
+      //response alert
+      alert(JSON.stringify(result));
+    }
+  };
+ 
+  onLogout = () => {
+    //Clear the state after logout
   }
 
   render() {
@@ -91,6 +112,35 @@ export default class LoginScreenComponent extends React.Component<props> {
           </View>
           <View>
             <AppleSignInContainer />
+          </View>
+
+          <View style = {{alignItems : 'center'}}>
+          <LoginButton
+          readPermissions={['public_profile']}
+          onLoginFinished={(error, result) => {
+            if (error) {
+              console.log('Error',error)
+              alert(error);
+              alert('login has error: ' + result.error);
+            } else if (result.isCancelled) {
+              alert('login is cancelled.');
+            } else {
+              AccessToken.getCurrentAccessToken().then(data => {
+                alert(data.accessToken.toString());
+ 
+                const processRequest = new GraphRequest(
+                  '/me?fields=name,picture.type(large)',
+                  null,
+                  this.get_Response_Info
+                );
+                // Start the graph request.
+                new GraphRequestManager().addRequest(processRequest).start();
+              });
+            }
+          }}
+          onLogoutFinished={this.onLogout}
+        />
+
           </View>
           <View>
             <TouchableOpacity

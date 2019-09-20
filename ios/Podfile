@@ -35,6 +35,8 @@ target 'SysBoilerplateRN' do
   #pod 'RNCAppleAuthentication', :path => '../node_modules/@react-native-community/apple-authentication'
 
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+  pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
+
 
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths

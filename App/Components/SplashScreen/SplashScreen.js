@@ -4,7 +4,7 @@ import styles from './SplashScreenStyle'
 import { connect } from 'react-redux'
 import NavigationService from "./../../Services/NavigationService";
 import * as UserLoginActions from './../../Actions/userLoginActions'
-
+  
 class SplashScreen extends React.Component {
   constructor(props) {
     super(props);

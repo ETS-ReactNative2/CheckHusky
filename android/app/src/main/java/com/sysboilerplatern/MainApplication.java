@@ -1,7 +1,12 @@
 package com.sysboilerplatern;
 
 import android.app.Application;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+import android.util.Base64;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.facebook.react.PackageList;
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
@@ -12,12 +17,18 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+
 
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+
+
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
@@ -25,10 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      @SuppressWarnings("UnnecessaryLocalVariable")
       List<ReactPackage> packages = new PackageList(this).getPackages();
-      // Packages that cannot be autolinked yet can be added manually here, for example:
-      // packages.add(new MyReactNativePackage());
       return packages;
     }
 
@@ -46,6 +54,18 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    try {
+      PackageInfo info =     getPackageManager().getPackageInfo("com.sysboilerplatern",PackageManager.GET_SIGNATURES);
+      for (Signature signature : info.signatures) {
+        MessageDigest md = MessageDigest.getInstance("SHA");
+        md.update(signature.toByteArray());
+        String sign= Base64.encodeToString(md.digest(), Base64.DEFAULT);
+        Log.e("MY KEY HASH:", sign);
+        Toast.makeText(getApplicationContext(),sign,     Toast.LENGTH_LONG).show();
+      }
+    } catch (PackageManager.NameNotFoundException e) {
+    } catch (NoSuchAlgorithmException e) {
+    }
     SoLoader.init(this, /* native exopackage */ false);
   }
 }

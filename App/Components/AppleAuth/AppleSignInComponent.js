@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Text, View, TouchableOpacity,
-  NativeModules,
+  NativeModules,Platform,
   requireNativeComponent
 } from 'react-native';
 const { RNCAppleAuthentication } = NativeModules;
@@ -14,26 +14,15 @@ export default class AppleSignInComponent extends React.Component {
     };
   }
 
-   signIn() {
-    SignInWithApple.requestAsync({
-      requestedScopes: [
-          SignInWithApple.Scope.FULL_NAME,
-          SignInWithApple.Scope.EMAIL,
-      ]
-      }).then(credentials => {
-          // Handle successful authenticated
-          console.log('credentials',credentials)
-      }).catch(error => {
-          // Handle authentication errors
-          console.log('error',error)
-      })
-  }
-
   render() {
     return (
       <View>
-        <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={this.signIn} />
-      </View>
+      {
+        Platform.OS=='ios'?
+          <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={this.signIn} />
+        : null
+      }
+    </View>
     );
   }
 
