@@ -24,6 +24,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import { Sentry } from 'react-native-sentry';
+
+Sentry.config('https://2a5c220c8b6a499882a908969651fef8@sentry.io/1760827').install();
+
+
 const App = () => {
   return (
     <Fragment>

@@ -25,6 +25,7 @@
 		6C5975E1230E9A4200274AEE /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */; };
 		6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */; };
 		8924625E08DCB99542562411 /* libPods-SysBoilerplateRN-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D35C4CBD3698085D3B6C9D1C /* libPods-SysBoilerplateRN-tvOSTests.a */; };
+		B12E859881FB49DBBA4FE6B4 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 73585A3F14B7402196EB2937 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F1688BC789CDBFC865170036 /* Pods-SysBoilerplateRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SysBoilerplateRNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SysBoilerplateRNTests/Pods-SysBoilerplateRNTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF257B6715347CF19C66062A /* libPods-SysBoilerplateRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73585A3F14B7402196EB2937 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				6C5975E1230E9A4200274AEE /* libRNGoogleSignin.a in Frameworks */,
 				6C5296C4230E7CAD009C7872 /* libRNGestureHandler.a in Frameworks */,
 				2DC5E28D4EAD9EB14FF556D6 /* libPods-SysBoilerplateRN.a in Frameworks */,
+				B12E859881FB49DBBA4FE6B4 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +313,7 @@
 				3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */,
 				D35C4CBD3698085D3B6C9D1C /* libPods-SysBoilerplateRN-tvOSTests.a */,
 				8F48A50AA0ECFF71756614E2 /* libPods-SysBoilerplateRNTests.a */,
+				73585A3F14B7402196EB2937 /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -414,6 +418,14 @@
 			sourceTree = "<group>";
 			path = "";
 		};
+		389F0C824736453BA67B8674 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -447,6 +459,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				A09FFE38BDF13425C442D078 /* [CP] Copy Pods Resources */,
+				25C0CA795682414DBC9ABA55 /* Upload Debug Symbols to Sentry */,
 			);
 			buildRules = (
 			);
@@ -740,7 +753,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -754,7 +767,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\nexport NODE_BINARY=node\n../node_modules/@sentry/cli/bin/sentry-cli react-native xcode ../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
 		3DC5906531CC730A441DB57A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -901,6 +914,20 @@
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		25C0CA795682414DBC9ABA55 /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			name = "Upload Debug Symbols to Sentry";
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			shellScript = "export SENTRY_PROPERTIES=sentry.properties\n../node_modules/@sentry/cli/bin/sentry-cli upload-dsym";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -9,22 +9,22 @@ import * as StartupActions from '../../Actions/startUpActions';
 
 function RootScreen(props) {
   useEffect(() => {
-      props.startUp();
+    props.startUp();
   }, []);
 
-    return (
-      <SafeAreaView style={styles.container}>
-        <View style={styles.container}>
-          <AppNavigator
-            // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
-            ref={(navigatorRef) => {
-              NavigationService.setTopLevelNavigator(navigatorRef);
-            }}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <AppNavigator
+          // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
+          ref={(navigatorRef) => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  );
+}
 
 RootScreen.propTypes = {
   startUp: PropTypes.func,

@@ -5,4 +5,4 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
   },
-})
+});

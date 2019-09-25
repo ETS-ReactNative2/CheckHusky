@@ -1,14 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import GoogleSignInComponent from './GoogleSignInComponent';
-import * as UserLoginActions from "../../Actions/userLoginActions";
+import * as UserLoginActions from '../../Actions/userLoginActions';
 
 const GoogleSignInContainer = (props) => {
-    return (
-      <GoogleSignInComponent props={props} />
-    );
-}
+  return (
+    <GoogleSignInComponent props={props} />
+  );
+};
 
 GoogleSignInContainer.propTypes = {
   userData: PropTypes.object,

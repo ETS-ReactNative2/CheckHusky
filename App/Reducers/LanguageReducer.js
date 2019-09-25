@@ -1,9 +1,9 @@
-import { CHANGE_LANGUAGE } from "../Utils/Constants";
-import { getCurrentLocale } from "../i18n/index";
+import { CHANGE_LANGUAGE } from '../Utils/Constants';
+// import { getCurrentLocale } from "../i18n/index";
 
-const initialState = { language: "en" };
+const initialState = { language: 'en' };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case CHANGE_LANGUAGE: {
       return { ...state, language: action.payload };

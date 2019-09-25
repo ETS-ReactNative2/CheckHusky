@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import ProfileTabComponent from './ProfileTabComponent';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 
-const ProfileTabContainer=(props)=>{
-    return (
-      <ProfileTabComponent props={props} />
-    );
-  }
+const ProfileTabContainer = (props) => {
+  return (
+    <ProfileTabComponent props={props} />
+  );
+};
 
 const mapStateToProps = (state) => ({
   message: state.UserLoginReducer.message,

@@ -1,14 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import AppleSignInComponent from './AppleSignInComponent';
-import * as UserLoginActions from "../../Actions/userLoginActions";
+import * as UserLoginActions from '../../Actions/userLoginActions';
 
 const AppleSignInContainer = (props) => {
-    return (
-      <AppleSignInComponent props={props} />
-    );
-}
+  return (
+    <AppleSignInComponent props={props} />
+  );
+};
 
 AppleSignInContainer.propTypes = {
   userData: PropTypes.object,

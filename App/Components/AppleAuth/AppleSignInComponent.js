@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-  Text, View, TouchableOpacity,
-  NativeModules,Platform,
+  View,
+  NativeModules, Platform,
   requireNativeComponent
 } from 'react-native';
+
 const { RNCAppleAuthentication } = NativeModules;
 const SignInWithAppleButton = requireNativeComponent('RNCSignInWithAppleButton');
 
-export default function AppleSignInComponent({props}){
+export default function AppleSignInComponent({ props }) {
   const signIn = async () => {
     try {
       const result = await RNCAppleAuthentication.requestAsync({
@@ -18,13 +19,13 @@ export default function AppleSignInComponent({props}){
       console.error(err);
     }
   };
-    return (
-      <View>
-        {
-          Platform.OS=='ios'?
-            <SignInWithAppleButton style={{ height: 44, width: 200 ,  }} onPress={signIn} />
+  return (
+    <View>
+      {
+        Platform.OS === 'ios'
+          ? <SignInWithAppleButton style={{ height: 44, width: 200, }} onPress={signIn} />
           : null
-        }
-      </View>
-    );
+      }
+    </View>
+  );
 }

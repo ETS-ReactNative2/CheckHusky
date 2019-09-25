@@ -39,6 +39,10 @@ target 'SysBoilerplateRN' do
 
 
 
+  pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
+
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths
     # Pods for testing
