@@ -1,8 +1,8 @@
 import * as CONST from '../Utils/Constants';
 
-export function changeLanguage(user) {
+export function changeLanguage(lang) {
   return {
     type: CONST.CHANGE_LANGUAGE,
-    user
+    lang
   };
 }

@@ -1,9 +1,9 @@
-import { CHANGE_LANGUAGE } from '../Utils/Constants';
-import { getCurrentLocale } from '../i18n/index';
+import { CHANGE_LANGUAGE } from "../Utils/Constants";
+import { getCurrentLocale } from "../i18n/index";
 
-const initialState = { language: getCurrentLocale() };
+const initialState = { language: "en" };
 
-const languageReducer = (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
     case CHANGE_LANGUAGE: {
       return { ...state, language: action.payload };
@@ -11,6 +11,4 @@ const languageReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
-export default languageReducer;
+}

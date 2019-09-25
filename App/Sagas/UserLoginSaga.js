@@ -1,10 +1,7 @@
-import { put, call } from 'redux-saga/effects';
-import {
-  statusCodes,
-} from 'react-native-google-signin';
-import * as UserLoginActions from '../Actions/userLoginActions';
-import { loginWithGoogle, signOut } from '../Services/googleAuth';
-
+import { put, call } from "redux-saga/effects";
+import { statusCodes } from "react-native-google-signin";
+import * as UserLoginActions from "../Actions/userLoginActions";
+import { loginWithGoogle, signOut } from "../Services/googleAuth";
 
 export function* userLogin(action) {
   try {
@@ -24,18 +21,17 @@ export function* userLogin(action) {
     } else {
       // some other error happened
     }
-    console.log('_signIn error', error);
+    console.log("_signIn error", error);
     yield put(UserLoginActions.userLoginFailure(error));
   }
 }
-
 
 export function* userLogout() {
   try {
     yield call(signOut);
     yield put(UserLoginActions.userLogoutSuccess());
-  }
-  catch(error){
+  } catch (error) {
     yield put(UserLoginActions.userLogoutFailure(error));
   }
 }
+

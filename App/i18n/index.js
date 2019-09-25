@@ -17,4 +17,4 @@ export const setLocale = (locale) => {
 };
 
 export const getCurrentLocale = () => I18n.locale; // It will be used to define intial language state in reducer.
-export default I18n.translate.bind(I18n);
+export default I18n;
