@@ -4,21 +4,15 @@ import {
   TextInput,
   TouchableOpacity,
   Text,
-  View,
-} from "react-native";
-import {
-  LoginManager,
-  LoginButton,
-  AccessToken,
-  GraphRequest,
-  GraphRequestManager
-} from "react-native-fbsdk";
-import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
-import AppleSignInContainer from "../AppleAuth/AppleSignInComponent";
-import Validators from "../../Utils/Validators";
-import showToast from "../../Utils/showToast";
-import styles from "./styles";
-import I18n from "../../i18n/index";
+  View
+} from 'react-native';
+
+import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
+import AppleSignInContainer from '../AppleAuth/AppleSignInComponent';
+import FBAuthContainer  from '../FBAuth/FBAuthContainer';
+import Validators from '../../Utils/Validators';
+import showToast from '../../Utils/showToast';
+import styles from './styles';
 
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState("");
@@ -39,15 +33,6 @@ export default function LoginScreenComponent({ props }) {
     }
   }, [email, password]);
 
-  const get_Response_Info = (error, result) => {
-    if (error) {
-      //Alert for the Error
-      Alert.alert("Error fetching data: " + error.toString());
-    } else {
-      //response alert
-      alert(JSON.stringify(result));
-    }
-  };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -151,6 +136,24 @@ export default function LoginScreenComponent({ props }) {
           >
             <Text style={styles.subsText}>Change Language</Text>
           </TouchableOpacity>
+          <View>
+            <GoogleSignInContainer />
+          </View>
+          <View>
+            <AppleSignInContainer />
+          </View>
+          <View style = {{alignItems : 'center'}}>
+          <FBAuthContainer/>
+
+          </View>
+          <View>
+            <TouchableOpacity
+              style={styles.subsContainer}
+              onPress={() => console.log('pressed')}
+            >
+              <Text style={styles.subsText}>Change Language</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </ScrollView>
