@@ -29,19 +29,15 @@ target 'SysBoilerplateRN' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
   pod 'GoogleSignIn', '~> 4.4.0'
-  #pod 'RNLoginWithApple', :podspec => '../node_modules/react-native-apple-login/RNLoginWithApple.podspec'
-  #pod 'RNLoginWithApple', :podspec => '../' + 'RNLoginWithApple.podspec'
-  
-  #pod 'RNCAppleAuthentication', :path => '../node_modules/@react-native-community/apple-authentication'
 
+  pod 'Firebase/Core', '~> 6.3.0'
+  pod 'Firebase/Messaging', '~> 6.3.0'
+  pod 'GoogleIDFASupport', '~> 3.14.0'
+  
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
   pod 'react-native-fbsdk', :path => '../node_modules/react-native-fbsdk'
-
-
-
   pod 'SentryReactNative', :path => '../node_modules/react-native-sentry'
-
-  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
 
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths
