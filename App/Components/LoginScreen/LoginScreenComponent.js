@@ -8,7 +8,6 @@ import {
 } from "react-native";
 
 import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
-import AppleSignInContainer from "../AppleAuth/AppleSignInComponent";
 import FBAuthContainer from "../FBAuth/FBAuthContainer";
 import Validators from "../../Utils/Validators";
 import showToast from "../../Utils/showToast";
@@ -99,9 +98,6 @@ export default function LoginScreenComponent({ props }) {
         <View>
           <View>
             <GoogleSignInContainer />
-          </View>
-          <View>
-            <AppleSignInContainer />
           </View>
           <View style={{ alignItems: "center" }}>
             <FBAuthContainer />
