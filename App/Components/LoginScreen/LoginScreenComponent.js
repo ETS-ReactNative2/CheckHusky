@@ -7,12 +7,15 @@ import {
   View,
 } from "react-native";
 
+import firebase from 'react-native-firebase';
 import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
 import FBAuthContainer from "../FBAuth/FBAuthContainer";
 import Validators from "../../Utils/Validators";
 import showToast from "../../Utils/showToast";
 import styles from "./styles";
 import I18n from '../../i18n/index';
+
+let Analytics = firebase.analytics();
 
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState('');
@@ -29,6 +32,7 @@ export default function LoginScreenComponent({ props }) {
       showToast('Password is invalid');
     } else {
       const user = { name: email, password };
+      Analytics.logEvent('login_method', { type: 'email', email });
       props.userLogin(user);
     }
   }, [email, password, props]);

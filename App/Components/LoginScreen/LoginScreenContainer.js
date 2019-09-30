@@ -4,11 +4,16 @@ import * as UserLoginActions from '../../Actions/userLoginActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
 import LoginScreenComponent from './LoginScreenComponent';
 import NavigationService from '../../Services/NavigationService';
+import firebase from 'react-native-firebase';
+
+let Analytics = firebase.analytics();
 
 const LoginScreenContainer = (props) => {
   const { prevProps } = props;
 
   useEffect(() => {
+    Analytics.setAnalyticsCollectionEnabled(true);
+    Analytics.setCurrentScreen('Log_In', 'Login');
     if (props != prevProps && props.userData) {
       NavigationService.navigateAndReset('HomeTab');
     }
