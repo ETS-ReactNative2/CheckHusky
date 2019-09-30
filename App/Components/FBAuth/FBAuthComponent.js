@@ -13,11 +13,9 @@ import {
 export default function FBAuthComponent() {
   const get_Response_Info = (error, result) => {
     if (error) {
-      // Alert for the Error
-      Alert.alert(`Error fetching data: ${error.toString()}`);
+      alert(`Error fetching FB data: ${error.toString()}`);
     } else {
-      // response alert
-      alert(JSON.stringify(result));
+      console.log('## FB response : ', JSON.stringify(result));
     }
   };
 
@@ -28,14 +26,12 @@ export default function FBAuthComponent() {
         onLoginFinished={(error, result) => {
           if (error) {
             console.log('Error', error);
-            alert(error);
             alert(`login has error: ${result.error}`);
           } else if (result.isCancelled) {
             alert('login is cancelled.');
           } else {
             AccessToken.getCurrentAccessToken().then((data) => {
-              alert(data.accessToken.toString());
-
+              console.log('## FB access token : ',data.accessToken.toString());
               const processRequest = new GraphRequest(
                 '/me?fields=name,picture.type(large)',
                 null,
