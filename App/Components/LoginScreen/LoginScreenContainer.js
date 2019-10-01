@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import firebase from 'react-native-firebase';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
 import LoginScreenComponent from './LoginScreenComponent';
 import NavigationService from '../../Services/NavigationService';
-import firebase from 'react-native-firebase';
 
-let Analytics = firebase.analytics();
+
+const Analytics = firebase.analytics();
 
 const LoginScreenContainer = (props) => {
   const { prevProps } = props;
@@ -23,15 +24,15 @@ const LoginScreenContainer = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  userData: state.UserLoginReducer.user
-  // lang: state.LanguageReducer.language
+  userData: state.UserLoginReducer.user,
+  lang: state.LanguageReducer.language
 });
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (user) => {
     return dispatch(UserLoginActions.userLogin(user));
   },
-  language: (lang) => {
+  changeLanguage: (lang) => {
     return dispatch(LanguageActions.changeLanguage(lang));
   }
 });

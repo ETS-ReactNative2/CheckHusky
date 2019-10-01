@@ -5,17 +5,19 @@ import {
   TouchableOpacity,
   Text,
   View,
-} from "react-native";
+} from 'react-native';
 
 import firebase from 'react-native-firebase';
-import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
-import FBAuthContainer from "../FBAuth/FBAuthContainer";
-import Validators from "../../Utils/Validators";
-import showToast from "../../Utils/showToast";
-import styles from "./styles";
+import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
+import FBAuthContainer from '../FBAuth/FBAuthContainer';
+import Validators from '../../Utils/Validators';
+import showToast from '../../Utils/showToast';
+import styles from './styles';
 import I18n from '../../i18n/index';
 
-let Analytics = firebase.analytics();
+const Analytics = firebase.analytics();
+const enableGoogle = false;
+const enableFb = true;
 
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState('');
@@ -49,7 +51,7 @@ export default function LoginScreenComponent({ props }) {
               placeholder="Email"
               value={email}
               autoCapitalize="none"
-              onChangeText={email => setEmail(email)}
+              onChangeText={(email) => setEmail(email)}
               keyboardType="email-address"
               style={styles.emailInput}
             />
@@ -76,7 +78,7 @@ export default function LoginScreenComponent({ props }) {
               value={password}
               autoCapitalize="none"
               secureTextEntry
-              onChangeText={password => setPassword(password)}
+              onChangeText={(password) => setPassword(password)}
               style={styles.emailInput}
             />
           </View>
@@ -100,16 +102,28 @@ export default function LoginScreenComponent({ props }) {
           <Text style={styles.subsText}>SUBMIT</Text>
         </TouchableOpacity>
         <View>
-          <View>
-            <GoogleSignInContainer />
-          </View>
-          <View style={{ alignItems: "center" }}>
-            <FBAuthContainer />
-          </View>
+          {
+            enableGoogle
+            && (
+            <View>
+              <GoogleSignInContainer />
+            </View>
+            )
+          }
+          {
+            enableFb
+            && (
+            <View>
+              <FBAuthContainer />
+            </View>
+            )
+          }
           <View>
             <TouchableOpacity
               style={styles.subsContainer}
-              onPress={() => console.log("pressed")}
+              onPress={() => {
+                //this.props.changeLanguage()
+              }}
             >
               <Text style={styles.subsText}>Change Language</Text>
             </TouchableOpacity>

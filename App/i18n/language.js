@@ -9,7 +9,7 @@ export const setCurrentLanguage = (lang) => (dispatch) => {
 export const toggleLanguage = () => (dispatch, getState) => {
   const currentLanguage = getState().userPreferences.language;
   if (currentLanguage === 'en') {
-    dispatch(setCurrentLanguage('hi'));
+    dispatch(setCurrentLanguage('fr'));
   } else {
     dispatch(setCurrentLanguage('en'));
   }
