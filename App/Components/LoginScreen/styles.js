@@ -61,5 +61,9 @@ export default StyleSheet.create({
         justifyContent:'center',
         marginTop: 22,
         paddingHorizontal: 26
+    },
+    appleBtn: { 
+        height: 44, 
+        width: 200, 
     }
 })

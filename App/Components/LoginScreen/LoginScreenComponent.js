@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
+import { SignInWithAppleButton } from 'react-native-apple-authentication';
 import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
 import FBAuthContainer from '../FBAuth/FBAuthContainer';
 import Validators from '../../Utils/Validators';
@@ -22,6 +23,10 @@ const enableFb = true;
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const appleSignIn = (result) => {
+    console.log('Resssult',result);
+  };
 
   const onSubmit = useCallback(() => {
     if (Validators.isEmpty(email)) {
@@ -38,6 +43,8 @@ export default function LoginScreenComponent({ props }) {
       props.userLogin(user);
     }
   }, [email, password, props]);
+
+
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -118,6 +125,9 @@ export default function LoginScreenComponent({ props }) {
             </View>
             )
           }
+          <View>
+          { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
+          </View>
           <View>
             <TouchableOpacity
               style={styles.subsContainer}
