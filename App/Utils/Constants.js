@@ -60,8 +60,8 @@ export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 export const MSG_TITLE = 'Any Message Title';
 
 // image constants 'TODO specify correct assets path'
-export const HOME_INACTIVE = require('@assets/');
-export const HOME_ACTIVE = require('@assets/');
+// export const HOME_INACTIVE = require('@assets/');
+// export const HOME_ACTIVE = require('@assets/');
 
 // Screen uri constants
 export const BONUS_URI = 'https://www.xyz.com/app/bonus/';
