@@ -1,3 +1,5 @@
+import { Platform } from 'react-native';
+
 class Validators {
   static validEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -42,6 +44,15 @@ class Validators {
     // Password must contain one uppercase letter, one lower case letter, one special symbol, and in range of 4 - 8 char long.
     const flag = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
     return flag.test(value);
+  }
+  static platform() {
+    let platform;
+    if (Platform.OS === 'ios') {
+      platform = 'ios';
+    } else {
+      platform = 'android';
+    }
+    return platform;
   }
 }
 

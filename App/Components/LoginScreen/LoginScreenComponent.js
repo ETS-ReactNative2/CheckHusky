@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   View,
+  Platform
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
@@ -17,7 +18,7 @@ import styles from './styles';
 import I18n from '../../i18n/index';
 
 const Analytics = firebase.analytics();
-const enableGoogle = false;
+const enableGoogle = true;
 const enableFb = true;
 
 export default function LoginScreenComponent({ props }) {
@@ -25,7 +26,7 @@ export default function LoginScreenComponent({ props }) {
   const [password, setPassword] = useState('');
 
   const appleSignIn = (result) => {
-    console.log('Resssult',result);
+    console.log('Resssult', result);
   };
 
   const onSubmit = useCallback(() => {
@@ -39,11 +40,10 @@ export default function LoginScreenComponent({ props }) {
       showToast('Password is invalid');
     } else {
       const user = { name: email, password };
-      Analytics.logEvent('login_method', { type: 'email', email });
+      Analytics.logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
       props.userLogin(user);
     }
   }, [email, password, props]);
-
 
 
   return (
@@ -126,13 +126,13 @@ export default function LoginScreenComponent({ props }) {
             )
           }
           <View>
-          { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
+            { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
           </View>
           <View>
             <TouchableOpacity
               style={styles.subsContainer}
               onPress={() => {
-                //this.props.changeLanguage()
+                // this.props.changeLanguage()
               }}
             >
               <Text style={styles.subsText}>Change Language</Text>
