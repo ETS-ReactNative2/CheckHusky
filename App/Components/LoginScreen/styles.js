@@ -1,69 +1,70 @@
-import { StyleSheet } from 'react-native'
-import Fonts from './../../Theme/Fonts'
-import ApplicationStyles from './../../Theme/ApplicationStyles'
+import { StyleSheet } from 'react-native';
+import Fonts from '../../Theme/Fonts';
+import ApplicationStyles from '../../Theme/ApplicationStyles';
+import scale, { verticalScale } from '../../Utils/scale';
 
 export default StyleSheet.create({
-    container: {
-        ...ApplicationStyles.screen.container,
-        flex:1,
-        justifyContent:'center',
-    },
-    title: {
-        ...Fonts.style.h2,
-        textAlign: 'center',
-        marginBottom: 10,
-    },
-    subsContainer: {
-        height: 55,
-        backgroundColor: 'black',
-        justifyContent: 'center',
-        marginTop: 22,
-    },
-    subsText: {
-        color: 'white',
-        fontSize: 16,
-        textAlign: 'center',
-    },
-    emailInput: {
-        borderWidth: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 55,
-        borderColor: '#d0d0d0',
-        fontSize: 14,
-        textAlign: 'left',
-        padding: 10,
-        paddingRight: 30,
-    },
-    crossIconContainer: {
-        backgroundColor: 'transparent',
-        height: 55,
-        position: 'absolute',
-        right: 0,
-        top: 0
-    },
-    crossIcon: {
-        padding: 10,
-        height: 55,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    backIconContainer: {
-        marginTop: 15,
-        marginBottom: 10,
-        paddingLeft: 10,
-        paddingVertical: 10,
-        width: 50,
-    },
-    signInContainers: {
-        flex: 1,
-        justifyContent:'center',
-        marginTop: 22,
-        paddingHorizontal: 26
-    },
-    appleBtn: { 
-        height: 44, 
-        width: 200, 
-    }
-})
+  container: {
+    ...ApplicationStyles.screen.container,
+    flex: 1,
+    justifyContent: 'center'
+  },
+  title: {
+    ...Fonts.style.h2,
+    textAlign: 'center',
+    marginBottom: scale(10)
+  },
+  subsContainer: {
+    height: scale(55),
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    marginTop: scale(22)
+  },
+  subsText: {
+    color: 'white',
+    fontSize: scale(16),
+    textAlign: 'center'
+  },
+  emailInput: {
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: scale(55),
+    borderColor: '#d0d0d0',
+    fontSize: scale(14),
+    textAlign: 'left',
+    padding: scale(10),
+    paddingRight: scale(30)
+  },
+  crossIconContainer: {
+    backgroundColor: 'transparent',
+    height: scale(55),
+    position: 'absolute',
+    right: 0,
+    top: 0
+  },
+  crossIcon: {
+    padding: scale(10),
+    height: scale(55),
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  backIconContainer: {
+    marginTop: scale(15),
+    marginBottom: scale(10),
+    paddingLeft: scale(10),
+    paddingVertical: scale(10),
+    width: scale(50)
+  },
+  signInContainers: {
+    flex: 1,
+    justifyContent: 'center',
+    marginTop: scale(22),
+    paddingHorizontal: scale(26)
+  },
+  appleBtn: {
+    height: scale(44),
+    width: scale(200)
+  }
+});
