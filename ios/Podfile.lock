@@ -152,6 +152,8 @@ PODS:
     - React-cxxreact (= 0.60.4)
     - React-jsi (= 0.60.4)
   - React-jsinspector (0.60.4)
+  - react-native-apple-authentication (1.0.4):
+    - React
   - react-native-fbsdk (1.0.4):
     - React
     - react-native-fbsdk/Core (= 1.0.4)
@@ -232,6 +234,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-apple-authentication (from `../node_modules/react-native-apple-authentication`)
   - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -298,6 +301,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-apple-authentication:
+    :path: "../node_modules/react-native-apple-authentication"
   react-native-fbsdk:
     :path: "../node_modules/react-native-fbsdk"
   React-RCTActionSheet:
@@ -367,6 +372,7 @@ SPEC CHECKSUMS:
   React-jsi: 21d3153b1153fbf6510a92b6b11e33e725cb7432
   React-jsiexecutor: 7549641e48bafae7bfee3f3ea19bf4901639c5de
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
+  react-native-apple-authentication: e87a7abe41bd497016825d5d399384d4f37c27cb
   react-native-fbsdk: 45e28bbab3e905cbc635c0bdd3444b372e933ae9
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
   React-RCTAnimation: 981d8c95b0e30918a9832ccac32af83562a27fae

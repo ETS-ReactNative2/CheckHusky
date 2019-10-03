@@ -12,14 +12,16 @@ import com.facebook.react.PackageList;
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
-import io.invertase.firebase.RNFirebasePackage;
-import io.sentry.RNSentryPackage;
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+import io.sentry.RNSentryPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage; // <-- Add this line
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -39,6 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       List<ReactPackage> packages = new PackageList(this).getPackages();
+      packages.add(new RNFirebaseAnalyticsPackage()); // <-- Add this line
       return packages;
     }
 

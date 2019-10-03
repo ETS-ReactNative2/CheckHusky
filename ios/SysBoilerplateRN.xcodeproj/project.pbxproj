@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SysBoilerplateRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SysBoilerplateRNTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -19,8 +18,6 @@
 		2DCD954D1E0B4F2C00145EB5 /* SysBoilerplateRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SysBoilerplateRNTests.m */; };
 		47F6C49EFF03D4384FC44347 /* libPods-SysBoilerplateRN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */; };
 		60A518604A9D17A691D6DE05 /* libPods-SysBoilerplateRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F48A50AA0ECFF71756614E2 /* libPods-SysBoilerplateRNTests.a */; };
-		6C5296C4230E7CAD009C7872 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */; };
-		6C5975E1230E9A4200274AEE /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */; };
 		6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */; };
 		6E34B7CA233DE7A200778462 /* libFirebaseCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7C9233DE7A200778462 /* libFirebaseCore.a */; };
 		6E34B7CC233DE7A900778462 /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */; };
@@ -155,34 +152,6 @@
 			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
 			remoteInfo = "jsiexecutor-tvOS";
 		};
-		6C5975E6230E9A6700274AEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6C5975E2230E9A6700274AEE /* RNGoogleSignin.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
-			remoteInfo = RNGoogleSignin;
-		};
-		6C9E00A7230E79B60008D8F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6C9E00A2230E79B60008D8F9 /* RNGestureHandler.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNGestureHandler;
-		};
-		6C9E00A9230E79B60008D8F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6C9E00A2230E79B60008D8F9 /* RNGestureHandler.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
-			remoteInfo = "RNGestureHandler-tvOS";
-		};
-		6E34B7AA233DE1DF00778462 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E34B7A6233DE1DF00778462 /* RNFirebase.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNFirebase;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -201,16 +170,11 @@
 		2D02E47B1E0B4A5D006451C7 /* SysBoilerplateRN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SysBoilerplateRN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SysBoilerplateRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SysBoilerplateRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6138725822F96D2F003291BC /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SysBoilerplateRN.entitlements; path = SysBoilerplateRN/SysBoilerplateRN.entitlements; sourceTree = "<group>"; };
 		6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5296F8230E7D68009C7872 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C5975E2230E9A6700274AEE /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
 		6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6C9E00A2230E79B60008D8F9 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		6C9E00AB230E79E20008D8F9 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E34B7A6233DE1DF00778462 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		6E34B7C9233DE7A200778462 /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		73585A3F14B7402196EB2937 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -243,8 +207,6 @@
 			files = (
 				6E34B7CC233DE7A900778462 /* libFirebaseMessaging.a in Frameworks */,
 				6E34B7CA233DE7A200778462 /* libFirebaseCore.a in Frameworks */,
-				6C5975E1230E9A4200274AEE /* libRNGoogleSignin.a in Frameworks */,
-				6C5296C4230E7CAD009C7872 /* libRNGestureHandler.a in Frameworks */,
 				2DC5E28D4EAD9EB14FF556D6 /* libPods-SysBoilerplateRN.a in Frameworks */,
 				B12E859881FB49DBBA4FE6B4 /* libz.tbd in Frameworks */,
 			);
@@ -367,38 +329,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6C5975E3230E9A6700274AEE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6C5975E7230E9A6700274AEE /* libRNGoogleSignin.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6C9E00A3230E79B60008D8F9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6C9E00A8230E79B60008D8F9 /* libRNGestureHandler.a */,
-				6C9E00AA230E79B60008D8F9 /* libRNGestureHandler-tvOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6E34B7A7233DE1DF00778462 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6E34B7AB233DE1DF00778462 /* libRNFirebase.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6E34B7A6233DE1DF00778462 /* RNFirebase.xcodeproj */,
-				6C5975E2230E9A6700274AEE /* RNGoogleSignin.xcodeproj */,
 				6C5296F8230E7D68009C7872 /* React.xcodeproj */,
-				6C9E00A2230E79B60008D8F9 /* RNGestureHandler.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -554,18 +488,6 @@
 					ProductGroup = 6C5296F9230E7D68009C7872 /* Products */;
 					ProjectRef = 6C5296F8230E7D68009C7872 /* React.xcodeproj */;
 				},
-				{
-					ProductGroup = 6E34B7A7233DE1DF00778462 /* Products */;
-					ProjectRef = 6E34B7A6233DE1DF00778462 /* RNFirebase.xcodeproj */;
-				},
-				{
-					ProductGroup = 6C9E00A3230E79B60008D8F9 /* Products */;
-					ProjectRef = 6C9E00A2230E79B60008D8F9 /* RNGestureHandler.xcodeproj */;
-				},
-				{
-					ProductGroup = 6C5975E3230E9A6700274AEE /* Products */;
-					ProjectRef = 6C5975E2230E9A6700274AEE /* RNGoogleSignin.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -690,32 +612,11 @@
 			remoteRef = 6C529729230E7D68009C7872 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6C5975E7230E9A6700274AEE /* libRNGoogleSignin.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNGoogleSignin.a;
-			remoteRef = 6C5975E6230E9A6700274AEE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6C9E00A8230E79B60008D8F9 /* libRNGestureHandler.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNGestureHandler.a;
-			remoteRef = 6C9E00A7230E79B60008D8F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		6C9E00AA230E79B60008D8F9 /* libRNGestureHandler-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libRNGestureHandler-tvOS.a";
 			remoteRef = 6C9E00A9230E79B60008D8F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6E34B7AB233DE1DF00778462 /* libRNFirebase.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFirebase.a;
-			remoteRef = 6E34B7AA233DE1DF00778462 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1029,6 +930,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN.app/SysBoilerplateRN";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -1049,6 +953,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN.app/SysBoilerplateRN";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -1075,6 +982,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -1100,6 +1010,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -1128,6 +1041,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -1156,6 +1072,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -1183,6 +1102,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN-tvOS.app/SysBoilerplateRN-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -1210,6 +1132,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN-tvOS.app/SysBoilerplateRN-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
