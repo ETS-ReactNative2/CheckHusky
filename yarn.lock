@@ -5820,10 +5820,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-apple-authentication@^1.0.2:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-native-apple-authentication/-/react-native-apple-authentication-1.0.4.tgz#02b6485f86013798d15a294e7056f740e7b62a11"
-  integrity sha512-KWQyYGaTbFinrJ2wJmF52mjicd0slccCX6Zayi7ji3B7l+QeIBhf3m1rJ3DQ/OlEnD1+cZKVuAtUKwHvQp/7Tw==
+react-native-apple-authentication@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-apple-authentication/-/react-native-apple-authentication-1.0.5.tgz#7d0b98fb9a42d80ed5cd293c8837bdf9fa69789e"
+  integrity sha512-feIjzoGDvrKsRP3FfP6nhLf+bWpJRSaXWNiDJZmt0giXobjQ+2Du/pK+euUK6M40VCO4rJfqZGJimKp9oMeRsA==
 
 react-native-fbsdk@^1.0.4:
   version "1.0.4"

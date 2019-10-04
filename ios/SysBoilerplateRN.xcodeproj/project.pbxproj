@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SysBoilerplateRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SysBoilerplateRNTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -18,6 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* SysBoilerplateRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SysBoilerplateRNTests.m */; };
 		47F6C49EFF03D4384FC44347 /* libPods-SysBoilerplateRN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */; };
 		60A518604A9D17A691D6DE05 /* libPods-SysBoilerplateRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F48A50AA0ECFF71756614E2 /* libPods-SysBoilerplateRNTests.a */; };
+		6183904C2347594200C64F18 /* libAppleAuthentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6183903B234758D200C64F18 /* libAppleAuthentication.a */; };
 		6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */; };
 		6E34B7CA233DE7A200778462 /* libFirebaseCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7C9233DE7A200778462 /* libFirebaseCore.a */; };
 		6E34B7CC233DE7A900778462 /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */; };
@@ -39,6 +41,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "SysBoilerplateRN-tvOS";
+		};
+		6183903A234758D200C64F18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61839036234758D200C64F18 /* AppleAuthentication.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = AppleAuthentication;
 		};
 		6C52970B230E7D68009C7872 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -170,6 +179,7 @@
 		2D02E47B1E0B4A5D006451C7 /* SysBoilerplateRN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SysBoilerplateRN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* SysBoilerplateRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SysBoilerplateRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61839036234758D200C64F18 /* AppleAuthentication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppleAuthentication.xcodeproj; path = "../node_modules/react-native-apple-authentication/ios/AppleAuthentication.xcodeproj"; sourceTree = "<group>"; };
 		6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SysBoilerplateRN.entitlements; path = SysBoilerplateRN/SysBoilerplateRN.entitlements; sourceTree = "<group>"; };
 		6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5296F8230E7D68009C7872 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6183904C2347594200C64F18 /* libAppleAuthentication.a in Frameworks */,
 				60A518604A9D17A691D6DE05 /* libPods-SysBoilerplateRNTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +280,8 @@
 			children = (
 				6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */,
 				6E34B7C9233DE7A200778462 /* libFirebaseCore.a */,
-				6C5975E0230E9A4200274AEE /* libRNGoogleSignin.a */,
 				6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */,
 				6C9E00AB230E79E20008D8F9 /* libRNGestureHandler.a */,
-				6138725822F96D2F003291BC /* libRNGestureHandler.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				FF257B6715347CF19C66062A /* libPods-SysBoilerplateRN.a */,
@@ -306,6 +315,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		61839037234758D200C64F18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6183903B234758D200C64F18 /* libAppleAuthentication.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6C5296F9230E7D68009C7872 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +349,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				61839036234758D200C64F18 /* AppleAuthentication.xcodeproj */,
 				6C5296F8230E7D68009C7872 /* React.xcodeproj */,
 			);
 			name = Libraries;
@@ -458,7 +476,11 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 2W8FH84P94;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 2W8FH84P94;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -485,6 +507,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 61839037234758D200C64F18 /* Products */;
+					ProjectRef = 61839036234758D200C64F18 /* AppleAuthentication.xcodeproj */;
+				},
+				{
 					ProductGroup = 6C5296F9230E7D68009C7872 /* Products */;
 					ProjectRef = 6C5296F8230E7D68009C7872 /* React.xcodeproj */;
 				},
@@ -500,6 +526,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		6183903B234758D200C64F18 /* libAppleAuthentication.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppleAuthentication.a;
+			remoteRef = 6183903A234758D200C64F18 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		6C52970C230E7D68009C7872 /* libReact.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -610,13 +643,6 @@
 			fileType = archive.ar;
 			path = "libjsiexecutor-tvOS.a";
 			remoteRef = 6C529729230E7D68009C7872 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6C9E00AA230E79B60008D8F9 /* libRNGestureHandler-tvOS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = "libRNGestureHandler-tvOS.a";
-			remoteRef = 6C9E00A9230E79B60008D8F9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -915,10 +941,12 @@
 			baseConfigurationReference = F1688BC789CDBFC865170036 /* Pods-SysBoilerplateRNTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2W8FH84P94;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SysBoilerplateRNTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -930,9 +958,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN.app/SysBoilerplateRN";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Debug;
 		};
@@ -942,6 +967,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 2W8FH84P94;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SysBoilerplateRNTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -953,9 +980,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN.app/SysBoilerplateRN";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Release;
 		};
@@ -967,11 +991,12 @@
 				CODE_SIGN_ENTITLEMENTS = SysBoilerplateRN/SysBoilerplateRN.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2W8FH84P94;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SysBoilerplateRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -979,12 +1004,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Threadable.app;
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Debug;
 		};
@@ -995,11 +1017,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SysBoilerplateRN/SysBoilerplateRN.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2W8FH84P94;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SysBoilerplateRN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1007,12 +1030,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Threadable.app;
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Release;
 		};
@@ -1029,6 +1049,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SysBoilerplateRN-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1041,9 +1062,6 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Debug;
 		};
@@ -1060,6 +1078,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SysBoilerplateRN-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1072,9 +1091,6 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Release;
 		};
@@ -1090,6 +1106,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SysBoilerplateRN-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1102,9 +1119,6 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN-tvOS.app/SysBoilerplateRN-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Debug;
 		};
@@ -1120,6 +1134,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "SysBoilerplateRN-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1132,9 +1147,6 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SysBoilerplateRN-tvOS.app/SysBoilerplateRN-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-				);
 			};
 			name = Release;
 		};

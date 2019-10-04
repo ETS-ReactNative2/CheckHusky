@@ -43,6 +43,8 @@ target 'SysBoilerplateRN' do
 
   pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
 
+  pod 'react-native-apple-authentication', :path => '../node_modules/react-native-apple-authentication'
+
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths
     # Pods for testing
