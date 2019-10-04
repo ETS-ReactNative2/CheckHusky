@@ -66,5 +66,9 @@ export default StyleSheet.create({
   appleBtn: {
     height: scale(44),
     width: scale(200)
+  },
+  appleCont: {
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });

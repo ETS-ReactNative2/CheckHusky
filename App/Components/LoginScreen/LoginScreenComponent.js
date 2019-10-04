@@ -20,6 +20,7 @@ import I18n from '../../i18n/index';
 const Analytics = firebase.analytics();
 const enableGoogle = true;
 const enableFb = true;
+const enableApple = true;
 
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState('');
@@ -125,9 +126,14 @@ export default function LoginScreenComponent({ props }) {
             </View>
             )
           }
-          <View>
-            { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
-          </View>
+          {
+            enableApple
+            && (
+            <View style={styles.appleCont}>
+              { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
+            </View>
+            )
+          }
           <View>
             <TouchableOpacity
               style={styles.subsContainer}
