@@ -20,7 +20,7 @@
 		47F6C49EFF03D4384FC44347 /* libPods-SysBoilerplateRN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */; };
 		60A518604A9D17A691D6DE05 /* libPods-SysBoilerplateRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F48A50AA0ECFF71756614E2 /* libPods-SysBoilerplateRNTests.a */; };
 		6183904C2347594200C64F18 /* libAppleAuthentication.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6183903B234758D200C64F18 /* libAppleAuthentication.a */; };
-		6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */; };
+		6183906623477D3600C64F18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6183906523477D3600C64F18 /* GoogleService-Info.plist */; };
 		6E34B7CA233DE7A200778462 /* libFirebaseCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7C9233DE7A200778462 /* libFirebaseCore.a */; };
 		6E34B7CC233DE7A900778462 /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */; };
 		8924625E08DCB99542562411 /* libPods-SysBoilerplateRN-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D35C4CBD3698085D3B6C9D1C /* libPods-SysBoilerplateRN-tvOSTests.a */; };
@@ -180,10 +180,10 @@
 		2D02E4901E0B4A5D006451C7 /* SysBoilerplateRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SysBoilerplateRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D75E509958D54F13FE363EB /* libPods-SysBoilerplateRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SysBoilerplateRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61839036234758D200C64F18 /* AppleAuthentication.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppleAuthentication.xcodeproj; path = "../node_modules/react-native-apple-authentication/ios/AppleAuthentication.xcodeproj"; sourceTree = "<group>"; };
+		6183906523477D3600C64F18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SysBoilerplateRN.entitlements; path = SysBoilerplateRN/SysBoilerplateRN.entitlements; sourceTree = "<group>"; };
 		6C5296C3230E7CAD009C7872 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C5296F8230E7D68009C7872 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C9E00AB230E79E20008D8F9 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34B7C9233DE7A200778462 /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,8 +262,8 @@
 		13B07FAE1A68108700A75B9A /* SysBoilerplateRN */ = {
 			isa = PBXGroup;
 			children = (
+				6183906523477D3600C64F18 /* GoogleService-Info.plist */,
 				6660DC50233381CF0095DF31 /* SysBoilerplateRN.entitlements */,
-				6C5975E8230E9D9200274AEE /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -661,7 +661,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				6C5975E9230E9D9200274AEE /* GoogleService-Info.plist in Resources */,
+				6183906623477D3600C64F18 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1004,7 +1004,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Threadable.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sys.rn.boilerplate;
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1030,7 +1030,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Threadable.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sys.rn.boilerplate;
 				PRODUCT_NAME = SysBoilerplateRN;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
