@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import scale from '../../Utils/scale';
 
 export default StyleSheet.create({
   buttonStyle: {
-    height: 48,
+    height: scale(48),
     alignSelf: 'stretch',
-    marginHorizontal: 50,
-    marginVertical: 25
+    marginHorizontal: scale(50),
+    marginVertical: scale(10)
   }
 });

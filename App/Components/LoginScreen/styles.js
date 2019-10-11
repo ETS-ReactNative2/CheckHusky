@@ -69,6 +69,8 @@ export default StyleSheet.create({
   },
   appleCont: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginHorizontal: scale(50),
+    marginVertical: scale(10)
   }
 });

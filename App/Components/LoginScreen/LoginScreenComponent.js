@@ -20,7 +20,7 @@ import I18n from '../../i18n/index';
 const Analytics = firebase.analytics();
 const enableGoogle = true;
 const enableFb = true;
-const enableApple = true;
+const enableApple = (Platform.OS === 'ios') ? true : false;
 
 export default function LoginScreenComponent({ props }) {
   const [email, setEmail] = useState('');
