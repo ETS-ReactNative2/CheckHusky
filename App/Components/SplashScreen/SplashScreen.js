@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './SplashScreenStyle';
 import NavigationService from '../../Services/NavigationService';
 import * as UserLoginActions from '../../Actions/userLoginActions';
+import { Images } from '../../Theme';
 
 function SplashScreen(props) {
   useEffect(() => {
@@ -16,7 +17,7 @@ function SplashScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
-        <Text onPress={this._navigateToHome}>LOGO</Text>
+        <Image source={Images.logo} />
       </View>
     </View>
   );

@@ -1,4 +1,4 @@
 
 export default {
-  logo: require('./../Assets/Images/logo_systango.png'),
+  logo: require('../../assets/Images/logo_systango.png'),
 };
