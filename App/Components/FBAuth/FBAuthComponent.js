@@ -14,12 +14,14 @@ import styles from './styles';
 
 const Analytics = firebase.analytics();
 
-export default function FBAuthComponent() {
+export default function FBAuthComponent({ props }) {
   const get_Response_Info = (error, result) => {
     if (error) {
       alert(`Error fetching FB data: ${error.toString()}`);
     } else {
       console.log('## FB response : ', JSON.stringify(result));
+      const user = { name: 'dummy_name', password: 'dummy' };
+      props.userLogin(user);
     }
   };
 

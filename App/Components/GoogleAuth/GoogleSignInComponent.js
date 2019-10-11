@@ -10,7 +10,8 @@ const Analytics = firebase.analytics();
 export default function GoogleSignInComponent({ props }) {
   const signIn = async () => {
     Analytics.logEvent('login_method', { type: 'google', email: '' });
-    props.userLogin();
+    const user = { name: 'dummy_name', password: 'dummy' };
+    props.userLogin(user);
   };
 
   return (
