@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import * as firebase from 'react-native-firebase';
@@ -15,15 +15,11 @@ class RootScreen extends Component {
     super(props);
   }
 
-  componentWillMount() {
-    console.log('in will mount======');
+  componentDidMount() {
+    console.log('in did mount=======');
     this.props.startUp();
     this.getFCMToken();
     this.checkNotificationPermission();
-  }
-
-  componentDidMount() {
-    console.log('in did mount=======');
     if (Platform.OS === 'android') {
       this.createAndroidNotificationChannel();
     }

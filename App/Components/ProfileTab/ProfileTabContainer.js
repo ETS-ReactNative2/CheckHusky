@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProfileTabComponent from './ProfileTabComponent';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 
-const ProfileTabContainer = (props) => {
-  return (
-    <ProfileTabComponent props={props} />
-  );
-};
+class ProfileTabContainer extends Component {
+  
+  render() {
+    return (
+      <ProfileTabComponent {...this.props} />
+    );
+  }
+}
 
 const mapStateToProps = (state) => ({
   message: state.UserLoginReducer.message,

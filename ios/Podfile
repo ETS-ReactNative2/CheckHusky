@@ -45,6 +45,8 @@ target 'SysBoilerplateRN' do
 
   pod 'react-native-apple-authentication', :path => '../node_modules/react-native-apple-authentication'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'SysBoilerplateRNTests' do
     inherit! :search_paths
     # Pods for testing

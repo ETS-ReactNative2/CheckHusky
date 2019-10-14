@@ -1,40 +1,57 @@
-import React, { useEffect } from 'react';
+import React, { Component } from 'react';
+import {
+  connect
+} from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 import * as CONST from '../../Utils/Constants';
 import NavigationService from '../../Services/NavigationService';
 import styles from './styles';
 
-export default function ProfileTabComponent({ props }) {
-  const { prevProps } = props;
-  useEffect(() => {
-    if (props != prevProps && props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY) {
+class ProfileTabComponent extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    if (
+      this.props !== prevProps
+      && this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
+    ) {
       NavigationService.navigateAndReset('LoginScreen');
     }
-  }, [prevProps, props]);
-
-  const logout = () => {
-    props.userLogout();
   }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        {'Profile Tab'}
-      </Text>
-      <View style={styles.nameContainer}>
-        <Text style={styles.text}>
-          {'Name :  '}
-        </Text>
-        <Text style={styles.text}>
-          {props.userData && props.userData.name}
-        </Text>
+  logout() {
+    this.props.userLogout();
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Profile Tab</Text>
+        <View style={styles.nameContainer}>
+          <Text style={styles.text}>Name :  </Text>
+          <Text style={styles.text}>
+            {this.props.userData && this.props.userData.name}
+          </Text>
+        </View>
+        <TouchableOpacity
+          style={styles.subsContainer}
+          onPress={() => this.logout()}
+        >
+          <Text style={styles.subsText}>Logout</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        style={styles.subsContainer}
-        onPress={() => logout()}
-      >
-        <Text style={styles.subsText}>Logout</Text>
-      </TouchableOpacity>
-    </View>
-  );
+    );
+  }
 }
+
+function mapStateToProps(state) {
+  const {} = state;
+  return {};
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProfileTabComponent);
