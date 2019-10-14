@@ -1,6 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
+import scale from '../../Utils/scale';
 
 export default StyleSheet.create({
   container: {
@@ -33,5 +34,17 @@ export default StyleSheet.create({
   nameContainer: {
     margin: 20,
     flexDirection: 'row',
-  }
+  },
+  avatarContainer: {
+    borderColor: 'pink',
+    borderWidth: 1 / PixelRatio.get(),
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  avatar: {
+    borderRadius: 48,
+    width: scale(96),
+    height: scale(96),
+  },
 });
