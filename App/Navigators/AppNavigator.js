@@ -1,4 +1,7 @@
-import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import React from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SplashScreen from '../Components/SplashScreen/SplashScreen';
 import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer';
 import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
