@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AboutUsTabComponent from './AboutUsTabComponent';
 
-const AboutUsTabContainer = (props) => {
-  return <AboutUsTabComponent props={props} />;
-};
-export default AboutUsTabContainer;
+class AboutUsTabContainer extends Component {
+  static navigationOptions = {
+    title: 'My Payment',
+  };
+
+  render() {
+    return (
+      <AboutUsTabComponent {...this.props} />
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({
+  message: state.UserLoginReducer.message,
+  userData: state.UserLoginReducer.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  userLogout: () => {
+    return dispatch(UserLoginActions.userLogout());
+  },
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AboutUsTabContainer);

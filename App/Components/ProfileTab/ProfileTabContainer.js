@@ -4,7 +4,10 @@ import ProfileTabComponent from './ProfileTabComponent';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 
 class ProfileTabContainer extends Component {
-  
+  static navigationOptions = {
+    title: 'My Bar',
+  };
+
   render() {
     return (
       <ProfileTabComponent {...this.props} />
