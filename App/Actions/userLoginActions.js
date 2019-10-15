@@ -7,6 +7,17 @@ export function userLogin(user) {
   };
 }
 export function userLoginSuccess(user) {
+  user = {
+    ...user,
+    ...{
+      fname: 'Hemant',
+      lname: 'Parihar',
+      email: 'hemant.parihar18@gmail.com',
+      city: 'Indore',
+      state: 'MP',
+      country: 'India'
+    }
+  };
   return {
     type: CONST.USER_LOGIN_SUCCESS,
     payload: {
