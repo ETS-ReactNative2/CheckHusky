@@ -7,6 +7,7 @@ export const WHITE_COLOR = '#FFFFFF';
 export const BLACK_COLOR = '#000000';
 export const GREY_COLOR = '#626262';
 export const STATUS_BAR_BACKGROUND_COLOR = '#FFFFFF';
+export const PRIMARY_COLOR = '#ed9121';
 export const ACTIVE_TAB_COLOR = '#457ced';
 export const TITLEBAR_BACKGROUND_COLOR = 'rgb(253,249,249)';
 export const BORDER_COLOR_GREY = 'rgb(208,208,208)';

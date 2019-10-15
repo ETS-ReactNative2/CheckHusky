@@ -7,6 +7,7 @@ import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer
 import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
 import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
+import * as CONST from '../Utils/Constants';
 
 const TabNavigator = createBottomTabNavigator({
   ProfileTab: { screen: ProfileTabContainer },
@@ -28,7 +29,7 @@ const TabNavigator = createBottomTabNavigator({
     },
   }),
   tabBarOptions: {
-    activeTintColor: 'tomato',
+    activeTintColor: CONST.PRIMARY_COLOR,
     inactiveTintColor: 'gray',
   },
 });
