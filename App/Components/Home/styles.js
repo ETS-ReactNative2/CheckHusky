@@ -2,7 +2,7 @@ import { StyleSheet, PixelRatio } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import Colors from '../../Theme/Colors';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
-import scale from '../../Utils/scale';
+import scale, { verticalScale } from '../../Utils/scale';
 import * as CONST from '../../Utils/Constants';
 
 export default StyleSheet.create({
@@ -35,4 +35,32 @@ export default StyleSheet.create({
     shadowOffset: { height: 5, width: 5 },
     elevation: 5,
   },
+  listStyle: {
+    flex: 1,
+    paddingHorizontal: 20
+  },
+  cellContainer: {
+    flexDirection: 'row',
+    alignSelf: 'stretch',
+    height: verticalScale(140),
+    marginTop: verticalScale(20),
+    backgroundColor: '#ed9121',
+    opacity: 0.6,
+    borderRadius: scale(5),
+    padding: scale(5)
+  },
+  imageStyle: {
+    height: verticalScale(130),
+    width: scale(110),
+    backgroundColor: '#ed9121',
+  },
+  description: {
+    flex: 1,
+    alignSelf: 'stretch',
+    marginLeft: scale(5),
+    paddingLeft: scale(5),
+  },
+  nameRow: {
+    flexDirection: 'row'
+  }
 });
