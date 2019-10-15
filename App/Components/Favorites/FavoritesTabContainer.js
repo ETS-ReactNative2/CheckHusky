@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProfileTabComponent from './ProfileTabComponent';
+import FavoritesTabComponent from './FavoritesTabComponent';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 
-class ProfileTabContainer extends Component {
+class FavoritesTabContainer extends Component {
   static navigationOptions = {
-    title: 'Profile',
+    title: 'Favorites',
   };
 
   render() {
     return (
-      <ProfileTabComponent {...this.props} />
+      <FavoritesTabComponent {...this.props} />
     );
   }
 }
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProfileTabContainer);
+)(FavoritesTabContainer);
