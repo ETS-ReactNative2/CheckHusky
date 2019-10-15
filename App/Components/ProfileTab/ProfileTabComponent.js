@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import {
   connect
 } from 'react-redux';
-import { View, Text, TouchableOpacity, Image, Button } from 'react-native';
+import {
+  View, Text, TouchableOpacity, Image, Button
+} from 'react-native';
+import ImagePicker from 'react-native-image-picker';
+import Icons from 'react-native-vector-icons/AntDesign';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import * as CONST from '../../Utils/Constants';
 import NavigationService from '../../Services/NavigationService';
 import styles from './styles';
-import ImagePicker from 'react-native-image-picker';
 
 class ProfileTabComponent extends Component {
   constructor(props) {
@@ -28,9 +33,9 @@ class ProfileTabComponent extends Component {
   logout() {
     this.props.userLogout();
   }
-  
+
   chooseFile = () => {
-    var options = {
+    const options = {
       title: 'Select Image',
       customButtons: [
         { name: 'customOptionKey', title: 'Choose Photo from Custom Option' },
@@ -40,9 +45,9 @@ class ProfileTabComponent extends Component {
         path: 'images',
       },
     };
-    ImagePicker.showImagePicker(options, response => {
+    ImagePicker.showImagePicker(options, (response) => {
       console.log('Response = ', response);
- 
+
       if (response.didCancel) {
         console.log('User cancelled image picker');
       } else if (response.error) {
@@ -51,7 +56,7 @@ class ProfileTabComponent extends Component {
         console.log('User tapped custom button: ', response.customButton);
         alert(response.customButton);
       } else {
-        let source = response;
+        const source = response;
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
         this.setState({
@@ -61,19 +66,80 @@ class ProfileTabComponent extends Component {
     });
   };
 
-  render() {
+  _renderHeader() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Profile Tab</Text>
+      <View>
         <View style={[styles.avatar, styles.avatarContainer]}>
-            <Image source={{ uri: this.state.filePath.uri }} style={styles.avatar}/>
+          {
+              this.state.filePath.uri
+                ? <Image source={{ uri: this.state.filePath.uri }} style={styles.avatar} />
+                : <Icons name="user" size={60} color={CONST.GREY_COLOR} />
+            }
+          <Icons name="camerao" style={styles.cameraIcon} size={20} onPress={this.chooseFile.bind(this)} color={CONST.PRIMARY_COLOR} />
         </View>
-        <Button title="Choose File" onPress={this.chooseFile.bind(this)} />
         <View style={styles.nameContainer}>
-          <Text style={styles.text}>Name :  </Text>
           <Text style={styles.text}>
-            {this.props.userData && this.props.userData.name}
+            {this.props.userData && this.props.userData.email}
           </Text>
+        </View>
+      </View>
+    );
+  }
+
+  _renderDetails() {
+    return (
+      <View style={styles.detsContainer}>
+        <View style={styles.itemContaine}>
+          <View style={styles.iconContainer}>
+            <FontAwesome5Icon name="user" size={30}  color={CONST.GREY_COLOR} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.label}>
+              NAME
+            </Text>
+            <Text style={styles.labelVal}>
+              Hemant Singh Parihar
+            </Text>
+          </View>
+        </View>
+        <View style={styles.itemContaine}>
+          <View style={styles.iconContainer}>
+            <Icons name="mobile1" size={30}  color={CONST.GREY_COLOR} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.label}>
+              MOBILE
+            </Text>
+            <Text style={styles.labelVal}>
+              9179314652
+            </Text>
+          </View>
+        </View>
+        <View style={styles.itemContaine}>
+          <View style={styles.iconContainer}>
+            <EntypoIcon name="address" size={30}  color={CONST.GREY_COLOR} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.label}>
+              ADDRESS
+            </Text>
+            <Text numberOfLines={3} style={styles.labelVal}>
+              93 yashoda nagar Indore - 452010 
+            </Text>
+          </View>
+        </View>
+        <View style={styles.itemContaine}>
+          <View style={styles.iconContainer}>
+            <FontAwesome5Icon name="birthday-cake" size={30}  color={CONST.GREY_COLOR} />
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.label}>
+              DOB
+            </Text>
+            <Text style={styles.labelVal}>
+              18/11/89
+            </Text>
+          </View>
         </View>
         <TouchableOpacity
           style={styles.subsContainer}
@@ -82,6 +148,20 @@ class ProfileTabComponent extends Component {
           <Text style={styles.subsText}>Logout</Text>
         </TouchableOpacity>
       </View>
+    );
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={[styles.headerContainer]}>
+          { this._renderHeader() }
+        </View>
+        <View style={styles.detailsCon}>
+          { this._renderDetails() }
+        </View>
+      </View>
+
     );
   }
 }
