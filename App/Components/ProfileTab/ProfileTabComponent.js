@@ -11,6 +11,7 @@ import EntypoIcon from 'react-native-vector-icons/Entypo';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import * as CONST from '../../Utils/Constants';
 import NavigationService from '../../Services/NavigationService';
+import I18n from '../../i18n/index';
 import styles from './styles';
 
 class ProfileTabComponent extends Component {
@@ -36,9 +37,9 @@ class ProfileTabComponent extends Component {
 
   chooseFile = () => {
     const options = {
-      title: 'Select Image',
+      title: I18n.t('selectImage'),
       customButtons: [
-        { name: 'customOptionKey', title: 'Choose Photo from Custom Option' },
+        { name: 'customOptionKey', title: I18n.t('choosePhotoText') },
       ],
       storageOptions: {
         skipBackup: true,
@@ -92,11 +93,11 @@ class ProfileTabComponent extends Component {
       <View style={styles.detsContainer}>
         <View style={styles.itemContaine}>
           <View style={styles.iconContainer}>
-            <FontAwesome5Icon name="user" size={30}  color={CONST.GREY_COLOR} />
+            <FontAwesome5Icon name="user" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.label}>
-              NAME
+              {I18n.t('name')}
             </Text>
             <Text style={styles.labelVal}>
               Hemant Singh Parihar
@@ -105,11 +106,11 @@ class ProfileTabComponent extends Component {
         </View>
         <View style={styles.itemContaine}>
           <View style={styles.iconContainer}>
-            <Icons name="mobile1" size={30}  color={CONST.GREY_COLOR} />
+            <Icons name="mobile1" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.label}>
-              MOBILE
+              {I18n.t('mobile')}
             </Text>
             <Text style={styles.labelVal}>
               9179314652
@@ -118,36 +119,30 @@ class ProfileTabComponent extends Component {
         </View>
         <View style={styles.itemContaine}>
           <View style={styles.iconContainer}>
-            <EntypoIcon name="address" size={30}  color={CONST.GREY_COLOR} />
+            <EntypoIcon name="address" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.label}>
-              ADDRESS
+              {I18n.t('address')}
             </Text>
             <Text numberOfLines={3} style={styles.labelVal}>
-              93 yashoda nagar Indore - 452010 
+              93 yashoda nagar Indore - 452010
             </Text>
           </View>
         </View>
         <View style={styles.itemContaine}>
           <View style={styles.iconContainer}>
-            <FontAwesome5Icon name="birthday-cake" size={30}  color={CONST.GREY_COLOR} />
+            <FontAwesome5Icon name="birthday-cake" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
             <Text style={styles.label}>
-              DOB
+              {I18n.t('dob')}
             </Text>
             <Text style={styles.labelVal}>
               18/11/89
             </Text>
           </View>
         </View>
-        <TouchableOpacity
-          style={styles.subsContainer}
-          onPress={() => this.logout()}
-        >
-          <Text style={styles.subsText}>Logout</Text>
-        </TouchableOpacity>
       </View>
     );
   }
@@ -157,9 +152,23 @@ class ProfileTabComponent extends Component {
       <View style={styles.container}>
         <View style={[styles.headerContainer]}>
           { this._renderHeader() }
-        </View>
-        <View style={styles.detailsCon}>
-          { this._renderDetails() }
+          <View style={styles.detailsCon}>
+            { this._renderDetails() }
+          </View>
+          <TouchableOpacity
+            style={styles.editContainer}
+            onPress={() => {}}
+          >
+            <Icons name="edit" size={25} color={CONST.WHITE_COLOR} />
+            {/* <Text style={styles.subsText}>{I18n.t('logout')}</Text> */}
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.subsContainer}
+            onPress={() => this.logout()}
+          >
+            <Icons name="logout" size={25} color={CONST.WHITE_COLOR} />
+            {/* <Text style={styles.subsText}>{I18n.t('logout')}</Text> */}
+          </TouchableOpacity>
         </View>
       </View>
 

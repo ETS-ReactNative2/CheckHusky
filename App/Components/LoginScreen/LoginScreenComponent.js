@@ -82,7 +82,7 @@ export default function LoginScreenComponent({ props }) {
             <TextInput
               underlineColorAndroid="transparent"
               returnKeyType="next"
-              placeholder="Password"
+              placeholder={I18n.t('password')}
               value={password}
               autoCapitalize="none"
               secureTextEntry
@@ -107,7 +107,7 @@ export default function LoginScreenComponent({ props }) {
           style={styles.subsContainer}
           onPress={() => onSubmit()}
         >
-          <Text style={styles.subsText}>SUBMIT</Text>
+          <Text style={styles.subsText}>{I18n.t('submit')}</Text>
         </TouchableOpacity>
         <View>
           {
@@ -141,7 +141,7 @@ export default function LoginScreenComponent({ props }) {
                 // this.props.changeLanguage()
               }}
             >
-              <Text style={styles.subsText}>Change Language</Text>
+              <Text style={styles.subsText}>{I18n.t('changeLanguage')}</Text>
             </TouchableOpacity>
           </View>
         </View>

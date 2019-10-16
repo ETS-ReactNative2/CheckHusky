@@ -3,6 +3,7 @@ import {
   View, Text, FlatList, Image
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import I18n from '../../i18n/index';
 import styles from './styles';
 
 export default class HomeTabComponent extends Component {
@@ -88,7 +89,7 @@ export default class HomeTabComponent extends Component {
         <View style={styles.description}>
           <View style={styles.nameRow}>
             <Text style={styles.text}>
-              {'Name '}
+              {I18n.t('nameText')}
                 :
             </Text>
             <Text style={styles.text}>
@@ -97,7 +98,7 @@ export default class HomeTabComponent extends Component {
           </View>
           <View style={styles.nameRow}>
             <Text style={styles.text}>
-              {'Brand '}
+              {I18n.t('brand')}
                 :
             </Text>
             <Text style={styles.text}>
@@ -106,7 +107,7 @@ export default class HomeTabComponent extends Component {
           </View>
           <View style={styles.nameRow}>
             <Text style={styles.text}>
-              {'Category '}
+              {I18n.t('category')}
                 :
             </Text>
             <Text style={styles.text}>
@@ -115,11 +116,20 @@ export default class HomeTabComponent extends Component {
           </View>
           <View style={styles.nameRow}>
             <Text style={styles.text}>
-              {'Quantity '}
+              {I18n.t('quantity')}
                 :
             </Text>
             <Text style={styles.text}>
               {quantity}
+            </Text>
+          </View>
+          <View style={styles.nameRow}>
+            <Text style={styles.text}>
+              {I18n.t('price')}
+                    :
+            </Text>
+            <Text style={styles.text}>
+              {price}
             </Text>
           </View>
           <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'space-between' }}>
@@ -129,15 +139,6 @@ export default class HomeTabComponent extends Component {
                   (index <= rating) ? <FontAwesome name="star" size={20} key={index} /> : <FontAwesome name="star-o" size={20} key={index} />
                 );
               })}
-            </View>
-            <View style={styles.nameRow}>
-              <Text style={styles.text}>
-                {'Price '}
-                    :
-              </Text>
-              <Text style={styles.text}>
-                {price}
-              </Text>
             </View>
           </View>
         </View>
@@ -149,7 +150,7 @@ export default class HomeTabComponent extends Component {
     return (
       <View style={styles.container}>
         <View style={[styles.headerContainer]}>
-          <Text style={styles.text}>Home Screen</Text>
+          <Text style={styles.screenText}>{I18n.t('homeScreen')}</Text>
           <FlatList
             style={styles.listStyle}
             keyExtractor={(item, index) => index.toString()}

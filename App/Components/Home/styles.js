@@ -21,6 +21,11 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: Colors.text,
   },
+  screenText: {
+    ...Fonts.style.normal,
+    textAlign: 'center',
+    color: Colors.text,
+  },
   headerContainer: {
     flex: 3,
     paddingTop: 30,
@@ -61,6 +66,7 @@ export default StyleSheet.create({
     paddingLeft: scale(5),
   },
   nameRow: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: 1,
   }
 });
