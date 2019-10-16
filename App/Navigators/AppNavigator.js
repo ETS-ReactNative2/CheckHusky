@@ -7,6 +7,7 @@ import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer
 import HomeTabContainer from '../Components/Home/HomeTabContainer';
 import OrderTabContainer from '../Components/Order/OrderTabContainer';
 import FavoritesTabContainer from '../Components/Favorites/FavoritesTabContainer';
+import FeedbackScreenContainer from '../Components/FeedbackScreen/FeedbackContainer';
 import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
 import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
@@ -47,7 +48,8 @@ const StackNavigator = createStackNavigator(
   {
     SplashScreen: { screen: SplashScreen },
     LoginScreen: { screen: LoginScreenContainer },
-    HomeTab: { screen: TabNavigator }
+    HomeTab: { screen: TabNavigator },
+    FeedbackScreen: { screen: FeedbackScreenContainer },
   },
   {
     initialRouteName: 'SplashScreen',

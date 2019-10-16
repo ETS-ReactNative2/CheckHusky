@@ -21,6 +21,9 @@ const style = {
   normal: {
     fontSize: size.regular,
   },
+  small: {
+    fontSize: size.small,
+  },
 };
 
 export default {
