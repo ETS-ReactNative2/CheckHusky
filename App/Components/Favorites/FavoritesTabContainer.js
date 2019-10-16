@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FavoritesTabComponent from './FavoritesTabComponent';
+import FeedbackComponent from '../FeedbackScreen/FeedbackComponent';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 
 class FavoritesTabContainer extends Component {
@@ -10,7 +11,8 @@ class FavoritesTabContainer extends Component {
 
   render() {
     return (
-      <FavoritesTabComponent {...this.props} />
+      <FeedbackComponent {...this.props} />
+      // <FavoritesTabComponent {...this.props} />
     );
   }
 }

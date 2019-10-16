@@ -17,7 +17,7 @@ export default StyleSheet.create({
     marginBottom: scale(10),
   },
   text: {
-    ...Fonts.style.normal,
+    ...Fonts.style.small,
     textAlign: 'center',
     color: Colors.text,
   },

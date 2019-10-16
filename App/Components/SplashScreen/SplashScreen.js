@@ -11,7 +11,7 @@ function SplashScreen(props) {
     setTimeout(() => {
       const { navigation } = props;
       NavigationService.navigateAndReset('LoginScreen', navigation);
-    }, 1000);
+    }, 2000);
   }, []);
 
   return (

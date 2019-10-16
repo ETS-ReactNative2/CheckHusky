@@ -28,40 +28,43 @@ class FeedbackComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Please rate our product with the star</Text>
-        <View style={styles.inputContainer}>
-          <TextInput
-            numberOfLines={2}
-            rowSpan={2}
-            blurOnSubmit
-            onChangeText={(text) => this.setState({ translatedText: text })}
-            onEndEditing={() => {}}
-            onSubmitEditing={() => {}}
-            style={styles.textInputContainer}
-            bordered
-            placeholder="How satisfied are you with the product...?"
-            placeholderTextColor="#2B2D42"
-            autoCorrect={false}
-          />
+        <View style={[styles.headerContainer]}>
+          <Text style={styles.text}>Favorites Screen</Text>
+          <Text style={styles.textRate}>Please rate our product with the star</Text>
+          <View style={styles.inputContainer}>
+            <TextInput
+              numberOfLines={2}
+              rowSpan={2}
+              blurOnSubmit
+              onChangeText={(text) => this.setState({ translatedText: text })}
+              onEndEditing={() => {}}
+              onSubmitEditing={() => {}}
+              style={styles.textInputContainer}
+              bordered
+              placeholder="How satisfied are you with the product...?"
+              placeholderTextColor="#2B2D42"
+              autoCorrect={false}
+            />
+          </View>
+          <View style={styles.ratingContainer}>
+            <Rating
+              type="custom"
+              ratingColor="#ed9121"
+              ratingTextColor="#000000"
+              ratingCount={5}
+              startingValue={1}
+              imageSize={60}
+              showRating
+              onFinishRating={this.ratingCompleted}
+            />
+          </View>
+          <TouchableOpacity
+            style={styles.subsContainer}
+            onPress={() => {}}
+          >
+            <Text style={styles.subsText}>SUBMIT</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.ratingContainer}>
-          <Rating
-            type="custom"
-            ratingColor="#ed9121"
-            ratingTextColor="#000000"
-            ratingCount={5}
-            startingValue={1}
-            imageSize={60}
-            showRating
-            onFinishRating={this.ratingCompleted}
-          />
-        </View>
-        <TouchableOpacity
-          style={styles.subsContainer}
-          onPress={() => {}}
-        >
-          <Text style={styles.subsText}>SUBMIT</Text>
-        </TouchableOpacity>
       </View>
     );
   }
