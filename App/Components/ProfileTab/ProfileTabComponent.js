@@ -5,6 +5,9 @@ import {
 import {
   View, Text, TouchableOpacity, Image, Button
 } from 'react-native';
+import {
+  GoogleSigninButton, GoogleSignin, statusCodes
+} from 'react-native-google-signin';
 import ImagePicker from 'react-native-image-picker';
 import Icons from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
@@ -31,8 +34,20 @@ class ProfileTabComponent extends Component {
     }
   }
 
-  logout() {
+  async logout() {
     this.props.userLogout();
+    try {
+      const isSignedIn = await GoogleSignin.isSignedIn();
+      if (isSignedIn) { // In case when not loged in from google
+        await GoogleSignin.revokeAccess();
+        await GoogleSignin.signOut();
+        this.setState({ user: null }); // Remember to remove the user from your app's state as well
+      } else {
+        this.setState({ user: null }); // Remember to remove the user from your app's state as well
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   chooseFile = () => {

@@ -3,7 +3,7 @@ import scale from '../../Utils/scale';
 
 export default StyleSheet.create({
   buttonStyle: {
-    height: scale(42),
+    height: scale(40),
     alignSelf: 'stretch',
     marginHorizontal: scale(54),
     marginVertical: scale(10)

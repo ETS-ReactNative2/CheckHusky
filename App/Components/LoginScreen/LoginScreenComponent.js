@@ -114,7 +114,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
             enableGoogle
             && (
             <View>
-              <GoogleSignInContainer />
+              <GoogleSignInContainer props={props} />
             </View>
             )
           }
