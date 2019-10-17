@@ -48,3 +48,27 @@ export function userLogoutFailure() {
     type: CONST.USER_LOGOUT_FAILURE,
   };
 }
+
+/**
+ * Signup
+ */
+
+export function userSignup(user) {
+  return {
+    type: CONST.USER_SIGNUP,
+    user
+  };
+}
+export function userSignupSuccess(user) {
+  return {
+    type: CONST.USER_SIGNUP_SUCCESS,
+    payload: {
+      user
+    }
+  };
+}
+export function userSignupFailure(error) {
+  return {
+    type: CONST.USER_SIGNUP_FAILURE,
+  };
+}

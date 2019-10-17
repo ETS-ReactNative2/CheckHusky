@@ -1,49 +1,94 @@
-import axios from 'axios';
-import { is, curryN, gte } from 'ramda';
-import { Config } from '../Config';
-
-const isWithin = curryN(3, (min, max, value) => {
-  const isNumber = is(Number);
-  return isNumber(min) && isNumber(max) && isNumber(value) && gte(value, min) && gte(max, value);
-});
-const in200s = isWithin(200, 299);
-
 /**
- * This is an example of a service that connects to a 3rd party API.
- *
- * Feel free to remove this example from your application.
+ * @ApiService is the single entry point for all api's calling, Here the Single fetch is written that will serve requests
  */
-const userApiClient = axios.create({
-  /**
-   * Import the config from the App/Config/index.js file
-   */
-  baseURL: Config.API_URL,
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  timeout: 3000,
-});
 
-function fetchUser() {
-  // Simulate an error 50% of the time just for testing purposes
-  if (Math.random() > 0.5) {
-    return new Promise(((resolve, reject) => {
-      resolve(null);
-    }));
-  }
+import { Alert } from 'react-native';
+import Config from '../Config';
+import * as CONST from '../Utils/Constants';
 
-  const number = Math.floor(Math.random() / 0.1) + 1;
+export function CommonFetch(params, opt) {
+  try {
+    let URL = `${Config.API_URL}` + `${opt.url}`;
+    const Options = {
+      method: opt.method,
+      URL,
+      body: params
+    };
 
-  return userApiClient.get(number.toString()).then((response) => {
-    if (in200s(response.status)) {
-      return response.data;
+    const ReqOptions = {
+      method: Options.method,
+      headers: {
+      },
+      body: params,
+      timeout: CONST.API_TIMEOUT
+    };
+
+    ReqOptions.headers['Accept'] = 'application/json';
+    ReqOptions.headers['Content-Type'] = 'application/json';
+
+    if (ReqOptions.method === CONST.GET_API) {
+      delete ReqOptions.body;
+    } else {
+      ReqOptions.body = JSON.stringify(Options.body);
     }
 
-    return null;
-  });
+    const apiResponse = {};
+
+    try {
+      console.log('Options----', Options);
+      console.log('ReqOptions----', ReqOptions);
+
+      return new Promise((Resolve, Reject) => {
+        requestTimeoutPromise(ReqOptions.timeout, fetch(Options.URL, ReqOptions), Resolve, Reject);
+      }).then((Response) => {
+        console.log('Api Response -----', Response);
+        if (Response.status === 200 || Response.status === 201) {
+          return Response.json();
+        } else if (Response.status === 400) { //* Not found OR Something Went Wrong
+          Response.json().then((res) => {
+            Alert.alert('Url not found');
+            return undefined;
+          });
+        } else {
+          Alert.alert('SomeThing Went Wrong');
+          return undefined;
+        }
+      })
+        .catch((error) => {
+          console.log('ApiService Error1 ####', error);
+        });
+    } catch (error) {
+      console.log('ApiService Error2 ####', error);
+      return undefined;
+    }
+  } catch (error) {
+    console.log('ApiService Error3 ####', error);
+    return undefined;
+  }
 }
 
-export const userService = {
-  fetchUser,
-};
+/**
+     * Request Timeout Promise
+     */
+function requestTimeoutPromise(waitingTime, promise, resoveInternal, rejectInternal) {
+  const _timeout = setTimeout(() => {
+    rejectInternal('TIMEOUT');
+  }, waitingTime);
+  try {
+    promise.then(
+      (res) => {
+        clearTimeout(_timeout);
+        resoveInternal(res);
+      },
+      (resError) => {
+        console.log('Timeout Error1 ####', resError);
+        clearTimeout(_timeout);
+        rejectInternal('Request Timeout');
+      }
+    );
+  } catch (error) {
+    console.log('Timeout Error2 ####', error);
+  }
+}
+
+// export default CommonFetch;

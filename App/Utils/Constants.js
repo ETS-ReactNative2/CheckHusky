@@ -42,12 +42,26 @@ export const fontFamily = {
   Black: 'Raleway-Black'
 };
 
+// CONFIGURATIONS
+export const API_TIMEOUT = 30000;
+
+// API CALLING CONSTANTS
+export const GET_API = 'GET';
+export const POST_API = 'POST';
+export const PUT_API = 'PUT';
+export const DELETE_API = 'DELETE';
+export const UPDATE_API = 'PUT';
+
 // Saga Constants
 export const START_UP = 'START_UP';
 
 export const USER_LOGIN = 'USER_LOGIN';
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILURE = 'USER_LOGIN_FAILURE';
+
+export const USER_SIGNUP = 'USER_SIGNUP';
+export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS';
+export const USER_SIGNUP_FAILURE = 'USER_SIGNUP_FAILURE';
 
 export const USER_LOGOUT = 'USER_LOGOUT';
 export const USER_LOGOUT_SUCCESS = 'USER_LOGOUT_SUCCESS';

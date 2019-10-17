@@ -22,7 +22,7 @@ const enableGoogle = true;
 const enableFb = true;
 const enableApple = (Platform.OS === 'ios') ? true : false;
 
-export default function LoginScreenComponent({ props }) {
+export default function LoginScreenComponent({ props, onSignupPressed }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -50,7 +50,7 @@ export default function LoginScreenComponent({ props }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.signInContainers}>
-        <Text style={styles.title}>{I18n.t('title')}</Text>
+        <Text style={styles.title}>{I18n.t('login_title')}</Text>
         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
           <View style={{ flex: 1 }}>
             <TextInput
@@ -134,6 +134,17 @@ export default function LoginScreenComponent({ props }) {
             </View>
             )
           }
+          <View style={styles.signupButtonContainer}>
+            <Text style={styles.orTextStyle}> OR </Text>
+            <TouchableOpacity
+              style={styles.signupButton}
+              onPress={() => {
+                onSignupPressed();
+              }}
+            >
+              <Text style={styles.subsText}>Signup</Text>
+            </TouchableOpacity>
+          </View>
           <View>
             <TouchableOpacity
               style={styles.subsContainer}

@@ -12,6 +12,7 @@ import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
 import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
 import * as CONST from '../Utils/Constants';
+import SignupScreenContainer from '../Components/SignupScreen/SignupScreenContainer';
 
 const TabNavigator = createBottomTabNavigator({
   HomeTab: { screen: HomeTabContainer },
@@ -50,6 +51,7 @@ const StackNavigator = createStackNavigator(
     LoginScreen: { screen: LoginScreenContainer },
     HomeTab: { screen: TabNavigator },
     FeedbackScreen: { screen: FeedbackScreenContainer },
+    Signup: { screen: SignupScreenContainer }
   },
   {
     initialRouteName: 'SplashScreen',

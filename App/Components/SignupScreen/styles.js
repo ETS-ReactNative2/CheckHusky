@@ -34,7 +34,7 @@ export default StyleSheet.create({
     fontSize: scale(14),
     textAlign: 'left',
     padding: scale(10),
-    paddingRight: scale(30)
+    paddingRight: scale(30),
   },
   crossIconContainer: {
     backgroundColor: 'transparent',
@@ -95,4 +95,28 @@ export default StyleSheet.create({
     fontSize: scale(20),
     textAlign: 'center'
   },
+  genderInput: {
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: scale(55),
+    borderColor: '#d0d0d0',
+    fontSize: scale(14),
+    textAlign: 'left',
+    padding: scale(10),
+    paddingRight: scale(30)
+  },
+  genderView: {
+    borderWidth: 1,
+    borderColor: '#d0d0d0',
+    marginTop: 10
+  },
+  dobContainer: {
+    marginTop: 10,
+    height: 50,
+    borderWidth: 1,
+    borderColor: '#d0d0d0',
+    justifyContent: 'center',
+    paddingLeft: 10
+  }
 });

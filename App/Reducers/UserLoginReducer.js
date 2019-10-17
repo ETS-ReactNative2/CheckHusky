@@ -26,6 +26,26 @@ export default function (state = initialState, action) {
         user: null,
         message: 'error in login process',
       };
+
+    case CONST.USER_SIGNUP:
+      return {
+        ...state,
+        user: null,
+        message: null,
+      };
+    case CONST.USER_SIGNUP_SUCCESS:
+      return {
+        ...state,
+        user: action.payload.user,
+        message: 'successfully signed up',
+      };
+    case CONST.USER_SIGNUP_FAILED:
+      return {
+        ...state,
+        user: null,
+        message: 'error in signup process',
+      };
+
     case CONST.USER_LOGOUT:
       return {
         ...state,

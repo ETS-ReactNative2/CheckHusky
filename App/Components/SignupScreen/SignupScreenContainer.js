@@ -3,29 +3,24 @@ import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 import * as UserLoginActions from '../../Actions/userLoginActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
-import LoginScreenComponent from './LoginScreenComponent';
+import SignupScreenComponent from './SignupScreenComponent';
 import NavigationService from '../../Services/NavigationService';
 
 
 const Analytics = firebase.analytics();
 
-const LoginScreenContainer = (props) => {
+const SignupScreenContainer = (props) => {
   const { prevProps } = props;
 
   useEffect(() => {
     Analytics.setAnalyticsCollectionEnabled(true);
-    Analytics.setCurrentScreen('Log_In', 'Login');
+    Analytics.setCurrentScreen('Sign_up', 'Signup');
     if (props != prevProps && props.userData) {
       NavigationService.navigateAndReset('HomeTab');
     }
   }, [prevProps, props]);
 
-  onSignupPressed = () => {
-    console.log('HEre Called----');
-		NavigationService.navigate('Signup');
-	}
-
-  return <LoginScreenComponent props={props} onSignupPressed={()=> onSignupPressed()} />;
+  return <SignupScreenComponent props={props} />;
 };
 
 const mapStateToProps = (state) => ({
@@ -34,8 +29,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  userLogin: (user) => {
-    return dispatch(UserLoginActions.userLogin(user));
+  userSignup: (user) => {
+    return dispatch(UserLoginActions.userSignup(user));
   },
   changeLanguage: (lang) => {
     return dispatch(LanguageActions.changeLanguage(lang));
@@ -45,4 +40,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginScreenContainer);
+)(SignupScreenContainer);
