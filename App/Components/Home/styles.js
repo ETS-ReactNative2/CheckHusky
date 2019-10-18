@@ -1,4 +1,4 @@
-import { StyleSheet, PixelRatio } from 'react-native';
+import { StyleSheet, PixelRatio, Platform } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import Colors from '../../Theme/Colors';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
@@ -9,64 +9,102 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    justifyContent: 'center',
-  },
-  title: {
-    ...Fonts.style.h2,
-    textAlign: 'center',
-    marginBottom: scale(10),
-  },
-  text: {
-    ...Fonts.style.small,
-    textAlign: 'center',
-    color: Colors.text,
-  },
-  screenText: {
-    ...Fonts.style.normal,
-    textAlign: 'center',
-    color: Colors.text,
   },
   headerContainer: {
-    flex: 3,
-    paddingTop: 30,
-    borderWidth: 1,
-    backgroundColor: '#ECE5E3',
-    borderColor: CONST.LIGHT_GREY_BG,
-    borderRadius: scale(30),
-    margin: scale(20),
-    shadowOpacity: 0.75,
-    shadowRadius: scale(10),
-    shadowColor: CONST.GREY_COLOR,
-    shadowOffset: { height: 5, width: 5 },
-    elevation: 5,
+    flexDirection: CONST.ROW,
+    justifyContent: CONST.SPACE_BETWEEN,
+    alignItems: CONST.CENTER,
+    height: scale(50),
+    marginTop: scale(10)
   },
-  listStyle: {
-    flex: 1,
-    paddingHorizontal: 20
+  notificationIcon: {
+    marginLeft: 10
+  },
+  cartIcon: {
+    marginRight: 10
+  },
+  cartsIcon: {
+    // width: scale(25),
+    // height: scale(25)
+  },
+  notiIcon: {
+    // width: scale(30),
+    // height: scale(30)
+  },
+  searchContainer: {
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: CONST.BORDER_COLOR_GREY_LIGHT,
+    borderRadius: 10,
+    marginHorizontal: scale(10),
+  },
+  searchInput: {
+    justifyContent: CONST.CENTER,
+    alignItems: CONST.CENTER,
+    height: scale(50),
+    fontSize: scale(20),
+    fontFamily: CONST.fontFamily.Josef,
+    marginHorizontal: scale(35),
+    color: CONST.GREY_DARK,
+  },
+  searchIcon: {
+    position: CONST.POSITION_ABSOLUTE,
+    top: 15,
+    left: 10,
+  },
+  filterIcon: {
+    position: CONST.POSITION_ABSOLUTE,
+    top: 15,
+    right: 10,
   },
   cellContainer: {
-    flexDirection: 'row',
-    alignSelf: 'stretch',
-    height: verticalScale(140),
-    marginTop: verticalScale(20),
-    backgroundColor: '#ed9121',
-    opacity: 0.6,
-    borderRadius: scale(5),
-    padding: scale(5)
+    marginTop: scale(100),
+    marginHorizontal: 15,
+    borderWidth: 1,
+    borderColor: CONST.BORDER_COLOR_GREY_LIGHT,
+    borderRadius: 10,
+    marginBottom: 20,
+    paddingTop: scale(100),
+    paddingBottom: scale(20),
   },
-  imageStyle: {
-    height: verticalScale(130),
-    width: scale(110),
-    backgroundColor: '#ed9121',
+  productImage: {
+    alignSelf: CONST.CENTER,
+    position: CONST.POSITION_ABSOLUTE,
+    top: scale(-80)
   },
-  description: {
+  productDetailContainer: {
+    marginHorizontal: 20
+  },
+  nameContainer: {
+    flexDirection: CONST.ROW,
+    justifyContent: CONST.SPACE_BETWEEN,
+    alignItems: CONST.CENTER
+  },
+  productName: {
+    color: CONST.GREY_DARK,
+    fontSize: scale(20),
+    fontFamily: CONST.fontFamily.JosefBold,
+  },
+  listContainer: {
     flex: 1,
-    alignSelf: 'stretch',
-    marginLeft: scale(5),
-    paddingLeft: scale(5),
+    marginTop: scale(10),
+    marginBottom: scale(10)
   },
-  nameRow: {
-    flexDirection: 'row',
-    marginTop: 1,
+  productPrice: {
+    marginTop: 15,
+    color: CONST.PRIMARY_COLOR,
+    fontSize: scale(18),
+    fontFamily: CONST.fontFamily.JosefBold,
+  },
+  productDescription: {
+    width: scale(200),
+    marginTop: 15,
+    textAlign: 'justify',
+    color: CONST.GREY_DARK,
+    fontSize: scale(15),
+    fontFamily: CONST.fontFamily.Josef,
+  },
+  loadMore: {
+    alignSelf: CONST.CENTER
   }
 });

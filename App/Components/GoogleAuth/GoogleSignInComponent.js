@@ -1,9 +1,11 @@
 import React from 'react';
+import { Image, TouchableOpacity } from 'react-native';
 import {
   GoogleSigninButton, GoogleSignin, statusCodes
 } from 'react-native-google-signin';
 import firebase from 'react-native-firebase';
 import NavigationService from '../../Services/NavigationService';
+import * as CONST from '../../Utils/Constants';
 import styles from './styles';
 
 const Analytics = firebase.analytics();
@@ -35,11 +37,8 @@ export default function GoogleSignInComponent({ props }) {
   };
 
   return (
-    <GoogleSigninButton
-      style={styles.buttonStyle}
-      size={GoogleSigninButton.Size.Icon}
-      color={GoogleSigninButton.Color.Dark}
-      onPress={signIn}
-    />
+    <TouchableOpacity onPress={() => signIn()} style={styles.googleSocialIcon}>
+      <Image source={CONST.GOOGLE_PLUS_ICON} />
+    </TouchableOpacity>
   );
 }

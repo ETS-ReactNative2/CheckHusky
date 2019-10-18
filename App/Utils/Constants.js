@@ -16,6 +16,9 @@ export const BORDER_SHADOW_COLOR = 'rgba(0,0,0,0.03)';
 export const BLUE_COLOR_COLLAPSE = 'rgb(69,124,237)';
 export const ICON_BG = 'rgb(253, 249, 249)';
 export const LIGHT_GREY_BG = 'rgb(235, 235, 235)';
+export const LIGHT_GREY_COLOR = '#efefef';
+export const GREY_DARK = '#323232';
+export const PRIMARY_DARK_COLOR = '#a24900';
 
 // Font Weight Constants
 export const fontWeight = {
@@ -40,7 +43,8 @@ export const fontFamily = {
   MediumItalic: 'Raleway-MediumItalic',
   RegularItalic: 'Raleway-Italic',
   Black: 'Raleway-Black',
-  Josef: 'JosefinSans-Regular'
+  Josef: 'JosefinSans-Regular',
+  JosefBold: 'JosefinSans-Bold',
 };
 
 // CONFIGURATIONS
@@ -116,5 +120,14 @@ export const APP_LOGO = require('../../assets/Images/logo.png');
 export const FB_ICON = require('../../assets/Images/fb.png');
 export const GOOGLE_PLUS_ICON = require('../../assets/Images/googlePlus.png');
 export const INSTA_ICON = require('../../assets/Images/insta.png');
-
-
+export const NOTIFICATION_ICON = require('../../assets/Home/notifications.png');
+export const CART_ICON = require('../../assets/Home/cart.png');
+export const SEARCH_ICON = require('../../assets/Home/search.png');
+export const FILTER_ICON = require('../../assets/Home/filter.png');
+export const BOTTLE_IMAGE = require('../../assets/Home/img.png');
+export const TRIPLE_DOT = require('../../assets/Home/dots.png');
+export const HOME_TAB_ICON = require('../../assets/Home/home.png');
+export const ORDERS_TAB_ICON = require('../../assets/Home/orders.png');
+export const FAVORITES_TAB_ICON = require('../../assets/Home/favorites.png');
+export const SETTINGS_TAB_ICON = require('../../assets/Home/settings.png');
+export const LOAD_MORE_ICON = require('../../assets/Home/loadMore.png');

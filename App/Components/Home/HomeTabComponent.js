@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import {
-  View, Text, FlatList, Image
+  View, Text, FlatList, Image, TouchableOpacity, TextInput
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import I18n from '../../i18n/index';
+import * as CONST from '../../Utils/Constants';
 import styles from './styles';
 
 export default class HomeTabComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchText: ''
     };
     this.dummyData = [
       {
@@ -82,68 +84,28 @@ export default class HomeTabComponent extends Component {
     } = item;
     const overallRating = [1, 2, 3, 4, 5];
     return (
-      <View style={styles.cellContainer}>
-        <Image
-          style={styles.imageStyle}
-          source={{ uri: `https://picsum.photos/id/${id}/200/200` }}
-        />
-        <View style={styles.description}>
-          <View style={styles.nameRow}>
-            <Text style={styles.text}>
-              {I18n.t('nameText')}
-                :
-            </Text>
-            <Text style={styles.text}>
-              {name}
-            </Text>
+      <TouchableOpacity activeOpacity={0.5} style={styles.cellContainer}>
+        <Image style={styles.productImage} source={CONST.BOTTLE_IMAGE} />
+        <View style={styles.productDetailContainer}>
+          <View style={styles.nameContainer}>
+            <Text style={styles.productName}>St Ambroise Taster Pack</Text>
+            <TouchableOpacity style={styles.dotIcon}>
+              <Image source={CONST.TRIPLE_DOT} />
+            </TouchableOpacity>
           </View>
-          <View style={styles.nameRow}>
-            <Text style={styles.text}>
-              {I18n.t('brand')}
-                :
-            </Text>
-            <Text style={styles.text}>
-              {brand}
-            </Text>
-          </View>
-          <View style={styles.nameRow}>
-            <Text style={styles.text}>
-              {I18n.t('category')}
-                :
-            </Text>
-            <Text style={styles.text}>
-              {category}
-            </Text>
-          </View>
-          <View style={styles.nameRow}>
-            <Text style={styles.text}>
-              {I18n.t('quantity')}
-                :
-            </Text>
-            <Text style={styles.text}>
-              {quantity}
-            </Text>
-          </View>
-          <View style={styles.nameRow}>
-            <Text style={styles.text}>
-              {I18n.t('price')}
-                    :
-            </Text>
-            <Text style={styles.text}>
-              {price}
-            </Text>
-          </View>
-          <View style={{ flexDirection: 'row', marginTop: 5, justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row', marginTop: 15, justifyContent: 'space-between' }}>
             <View style={{ flexDirection: 'row' }}>
               {overallRating.map((index) => {
                 return (
-                  (index <= rating) ? <FontAwesome name="star" size={20} key={index} /> : <FontAwesome name="star-o" size={20} key={index} />
+                  <View style={{marginRight: 5}}><FontAwesome name="star" color={(index <= rating) ? CONST.PRIMARY_COLOR : CONST.BORDER_COLOR_GREY_LIGHT} size={20} key={index} /></View>
                 );
               })}
             </View>
           </View>
+          <Text style={styles.productPrice}>$26.30</Text>
+          <Text style={styles.productDescription}>The taste pack consists of 3 each of: St. Ambroise Pale Ale, St. Ambroise Apricot Wheat Ale, St. Ambroise Oatmeal Stout and St. Ambroise India Pale Ale (4.5% to 6.2% alc.).</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 
@@ -151,14 +113,39 @@ export default class HomeTabComponent extends Component {
     return (
       <View style={styles.container}>
         <View style={[styles.headerContainer]}>
-          <Text style={styles.screenText}>{I18n.t('homeScreen')}</Text>
+          <TouchableOpacity style={styles.notificationIcon}>
+            <Image style={styles.notiIcon} source={CONST.NOTIFICATION_ICON} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.cartIcon}>
+            <Image style={styles.cartsIcon} source={CONST.CART_ICON} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.searchContainer}>
+          <TextInput
+            underlineColorAndroid="transparent"
+            returnKeyType="next"
+            placeholder="Search product"
+            value={this.state.searchText}
+            autoCapitalize="none"
+            onChangeText={(searchText) => { this.setState({ searchText }); }}
+            keyboardType="email-address"
+            style={styles.searchInput}
+          />
+          <TouchableOpacity style={styles.searchIcon}>
+            <Image source={CONST.SEARCH_ICON} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.filterIcon}>
+            <Image source={CONST.FILTER_ICON} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.listContainer}>
           <FlatList
-            style={styles.listStyle}
             keyExtractor={(item, index) => index.toString()}
             data={this.dummyData}
             renderItem={(item) => this.renderCell(item)}
             extraData={this.state}
           />
+          <Image style={styles.loadMore} source={CONST.LOAD_MORE_ICON} />
         </View>
       </View>
 

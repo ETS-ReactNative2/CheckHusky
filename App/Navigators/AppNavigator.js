@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Image
+} from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -12,6 +15,7 @@ import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
 import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
 import * as CONST from '../Utils/Constants';
+import scale, { verticalScale } from '../Utils/scale';
 import SignupScreenContainer from '../Components/SignupScreen/SignupScreenContainer';
 
 const TabNavigator = createBottomTabNavigator({
@@ -27,21 +31,28 @@ const TabNavigator = createBottomTabNavigator({
       let IconComponent = Ionicons;
       let iconName;
       if (routeName === 'HomeTab') {
-        iconName = `beer`;
+        iconName = CONST.HOME_TAB_ICON;
       } else if (routeName === 'OrderTab') {
-        iconName = `money-check`;
+        iconName = CONST.ORDERS_TAB_ICON;
       } else if (routeName === 'FavoritesTab') {
-        iconName = `thumbs-up`;
+        iconName = CONST.FAVORITES_TAB_ICON;
       } else if (routeName === 'ProfileTab') {
-        iconName = `user-edit`;
+        iconName = CONST.SETTINGS_TAB_ICON;
       }
       // You can return any component that you like here!
-      return <IconComponent name={iconName} size={25} color={tintColor} />;
+      return <Image source={iconName} />
     },
   }),
   tabBarOptions: {
     activeTintColor: CONST.PRIMARY_COLOR,
     inactiveTintColor: 'gray',
+    labelStyle: {
+      fontSize: scale(15),
+      fontFamily: CONST.fontFamily.JosefBold,
+    },
+    style: {
+      height: scale(80)
+    }
   },
 });
 

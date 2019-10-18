@@ -18,16 +18,29 @@ export default StyleSheet.create({
     marginTop: 30,
     alignSelf: CONST.CENTER
   },
+  LoginText: {
+    position: CONST.POSITION_ABSOLUTE,
+    top: scale(88),
+    alignSelf: CONST.CENTER,
+    fontFamily: CONST.fontFamily.JosefBold,
+    fontSize: scale(40),
+    color: '#f98829'
+  },
   inputContainer: {
     justifyContent: 'center',
   },
   emailContainer: {
-    marginTop: 250,
+    marginTop: scale(330),
     marginHorizontal: 45,
   },
   passContainer: {
     marginTop: 70,
     marginHorizontal: 45,
+  },
+  field: {
+    fontSize: scale(20),
+    color: CONST.PRIMARY_DARK_COLOR,
+    fontFamily: CONST.fontFamily.Josef
   },
   fieldText: {
     fontSize: scale(20),
@@ -37,8 +50,7 @@ export default StyleSheet.create({
   signUpText: {
     color: CONST.BLACK_COLOR,
     fontSize: scale(22),
-    fontWeight: CONST.BOLD,
-    fontFamily: CONST.fontFamily.Josef
+    fontFamily: CONST.fontFamily.JosefBold
   },
   forgotPassword: {
     marginTop: scale(50),
@@ -61,8 +73,7 @@ export default StyleSheet.create({
   loginText: {
     color: CONST.WHITE_COLOR,
     fontSize: scale(22),
-    fontWeight: CONST.BOLD,
-    fontFamily: CONST.fontFamily.Josef,
+    fontFamily: CONST.fontFamily.JosefBold,
     marginRight: 10,
   },
   connectContainer: {
