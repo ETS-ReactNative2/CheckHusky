@@ -37,7 +37,7 @@ export default function GoogleSignInComponent({ props }) {
   return (
     <GoogleSigninButton
       style={styles.buttonStyle}
-      size={GoogleSigninButton.Size.Wide}
+      size={GoogleSigninButton.Size.Icon}
       color={GoogleSigninButton.Color.Dark}
       onPress={signIn}
     />

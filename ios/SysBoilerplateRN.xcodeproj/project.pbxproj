@@ -31,6 +31,16 @@
 		647344EDB3BC472B8AD7A397 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685E3A2E67D44222BA6193A6 /* Feather.ttf */; };
 		6E34B7CA233DE7A200778462 /* libFirebaseCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7C9233DE7A200778462 /* libFirebaseCore.a */; };
 		6E34B7CC233DE7A900778462 /* libFirebaseMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */; };
+		6F3FA2D323586A8B007242F1 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2C923586A88007242F1 /* JosefinSans-Regular.ttf */; };
+		6F3FA2D423586A8B007242F1 /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CA23586A88007242F1 /* JosefinSans-SemiBold.ttf */; };
+		6F3FA2D523586A8B007242F1 /* JosefinSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CB23586A89007242F1 /* JosefinSans-Italic.ttf */; };
+		6F3FA2D623586A8B007242F1 /* JosefinSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CC23586A89007242F1 /* JosefinSans-ThinItalic.ttf */; };
+		6F3FA2D723586A8B007242F1 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CD23586A8A007242F1 /* JosefinSans-Bold.ttf */; };
+		6F3FA2D823586A8B007242F1 /* JosefinSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CE23586A8A007242F1 /* JosefinSans-LightItalic.ttf */; };
+		6F3FA2D923586A8B007242F1 /* JosefinSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2CF23586A8A007242F1 /* JosefinSans-Light.ttf */; };
+		6F3FA2DA23586A8B007242F1 /* JosefinSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2D023586A8B007242F1 /* JosefinSans-Thin.ttf */; };
+		6F3FA2DB23586A8B007242F1 /* JosefinSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2D123586A8B007242F1 /* JosefinSans-SemiBoldItalic.ttf */; };
+		6F3FA2DC23586A8B007242F1 /* JosefinSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F3FA2D223586A8B007242F1 /* JosefinSans-BoldItalic.ttf */; };
 		76C3C5441F45427ABDF6A9C0 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A93CB9A874FA4EF9B11DE4A3 /* Octicons.ttf */; };
 		8924625E08DCB99542562411 /* libPods-SysBoilerplateRN-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D35C4CBD3698085D3B6C9D1C /* libPods-SysBoilerplateRN-tvOSTests.a */; };
 		8B4F2DB3E8C043F18392300F /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFC8536C8D141E8A9EE244E /* AntDesign.ttf */; };
@@ -209,6 +219,16 @@
 		6C9E00AB230E79E20008D8F9 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34B7C9233DE7A200778462 /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E34B7CB233DE7A900778462 /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F3FA2C923586A88007242F1 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		6F3FA2CA23586A88007242F1 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		6F3FA2CB23586A89007242F1 /* JosefinSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Italic.ttf"; sourceTree = "<group>"; };
+		6F3FA2CC23586A89007242F1 /* JosefinSans-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-ThinItalic.ttf"; sourceTree = "<group>"; };
+		6F3FA2CD23586A8A007242F1 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		6F3FA2CE23586A8A007242F1 /* JosefinSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		6F3FA2CF23586A8A007242F1 /* JosefinSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Light.ttf"; sourceTree = "<group>"; };
+		6F3FA2D023586A8B007242F1 /* JosefinSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Thin.ttf"; sourceTree = "<group>"; };
+		6F3FA2D123586A8B007242F1 /* JosefinSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6F3FA2D223586A8B007242F1 /* JosefinSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		73585A3F14B7402196EB2937 /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7A39E17B5B674B889A093A8E /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		7DC890451C1F791761E7FC18 /* Pods-SysBoilerplateRNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SysBoilerplateRNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SysBoilerplateRNTests/Pods-SysBoilerplateRNTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -394,6 +414,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6F3FA2B723586A3B007242F1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6F3FA2CD23586A8A007242F1 /* JosefinSans-Bold.ttf */,
+				6F3FA2D223586A8B007242F1 /* JosefinSans-BoldItalic.ttf */,
+				6F3FA2CB23586A89007242F1 /* JosefinSans-Italic.ttf */,
+				6F3FA2CF23586A8A007242F1 /* JosefinSans-Light.ttf */,
+				6F3FA2CE23586A8A007242F1 /* JosefinSans-LightItalic.ttf */,
+				6F3FA2C923586A88007242F1 /* JosefinSans-Regular.ttf */,
+				6F3FA2CA23586A88007242F1 /* JosefinSans-SemiBold.ttf */,
+				6F3FA2D123586A8B007242F1 /* JosefinSans-SemiBoldItalic.ttf */,
+				6F3FA2D023586A8B007242F1 /* JosefinSans-Thin.ttf */,
+				6F3FA2CC23586A89007242F1 /* JosefinSans-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +443,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6F3FA2B723586A3B007242F1 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* SysBoilerplateRN */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SysBoilerplateRNTests */,
@@ -710,22 +748,32 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				6183906623477D3600C64F18 /* GoogleService-Info.plist in Resources */,
+				6F3FA2DC23586A8B007242F1 /* JosefinSans-BoldItalic.ttf in Resources */,
+				6F3FA2D923586A8B007242F1 /* JosefinSans-Light.ttf in Resources */,
 				8B4F2DB3E8C043F18392300F /* AntDesign.ttf in Resources */,
 				0CEF99A1CB8C442C9B6F69F4 /* Entypo.ttf in Resources */,
 				B169D14677E742218F6E8299 /* EvilIcons.ttf in Resources */,
+				6F3FA2D523586A8B007242F1 /* JosefinSans-Italic.ttf in Resources */,
 				647344EDB3BC472B8AD7A397 /* Feather.ttf in Resources */,
+				6F3FA2D423586A8B007242F1 /* JosefinSans-SemiBold.ttf in Resources */,
 				CF53682A8D7448DBBE8DA6E7 /* FontAwesome.ttf in Resources */,
+				6F3FA2D623586A8B007242F1 /* JosefinSans-ThinItalic.ttf in Resources */,
 				4D625719374D4AAB83F47D9D /* FontAwesome5_Brands.ttf in Resources */,
 				58FCBAF7AE52435EA2624AEC /* FontAwesome5_Regular.ttf in Resources */,
 				AF5B60394E224991B03295BB /* FontAwesome5_Solid.ttf in Resources */,
+				6F3FA2D823586A8B007242F1 /* JosefinSans-LightItalic.ttf in Resources */,
 				C98A8058ADE34A0199A8CF32 /* Fontisto.ttf in Resources */,
 				162FA9EA29BC4471A30D00DC /* Foundation.ttf in Resources */,
+				6F3FA2D323586A8B007242F1 /* JosefinSans-Regular.ttf in Resources */,
+				6F3FA2D723586A8B007242F1 /* JosefinSans-Bold.ttf in Resources */,
 				19DA93DAFEF945D69AFC8869 /* Ionicons.ttf in Resources */,
 				54D3EBDD7EC84328A66AEE56 /* MaterialCommunityIcons.ttf in Resources */,
 				9BE75807190641E990163B3D /* MaterialIcons.ttf in Resources */,
 				76C3C5441F45427ABDF6A9C0 /* Octicons.ttf in Resources */,
 				1530380AF04E46A592692FD4 /* SimpleLineIcons.ttf in Resources */,
 				9F6E929B7B8E4F6BBB867BC6 /* Zocial.ttf in Resources */,
+				6F3FA2DA23586A8B007242F1 /* JosefinSans-Thin.ttf in Resources */,
+				6F3FA2DB23586A8B007242F1 /* JosefinSans-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

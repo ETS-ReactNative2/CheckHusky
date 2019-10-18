@@ -1,13 +1,94 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
 import scale, { verticalScale } from '../../Utils/scale';
+import * as CONST from '../../Utils/Constants';
+const { height, width } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
     justifyContent: 'center'
+  },
+  loginContainer: {
+    flex: 1
+  },
+  logoImage: {
+    marginTop: 30,
+    alignSelf: CONST.CENTER
+  },
+  inputContainer: {
+    justifyContent: 'center',
+  },
+  emailContainer: {
+    marginTop: 250,
+    marginHorizontal: 45,
+  },
+  passContainer: {
+    marginTop: 70,
+    marginHorizontal: 45,
+  },
+  fieldText: {
+    fontSize: scale(20),
+    color: CONST.WHITE_COLOR,
+    fontFamily: CONST.fontFamily.Josef
+  },
+  signUpText: {
+    color: CONST.BLACK_COLOR,
+    fontSize: scale(22),
+    fontWeight: CONST.BOLD,
+    fontFamily: CONST.fontFamily.Josef
+  },
+  forgotPassword: {
+    marginTop: scale(50),
+  },
+  buttonContainer: {
+    flexDirection: CONST.ROW,
+    justifyContent: CONST.SPACE_BETWEEN
+  },
+  signUp: {
+    marginTop: scale(30),
+    marginLeft: scale(50)
+  },
+  login: {
+    flexDirection: CONST.ROW,
+    justifyContent: CONST.CENTER,
+    alignItems: CONST.CENTER,
+    marginTop: scale(30),
+    marginRight: scale(50)
+  },
+  loginText: {
+    color: CONST.WHITE_COLOR,
+    fontSize: scale(22),
+    fontWeight: CONST.BOLD,
+    fontFamily: CONST.fontFamily.Josef,
+    marginRight: 10,
+  },
+  connectContainer: {
+    alignSelf: CONST.CENTER,
+    justifyContent: CONST.CENTER,
+    alignItems: CONST.CENTER,
+    marginTop: scale(10),
+  },
+  line: {
+    height: 1,
+    borderWidth: 1,
+    width: width - 200,
+    marginBottom: 10,
+    borderColor: '#f98729',
+    backgroundColor: '#f98729'
+  },
+  socialIconContainer: {
+    marginTop: scale(10),
+    flexDirection: CONST.ROW,
+    justifyContent: CONST.SPACE_BETWEEN
+  },
+  fbSocialIcon: {
+    marginLeft: scale(50)
+  },
+  instaSocialIcon: {
+    marginRight: scale(50)
   },
   title: {
     ...Fonts.style.h2,
@@ -26,15 +107,16 @@ export default StyleSheet.create({
     textAlign: 'center'
   },
   emailInput: {
-    borderWidth: 1,
+    borderBottomWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: scale(55),
-    borderColor: '#d0d0d0',
-    fontSize: scale(14),
+    height: scale(40),
+    borderBottomColor: CONST.WHITE_COLOR,
+    fontSize: scale(20),
+    fontFamily: CONST.fontFamily.Josef,
     textAlign: 'left',
-    padding: scale(10),
-    paddingRight: scale(30)
+    // padding: scale(10),
+    // paddingRight: scale(30)
   },
   crossIconContainer: {
     backgroundColor: 'transparent',

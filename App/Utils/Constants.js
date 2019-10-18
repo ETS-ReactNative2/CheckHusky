@@ -39,7 +39,8 @@ export const fontFamily = {
   Bold: 'Raleway-Bold',
   MediumItalic: 'Raleway-MediumItalic',
   RegularItalic: 'Raleway-Italic',
-  Black: 'Raleway-Black'
+  Black: 'Raleway-Black',
+  Josef: 'JosefinSans-Regular'
 };
 
 // CONFIGURATIONS
@@ -81,3 +82,32 @@ export const MSG_TITLE = 'Any Message Title';
 // Screen uri constants
 export const BONUS_URI = 'https://www.xyz.com/app/bonus/';
 export const FAQS_URI = 'https://www.xyz.com/app/faq/';
+
+// Style Constants
+export const POSITION_ABSOLUTE = 'absolute';
+export const POSITION_RELATIVE = 'relative';
+export const CENTER = 'center';
+export const UNDEFINED = 'undefined';
+export const SPACE_BETWEEN = 'space-between';
+export const FLEX_START = 'flex-start';
+export const FLEX_END = 'flex-end';
+export const ROW = 'row';
+export const COLUMN = 'column';
+export const WINDOW = 'window';
+export const PLATFORM_ANDROID = 'android';
+export const PLATFORM_IOS = 'ios';
+export const POSITION_RIGHT = 'right';
+export const SPACE_AROUND = 'space-around';
+export const STRETCH = 'stretch';
+export const CONTAIN = 'contain';
+export const BOLD = 'bold';
+
+// Image Constants
+
+export const APP_BACKGROUND = require('../../assets/Images/bg.png');
+export const APP_LOGO = require('../../assets/Images/logo.png');
+export const FB_ICON = require('../../assets/Images/fb.png');
+export const GOOGLE_PLUS_ICON = require('../../assets/Images/googlePlus.png');
+export const INSTA_ICON = require('../../assets/Images/insta.png');
+
+

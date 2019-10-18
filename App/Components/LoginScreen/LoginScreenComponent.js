@@ -3,24 +3,29 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  KeyboardAvoidingView,
   Text,
   View,
+  Image,
+  ImageBackground,
   Platform
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
 import { SignInWithAppleButton } from 'react-native-apple-authentication';
+import Icons from 'react-native-vector-icons/Ionicons';
 import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
 import FBAuthContainer from '../FBAuth/FBAuthContainer';
 import Validators from '../../Utils/Validators';
 import showToast from '../../Utils/showToast';
 import styles from './styles';
+import * as CONST from '../../Utils/Constants';
 import I18n from '../../i18n/index';
 
 const Analytics = firebase.analytics();
 const enableGoogle = true;
 const enableFb = true;
-const enableApple = (Platform.OS === 'ios') ? true : false;
+const enableApple = (Platform.OS === 'ios');
 
 export default function LoginScreenComponent({ props, onSignupPressed }) {
   const [email, setEmail] = useState('');
@@ -49,40 +54,33 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.signInContainers}>
-        <Text style={styles.title}>{I18n.t('login_title')}</Text>
-        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-          <View style={{ flex: 1 }}>
-            <TextInput
-              underlineColorAndroid="transparent"
-              returnKeyType="next"
-              placeholder="Email"
-              value={email}
-              autoCapitalize="none"
-              onChangeText={(email) => setEmail(email)}
-              keyboardType="email-address"
-              style={styles.emailInput}
-            />
-          </View>
-          {email !== '' && (
-            <View style={styles.crossIconContainer}>
-              <TouchableOpacity
-                onPress={() => {
-                  setEmail('');
-                }}
-                style={[styles.crossIcon]}
-              >
-                <Text style={{ fontSize: 26 }}>x</Text>
-              </TouchableOpacity>
+      <ImageBackground source={CONST.APP_BACKGROUND} style={styles.loginContainer}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+        <Image style={styles.logoImage} source={CONST.APP_LOGO} />
+        <View style={styles.inputContainer}>
+          <View style={styles.emailContainer}>
+            <Text style={styles.fieldText}>Email</Text>
+            <View style={{ flex: 1 }}>
+              <TextInput
+                underlineColorAndroid="transparent"
+                returnKeyType="next"
+                // placeholder="Email"
+                value={email}
+                autoCapitalize="none"
+                onChangeText={(email) => setEmail(email)}
+                keyboardType="email-address"
+                style={styles.emailInput}
+              />
             </View>
-          )}
+          </View>
         </View>
-        <View style={{ flexDirection: 'row' }}>
+        <View style={styles.passContainer}>
+          <Text style={styles.fieldText}>Password</Text>
           <View style={{ flex: 1 }}>
             <TextInput
               underlineColorAndroid="transparent"
               returnKeyType="next"
-              placeholder={I18n.t('password')}
+              // placeholder={I18n.t('password')}
               value={password}
               autoCapitalize="none"
               secureTextEntry
@@ -90,73 +88,39 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
               style={styles.emailInput}
             />
           </View>
-          {password !== '' && (
-            <View style={styles.crossIconContainer}>
-              <TouchableOpacity
-                onPress={() => {
-                  setPassword('');
-                }}
-                style={[styles.crossIcon]}
-              >
-                <Text style={{ fontSize: 26 }}>x</Text>
-              </TouchableOpacity>
-            </View>
-          )}
+          <TouchableOpacity style={styles.forgotPassword}>
+            <Text style={styles.fieldText}>Forgot your password?</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          style={styles.subsContainer}
-          onPress={() => onSubmit()}
-        >
-          <Text style={styles.subsText}>{I18n.t('submit')}</Text>
-        </TouchableOpacity>
-        <View>
-          {
-            enableGoogle
-            && (
-            <View>
-              <GoogleSignInContainer props={props} />
-            </View>
-            )
-          }
-          {
-            enableFb
-            && (
-            <View>
-              <FBAuthContainer />
-            </View>
-            )
-          }
-          {
-            enableApple
-            && (
-            <View style={styles.appleCont}>
-              { SignInWithAppleButton(styles.appleBtn, this.appleSignIn) }
-            </View>
-            )
-          }
-          <View style={styles.signupButtonContainer}>
-            <Text style={styles.orTextStyle}> OR </Text>
-            <TouchableOpacity
-              style={styles.signupButton}
-              onPress={() => {
-                onSignupPressed();
-              }}
-            >
-              <Text style={styles.subsText}>Signup</Text>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <TouchableOpacity
-              style={styles.subsContainer}
-              onPress={() => {
-                // this.props.changeLanguage()
-              }}
-            >
-              <Text style={styles.subsText}>{I18n.t('changeLanguage')}</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => onSignupPressed()} style={styles.signUp}>
+            <Text style={styles.signUpText}>SIGN UP</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => onSubmit()} style={styles.login}>
+            <Text style={styles.loginText}>LOGIN</Text>
+            <Icons name="ios-arrow-forward" size={20} color={CONST.WHITE_COLOR} />
+          </TouchableOpacity>
         </View>
-      </View>
+        <View style={styles.connectContainer}>
+          <View style={styles.line} />
+          <Text style={styles.fieldText}>Or connect with</Text>
+        </View>
+        <View style={styles.socialIconContainer}>
+          <TouchableOpacity style={styles.fbSocialIcon}>
+            <Image source={CONST.FB_ICON} />
+          </TouchableOpacity>
+          <View style={{ alignSelf: 'center', marginBottom: 10 }}>
+            <GoogleSignInContainer props={props} />
+          </View>
+          {/* <TouchableOpacity style={styles.googleSocialIcon}>
+            <Image source={CONST.GOOGLE_PLUS_ICON} />
+          </TouchableOpacity> */}
+          <TouchableOpacity style={styles.instaSocialIcon}>
+            <Image source={CONST.INSTA_ICON} />
+          </TouchableOpacity>
+        </View>
+      </KeyboardAvoidingView>
+      </ImageBackground>
     </ScrollView>
   );
 }
