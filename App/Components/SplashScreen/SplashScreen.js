@@ -3,7 +3,7 @@ import { Text, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './SplashScreenStyle';
 import NavigationService from '../../Services/NavigationService';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 import { Images } from '../../Theme';
 
 function SplashScreen(props) {
@@ -29,7 +29,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (user) => {
-    return dispatch(UserLoginActions.userLogin(user));
+    return dispatch(userActions.userLogin(user));
   },
 });
 

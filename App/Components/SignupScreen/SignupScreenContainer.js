@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
 import SignupScreenComponent from './SignupScreenComponent';
 import NavigationService from '../../Services/NavigationService';
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userSignup: (user) => {
-    return dispatch(UserLoginActions.userSignup(user));
+    return dispatch(userActions.userSignup(user));
   },
   changeLanguage: (lang) => {
     return dispatch(LanguageActions.changeLanguage(lang));

@@ -49,6 +49,15 @@ export function CommonFetch(params, opt) {
             Alert.alert('Url not found');
             return undefined;
           });
+        } else if (Response.status === 401) { //* Not found OR Something Went Wrong
+          try {
+            Response.json().then((res) => {
+              Alert.alert(res);
+              return undefined;
+            });
+          } catch (error) {
+            console.log('error-----', error);
+          }
         } else {
           Alert.alert('SomeThing Went Wrong');
           return undefined;

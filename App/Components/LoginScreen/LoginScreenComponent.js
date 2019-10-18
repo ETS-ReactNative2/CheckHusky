@@ -45,7 +45,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
     } else if (!Validators.isValidPassword(password)) {
       showToast('Password is invalid');
     } else {
-      const user = { name: email, password };
+      const user = { email, password };
       Analytics.logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
       props.userLogin(user);
     }

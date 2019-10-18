@@ -1,6 +1,6 @@
 import { put, call } from "redux-saga/effects";
 import { statusCodes } from "react-native-google-signin";
-import * as UserLoginActions from "../Actions/userLoginActions";
+import * as userActions from "../Actions/userActions";
 import { loginWithGoogle, signOut } from "../Services/googleAuth";
 import { CommonFetch } from '../Services/UserService';
 import * as CONST from '../Utils/Constants';
@@ -12,25 +12,17 @@ const opts = {
   };
 
 export function* userLogin(action) {
+  opts.method = CONST.POST_API;
+  opts.url = 'v1/auth';
   try {
-    if (action.user != null) {
-      yield put(UserLoginActions.userLoginSuccess(action.user));
+    const res = yield call(CommonFetch, action.user, opts);
+    if (res !== undefined) {
+      yield put(userActions.userLoginSuccess(res));
     } else {
-      const response = yield call(loginWithGoogle);
-      yield put(UserLoginActions.userLoginSuccess(response.user));
+      yield put(userActions.userLoginFailure(res));
     }
   } catch (error) {
-    if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-      // user cancelled the login flow
-    } else if (error.code === statusCodes.IN_PROGRESS) {
-      // operation (f.e. sign in) is in progress already
-    } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-      // play services not available or outdated
-    } else {
-      // some other error happened
-    }
-    console.log("_signIn error", error);
-    yield put(UserLoginActions.userLoginFailure(error));
+    yield put(userActions.userLoginFailure(error));
   }
 }
 
@@ -40,21 +32,21 @@ export function* userSignup(action) {
   try {
     const res = yield call(CommonFetch, action.user, opts);
     if (res !== undefined) {
-      yield put(UserLoginActions.userSignupSuccess(res));
+      console.log('response----', res)
+      yield put(userActions.userSignupSuccess(res));
     } else {
-      yield put(UserLoginActions.userSignupFailure(res));
+      yield put(userActions.userSignupFailure(res));
     }
   } catch (error) {
-    yield put(UserLoginActions.userSignupFailure(error));
+    yield put(userActions.userSignupFailure(error));
   }
 }
 
 export function* userLogout() {
   try {
     yield call(signOut);
-    yield put(UserLoginActions.userLogoutSuccess());
+    yield put(userActions.userLogoutSuccess());
   } catch (error) {
-    yield put(UserLoginActions.userLogoutFailure(error));
+    yield put(userActions.userLogoutFailure(error));
   }
 }
-

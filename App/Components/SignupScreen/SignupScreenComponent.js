@@ -74,7 +74,7 @@ export default function SignupScreenComponent({ props }) {
             <TextInput
               underlineColorAndroid="transparent"
               returnKeyType="next"
-              placeholder="Name"
+              placeholder={I18n.t('signup_name')}
               placeholderTextColor="gray"
               value={name}
               autoCapitalize="none"
@@ -128,7 +128,7 @@ export default function SignupScreenComponent({ props }) {
             <TextInput
               underlineColorAndroid="transparent"
               returnKeyType="next"
-              placeholder="Password"
+              placeholder={I18n.t('password')}
               placeholderTextColor="gray"
               value={password}
               autoCapitalize="none"
@@ -161,11 +161,11 @@ export default function SignupScreenComponent({ props }) {
           />
         ) : null}
         <TouchableOpacity style={styles.dobContainer} onPress={() => togglePicker(true)}>
-          <Text style={{ color: (dob == '') ? 'gray' : 'black' }}>{(dob == '') ? 'Select Date' : dob}</Text>
+          <Text style={{ color: (dob == '') ? 'gray' : 'black' }}>{(dob == '') ? I18n.t('Select_Date') : dob}</Text>
         </TouchableOpacity>
         <View style={{ height: 100, marginTop: 10 }}>
           <GooglePlacesAutocomplete
-            placeholder="Address"
+            placeholder={I18n.t('signup_address')}
             minLength={2} // minimum length of text to search
             autoFocus={false}
             returnKeyType="search" // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
@@ -222,7 +222,7 @@ export default function SignupScreenComponent({ props }) {
           style={styles.subsContainer}
           onPress={() => onSubmit()}
         >
-          <Text style={styles.subsText}>SUBMIT</Text>
+          <Text style={styles.subsText}>{I18n.t('submit')}</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>

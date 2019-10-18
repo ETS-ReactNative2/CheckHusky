@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FeedbackComponent from './FeedbackComponent';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 
 class FeedbackContainer extends Component {
   static navigationOptions = {
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogout: () => {
-    return dispatch(UserLoginActions.userLogout());
+    return dispatch(userActions.userLogout());
   },
 });
 

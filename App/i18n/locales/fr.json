@@ -20,6 +20,9 @@
   "price":"Prix ",
   "password":"Mot de passe",
   "changeLanguage":"Changer de langue",
-  "orderScreen":"Écran de commande"
+  "orderScreen":"Écran de commande",
+  "Select_Date": "Sélectionner une date",
+  "signup_address":"Adresse",
+  "signup_name":"Nom",
 
 }

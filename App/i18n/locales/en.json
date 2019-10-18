@@ -23,5 +23,8 @@
   "changeLanguage":"Change Language",
   "orderScreen":"Order Screen",
   "login_title":"Login",
-  "signup_title": "Signup"
+  "signup_title": "Signup",
+  "Select_Date": "Select Date",
+  "signup_address":"Address",
+  "signup_name":"Name ",
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import GoogleSignInComponent from './GoogleSignInComponent';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 
 const GoogleSignInContainer = (props) => {
   return (
@@ -19,7 +19,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  userLogin: () => dispatch(UserLoginActions.userLogin()),
+  userLogin: () => dispatch(userActions.userLogin()),
 });
 
 export default connect(

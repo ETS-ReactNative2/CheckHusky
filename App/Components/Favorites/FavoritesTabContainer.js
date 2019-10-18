@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FavoritesTabComponent from './FavoritesTabComponent';
 import FeedbackComponent from '../FeedbackScreen/FeedbackComponent';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 
 class FavoritesTabContainer extends Component {
   static navigationOptions = {
@@ -24,7 +24,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogout: () => {
-    return dispatch(UserLoginActions.userLogout());
+    return dispatch(userActions.userLogout());
   },
 });
 

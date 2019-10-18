@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import OrderTabComponent from './OrderTabComponent';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 
 class OrderTabContainer extends Component {
   static navigationOptions = {
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogout: () => {
-    return dispatch(UserLoginActions.userLogout());
+    return dispatch(userActions.userLogout());
   },
 });
 

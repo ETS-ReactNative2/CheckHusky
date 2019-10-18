@@ -72,6 +72,13 @@ export const USER_LOGGED_OUT_SUCCESSFULLY = 'USER_LOGGED_OUT_SUCCESSFULLY';
 export const ERROR_IN_LOGOUT = 'ERROR_IN_LOGOUT';
 export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 
+/**
+ * @Brands Constants
+ */
+export const GET_ALL_BRANDS = 'GET_ALL_BRANDS';
+export const GET_ALL_BRANDS_SUCCESS = 'GET_ALL_BRANDS_SUCCESS';
+export const GET_ALL_BRANDS_FAILURE = 'GET_ALL_BRANDS_FAILURE';
+
 // Messages
 export const MSG_TITLE = 'Any Message Title';
 

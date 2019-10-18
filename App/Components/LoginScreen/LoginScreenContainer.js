@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
 import LoginScreenComponent from './LoginScreenComponent';
 import NavigationService from '../../Services/NavigationService';
@@ -21,7 +21,6 @@ const LoginScreenContainer = (props) => {
   }, [prevProps, props]);
 
   onSignupPressed = () => {
-    console.log('HEre Called----');
 		NavigationService.navigate('Signup');
 	}
 
@@ -35,7 +34,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogin: (user) => {
-    return dispatch(UserLoginActions.userLogin(user));
+    return dispatch(userActions.userLogin(user));
   },
   changeLanguage: (lang) => {
     return dispatch(LanguageActions.changeLanguage(lang));

@@ -76,6 +76,7 @@ export default class HomeTabComponent extends Component {
   }
 
   renderCell({ item }) {
+    console.log('this.props.allBrands', this.props.allBrands);
     const {
       id, name, brand, category, quantity, price, rating
     } = item;
@@ -156,6 +157,7 @@ export default class HomeTabComponent extends Component {
             keyExtractor={(item, index) => index.toString()}
             data={this.dummyData}
             renderItem={(item) => this.renderCell(item)}
+            extraData={this.state}
           />
         </View>
       </View>

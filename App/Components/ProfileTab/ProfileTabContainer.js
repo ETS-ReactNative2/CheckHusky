@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProfileTabComponent from './ProfileTabComponent';
-import * as UserLoginActions from '../../Actions/userLoginActions';
+import * as userActions from '../../Actions/userActions';
 
 class ProfileTabContainer extends Component {
   static navigationOptions = {
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   userLogout: () => {
-    return dispatch(UserLoginActions.userLogout());
+    return dispatch(userActions.userLogout());
   },
 });
 
