@@ -1,0 +1,64 @@
+{
+  "name": "SysBoilerplateRN",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [
+    "react-native"
+  ],
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ./",
+    "lint-fix": "eslint --fix .",
+    "lint-check": "eslint .",
+    "rename": "react-native-rename",
+    "prettier": "prettier \"app/**/*.+(js|jsx|ts|tsx|json)\"",
+    "format": "yarn prettier --write",
+    "validate": "yarn prettier --list-different && yarn lint"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
+    "axios": "^0.19.0",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-i18n": "^2.0.15",
+    "react-native-image-picker": "^1.1.0",
+    "react-native-reanimated": "^1.10.1",
+    "react-native-root-toast": "^3.2.1",
+    "react-native-screens": "^1.0.0-alpha.23",
+    "react-native-tab-view": "^2.10.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.0.10",
+    "react-navigation-stack": "^1.9.4",
+    "react-navigation-tabs": "^2.5.6",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
+    "redux-saga": "^1.0.2",
+    "reduxsauce": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/runtime": "^7.10.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "jest": "^26.1.0",
+    "jetifier": "^1.6.4",
+    "metro-react-native-babel-preset": "^0.61.0",
+    "prettier": "^1.16.4",
+    "react-native-rename": "^2.4.1",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
