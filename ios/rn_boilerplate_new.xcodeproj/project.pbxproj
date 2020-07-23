@@ -194,7 +194,6 @@
 				7CA65B0BE6978C30EE96A2F8 /* Pods-rn_boilerplate_new-tvOSTests.debug.xcconfig */,
 				4770151E2DF5F4741B37A7DE /* Pods-rn_boilerplate_new-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

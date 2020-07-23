@@ -57,7 +57,8 @@ export const PUT_API = 'PUT'
 export const DELETE_API = 'DELETE'
 export const UPDATE_API = 'PUT'
 
-// Saga Constants
+// Reducer Constants
+export const GET_LOCATION = 'GET_LOCATION'
 
 // Messages
 export const MSG_TITLE = 'Any Message Title'
