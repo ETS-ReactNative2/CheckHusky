@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import HomeScreenComponent from './HomeScreenComponent';
 
 class HomeScreenContainer extends Component {
@@ -12,19 +12,15 @@ class HomeScreenContainer extends Component {
   }
 
   render() {
-    return (
-      <HomeScreenComponent {...this.props} />
-    );
+    return <HomeScreenComponent {...this.props} />;
   }
 }
 
-const mapStateToProps = (state) => ({
-});
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = (dispatch) => ({
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeScreenContainer);

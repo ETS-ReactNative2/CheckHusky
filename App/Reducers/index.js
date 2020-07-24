@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux'
-import configureStore from '../Stores/CreateStore'
-import rootSaga from '../Sagas'
-import LocationReducer from './LocationReducer'
+import {combineReducers} from 'redux';
+import configureStore from '../Stores/CreateStore';
+import rootSaga from '../Sagas';
+import LocationReducer from './LocationReducer';
 
 export default () => {
   const rootReducer = combineReducers({
-    LocationReducer
-  })
+    LocationReducer,
+  });
 
-  return configureStore(rootReducer, rootSaga)
-}
+  return configureStore(rootReducer, rootSaga);
+};

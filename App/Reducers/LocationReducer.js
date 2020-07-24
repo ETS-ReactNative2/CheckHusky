@@ -1,18 +1,18 @@
-import * as CONST from '../Utils/Constants'
+import * as CONST from '../Utils/Constants';
 
 const initialState = {
-  location: null
-}
+  location: null,
+};
 
 // This reducer stores the status of email verification.
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case CONST.GET_LOCATION:
       return {
         ...state,
-        location: null
-      }
+        location: null,
+      };
     default:
-      return state
+      return state;
   }
 }
