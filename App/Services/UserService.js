@@ -6,7 +6,7 @@ import {Alert} from 'react-native';
 import Config from '../Config';
 import * as CONST from '../Utils/Constants';
 
-export function CommonFetch(params, opt) {
+export async function CommonFetch(params, opt) {
   try {
     const URL = `${Config.API_URL}` + `${opt.url}`;
     const Options = {
@@ -31,48 +31,45 @@ export function CommonFetch(params, opt) {
       ReqOptions.body = JSON.stringify(Options.body);
     }
 
-    const apiResponse = {};
-
     try {
       console.log('Options----', Options);
       console.log('ReqOptions----', ReqOptions);
 
-      return new Promise((Resolve, Reject) => {
-        requestTimeoutPromise(
-          ReqOptions.timeout,
-          fetch(Options.URL, ReqOptions),
-          Resolve,
-          Reject,
-        );
-      })
-        .then(Response => {
-          console.log('Api Response -----', Response);
-          if (Response.status === 200 || Response.status === 201) {
-            return Response.json();
-          } else if (Response.status === 400) {
-            //* Not found OR Something Went Wrong
+      try {
+        const Response = await new Promise((Resolve, Reject) => {
+          requestTimeoutPromise(
+            ReqOptions.timeout,
+            fetch(Options.URL, ReqOptions),
+            Resolve,
+            Reject,
+          );
+        });
+        console.log('Api Response -----', Response);
+        if (Response.status === 200 || Response.status === 201) {
+          return Response.json();
+        } else if (Response.status === 400) {
+          //* Not found OR Something Went Wrong
+          Response.json().then(() => {
+            Alert.alert('Url not found');
+            return undefined;
+          });
+        } else if (Response.status === 401) {
+          //* Not found OR Something Went Wrong
+          try {
             Response.json().then(res => {
-              Alert.alert('Url not found');
+              Alert.alert(res);
               return undefined;
             });
-          } else if (Response.status === 401) {
-            //* Not found OR Something Went Wrong
-            try {
-              Response.json().then(res => {
-                Alert.alert(res);
-                return undefined;
-              });
-            } catch (error) {
-              console.log('error-----', error);
-            }
-          } else {
-            Alert.alert('SomeThing Went Wrong');
-            return undefined;
+          } catch (error) {
+            console.log('error-----', error);
           }
-        })
-        .catch(error => {
-          console.log('ApiService Error1 ####', error);
-        });
+        } else {
+          Alert.alert('SomeThing Went Wrong');
+          return undefined;
+        }
+      } catch (error_1) {
+        console.log('ApiService Error1 ####', error_1);
+      }
     } catch (error) {
       console.log('ApiService Error2 ####', error);
       return undefined;

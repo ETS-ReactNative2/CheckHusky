@@ -1,25 +1,25 @@
-const fs = require('fs')
+const fs = require('fs');
 
-function copyFile (source, target, cb) {
-  let cbCalled = false
+function copyFile(source, target, cb) {
+  let cbCalled = false;
 
-  const rd = fs.createReadStream(source)
+  const rd = fs.createReadStream(source);
   rd.on('error', err => {
-    done(err)
-  })
-  const wr = fs.createWriteStream(target)
+    done(err);
+  });
+  const wr = fs.createWriteStream(target);
   wr.on('error', err => {
-    done(err)
-  })
+    done(err);
+  });
   wr.on('close', () => {
-    done()
-  })
-  rd.pipe(wr)
+    done();
+  });
+  rd.pipe(wr);
 
-  function done (err) {
+  function done(err) {
     if (!cbCalled) {
-      cb(err)
-      cbCalled = true
+      cb(err);
+      cbCalled = true;
     }
   }
 }
@@ -27,5 +27,5 @@ function copyFile (source, target, cb) {
 copyFile(
   './scripts/node-modules/react-native-background-geolocation/VERSIONS.gradle',
   './node_modules/@mauron85/react-native-background-geolocation/android/common/VERSIONS.gradle',
-  () => {}
-)
+  () => {},
+);

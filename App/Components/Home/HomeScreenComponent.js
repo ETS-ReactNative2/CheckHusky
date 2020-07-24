@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Alert} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import LocationService from '../../Services/locationService';
 import * as CONST from '../../Utils/Constants';
@@ -33,7 +33,7 @@ export default class HomeScreenComponent extends Component {
       };
       this.setState({currentLocation: userLocation});
     } else {
-      alert('Error in fetching location');
+      Alert.alert('Error in fetching location');
     }
   }
 

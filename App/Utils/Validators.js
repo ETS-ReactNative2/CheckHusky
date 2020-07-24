@@ -2,7 +2,7 @@ import {Platform} from 'react-native';
 
 class Validators {
   static validEmail(email) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
   }
 
@@ -22,14 +22,14 @@ class Validators {
   }
 
   static validMobileNumber(number) {
-    if (number.length != 10) {
+    if (number.length !== 10) {
       return true;
     }
     return false;
   }
 
   static isEmpty(name) {
-    if (name && name.trim() != '') {
+    if (name && name.trim() !== '') {
       return false;
     }
     return true;

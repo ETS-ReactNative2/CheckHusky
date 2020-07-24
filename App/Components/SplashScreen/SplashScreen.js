@@ -11,7 +11,7 @@ function SplashScreen(props) {
       const {navigation} = props;
       NavigationService.navigateAndReset('HomeScreen', navigation);
     }, 2000);
-  }, []);
+  });
 
   return (
     <View style={styles.container}>
