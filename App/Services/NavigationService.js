@@ -1,4 +1,4 @@
-import { NavigationActions, StackActions } from 'react-navigation';
+import { NavigationActions, StackActions } from "react-navigation";
 
 /**
  * The navigation is implemented as a service so that it can be used outside of components, for example in sagas.
@@ -25,7 +25,7 @@ function navigate(routeName, params) {
   navigator.dispatch(
     NavigationActions.navigate({
       routeName,
-      params,
+      params
     })
   );
 }
@@ -47,9 +47,9 @@ function navigateAndReset(routeName, params) {
       actions: [
         NavigationActions.navigate({
           routeName,
-          params,
-        }),
-      ],
+          params
+        })
+      ]
     })
   );
 }
@@ -57,5 +57,5 @@ function navigateAndReset(routeName, params) {
 export default {
   navigate,
   navigateAndReset,
-  setTopLevelNavigator,
+  setTopLevelNavigator
 };

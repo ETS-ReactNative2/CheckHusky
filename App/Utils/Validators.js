@@ -1,4 +1,4 @@
-import { Platform } from 'react-native';
+import { Platform } from "react-native";
 
 class Validators {
   static validEmail(email) {
@@ -29,7 +29,7 @@ class Validators {
   }
 
   static isEmpty(name) {
-    if (name && name.trim() != '') {
+    if (name && name.trim() != "") {
       return false;
     }
     return true;
@@ -47,10 +47,10 @@ class Validators {
   }
   static platform() {
     let platform;
-    if (Platform.OS === 'ios') {
-      platform = 'ios';
+    if (Platform.OS === "ios") {
+      platform = "ios";
     } else {
-      platform = 'android';
+      platform = "android";
     }
     return platform;
   }

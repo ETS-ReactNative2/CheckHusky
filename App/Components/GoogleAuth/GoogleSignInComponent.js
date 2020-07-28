@@ -1,12 +1,14 @@
-import React from 'react';
-import { Image, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Image, TouchableOpacity } from "react-native";
 import {
-  GoogleSigninButton, GoogleSignin, statusCodes
-} from 'react-native-google-signin';
-import analytics from '@react-native-firebase/analytics';
-import NavigationService from '../../Services/NavigationService';
-import * as CONST from '../../Utils/Constants';
-import styles from './styles';
+  GoogleSigninButton,
+  GoogleSignin,
+  statusCodes
+} from "react-native-google-signin";
+import analytics from "@react-native-firebase/analytics";
+import NavigationService from "../../Services/NavigationService";
+import * as CONST from "../../Utils/Constants";
+import styles from "./styles";
 
 export default function GoogleSignInComponent({ props }) {
   // const signIn = async () => {
@@ -19,8 +21,8 @@ export default function GoogleSignInComponent({ props }) {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      console.log('Google Sign IN userInfo', userInfo);
-      NavigationService.navigateAndReset('HomeTab');
+      console.log("Google Sign IN userInfo", userInfo);
+      NavigationService.navigateAndReset("HomeTab");
     } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // user cancelled the login flow

@@ -1,14 +1,14 @@
-import { StyleSheet, PixelRatio, Platform } from 'react-native';
-import Fonts from '../../Theme/Fonts';
-import Colors from '../../Theme/Colors';
-import ApplicationStyles from '../../Theme/ApplicationStyles';
-import scale, { verticalScale } from '../../Utils/scale';
-import * as CONST from '../../Utils/Constants';
+import { StyleSheet, PixelRatio, Platform } from "react-native";
+import Fonts from "../../Theme/Fonts";
+import Colors from "../../Theme/Colors";
+import ApplicationStyles from "../../Theme/ApplicationStyles";
+import scale, { verticalScale } from "../../Utils/scale";
+import * as CONST from "../../Utils/Constants";
 
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
-    flex: 1,
+    flex: 1
   },
   headerContainer: {
     flexDirection: CONST.ROW,
@@ -36,7 +36,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: CONST.BORDER_COLOR_GREY_LIGHT,
     borderRadius: 10,
-    marginHorizontal: scale(10),
+    marginHorizontal: scale(10)
   },
   searchInput: {
     justifyContent: CONST.CENTER,
@@ -45,17 +45,17 @@ export default StyleSheet.create({
     fontSize: scale(20),
     fontFamily: CONST.fontFamily.Josef,
     marginHorizontal: scale(35),
-    color: CONST.GREY_DARK,
+    color: CONST.GREY_DARK
   },
   searchIcon: {
     position: CONST.POSITION_ABSOLUTE,
     top: 15,
-    left: 10,
+    left: 10
   },
   filterIcon: {
     position: CONST.POSITION_ABSOLUTE,
     top: 15,
-    right: 10,
+    right: 10
   },
   cellContainer: {
     marginTop: scale(100),
@@ -65,7 +65,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginBottom: 20,
     paddingTop: scale(100),
-    paddingBottom: scale(20),
+    paddingBottom: scale(20)
   },
   productImage: {
     alignSelf: CONST.CENTER,
@@ -83,7 +83,7 @@ export default StyleSheet.create({
   productName: {
     color: CONST.GREY_DARK,
     fontSize: scale(20),
-    fontFamily: CONST.fontFamily.JosefBold,
+    fontFamily: CONST.fontFamily.JosefBold
   },
   listContainer: {
     flex: 1,
@@ -94,15 +94,15 @@ export default StyleSheet.create({
     marginTop: 15,
     color: CONST.PRIMARY_COLOR,
     fontSize: scale(18),
-    fontFamily: CONST.fontFamily.JosefBold,
+    fontFamily: CONST.fontFamily.JosefBold
   },
   productDescription: {
     width: scale(200),
     marginTop: 15,
-    textAlign: 'justify',
+    textAlign: "justify",
     color: CONST.GREY_DARK,
     fontSize: scale(15),
-    fontFamily: CONST.fontFamily.Josef,
+    fontFamily: CONST.fontFamily.Josef
   },
   loadMore: {
     alignSelf: CONST.CENTER

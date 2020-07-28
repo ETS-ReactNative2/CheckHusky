@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { View, SafeAreaView, Platform } from 'react-native';
-import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
-import messaging, { firebase } from '@react-native-firebase/messaging'
+import React, { Component } from "react";
+import { View, SafeAreaView, Platform } from "react-native";
+import { connect } from "react-redux";
+import { PropTypes } from "prop-types";
+import messaging, { firebase } from "@react-native-firebase/messaging";
 
-import NavigationService from '../../Services/NavigationService';
-import AppNavigator from '../../Navigators/AppNavigator';
-import styles from './RootScreenStyle';
-import * as StartupActions from '../../Actions/startUpActions';
-import AsyncStorageUtil from '../../Utils/asyncStorage';
+import NavigationService from "../../Services/NavigationService";
+import AppNavigator from "../../Navigators/AppNavigator";
+import styles from "./RootScreenStyle";
+import * as StartupActions from "../../Actions/startUpActions";
+import AsyncStorageUtil from "../../Utils/asyncStorage";
 
 class RootScreen extends Component {
   constructor(props) {
@@ -16,98 +16,113 @@ class RootScreen extends Component {
   }
 
   async componentDidMount() {
-    console.log('in did mount=======');
+    console.log("in did mount=======");
     this.props.startUp();
     await this.getFCMToken();
     await this.checkNotificationPermission();
     await this._registerMessageHandlers();
   }
 
-  _registerMessageHandlers () {
+  _registerMessageHandlers() {
     // Assume a message-notification contains a "type" property in the data payload of the screen to open
-    this.noificationOpened = messaging().onNotificationOpenedApp(remoteMessage => {
-        console.warn('*** Notification caused app to open from background state:', remoteMessage.notification)
-    })
+    this.noificationOpened = messaging().onNotificationOpenedApp(
+      remoteMessage => {
+        console.warn(
+          "*** Notification caused app to open from background state:",
+          remoteMessage.notification
+        );
+      }
+    );
 
     // Invokes when the app is in foreground.
-    this.messageListener = messaging().onMessage((remoteMessage) => {
-      console.warn('*** Notification on message', remoteMessage)
-    }) 
+    this.messageListener = messaging().onMessage(remoteMessage => {
+      console.warn("*** Notification on message", remoteMessage);
+    });
 
-    messaging().setBackgroundMessageHandler(async (remoteMessage) => {
-      console.warn('*** Message handled in the background!', remoteMessage)
-    })
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.warn("*** Message handled in the background!", remoteMessage);
+    });
 
     // Check whether an initial notification is available
-    this.getInitialNotification = messaging().getInitialNotification().then(remoteMessage => {
-      if (remoteMessage) {
-        console.warn('*** Notification caused app to open from quit state:', remoteMessage.notification)
-      }
-    })
-  }
-
-  getFCMToken = async () => {
-    await messaging().getToken()
-      .then((fcmToken) => {
-        if (fcmToken) {
-          console.log('$$$$$ DEVICE TOKEN:', fcmToken);
-          AsyncStorageUtil.setAsyncStorage('DEVICE_TOKEN', fcmToken);
+    this.getInitialNotification = messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        if (remoteMessage) {
+          console.warn(
+            "*** Notification caused app to open from quit state:",
+            remoteMessage.notification
+          );
         }
-      }).catch(() => {
-        console.error('$$$$$ DEVICE TOKEN ERROR:', fcmToken);
       });
   }
 
-  async checkNotificationPermission () {
-    const permissionStatus = await messaging().hasPermission()
-    let result = false
-    if (permissionStatus === firebase.messaging.AuthorizationStatus.NOT_DETERMINED) {
+  getFCMToken = async () => {
+    await messaging()
+      .getToken()
+      .then(fcmToken => {
+        if (fcmToken) {
+          console.log("$$$$$ DEVICE TOKEN:", fcmToken);
+          AsyncStorageUtil.setAsyncStorage("DEVICE_TOKEN", fcmToken);
+        }
+      })
+      .catch(() => {
+        console.error("$$$$$ DEVICE TOKEN ERROR:", fcmToken);
+      });
+  };
+
+  async checkNotificationPermission() {
+    const permissionStatus = await messaging().hasPermission();
+    let result = false;
+    if (
+      permissionStatus === firebase.messaging.AuthorizationStatus.NOT_DETERMINED
+    ) {
       try {
-        const newStatus = await messaging().requestPermission()
+        const newStatus = await messaging().requestPermission();
         switch (newStatus) {
           case firebase.messaging.AuthorizationStatus.DENIED:
-            alert('You will not receive push notifications.')
-            result = false
-            break
+            alert("You will not receive push notifications.");
+            result = false;
+            break;
           case firebase.messaging.AuthorizationStatus.AUTHORIZED:
-            result = true
-            break
+            result = true;
+            break;
           case firebase.messaging.AuthorizationStatus.PROVISIONAL:
-            alert('You will receive notifications silently.')
-            result = true
-            break
+            alert("You will receive notifications silently.");
+            result = true;
+            break;
         }
       } catch (error) {
-        console.error('Error while requesting notification permissions', error)
-        result = false
+        console.error("Error while requesting notification permissions", error);
+        result = false;
       }
-    } else if (permissionStatus === firebase.messaging.AuthorizationStatus.AUTHORIZED) {
-      result = true
+    } else if (
+      permissionStatus === firebase.messaging.AuthorizationStatus.AUTHORIZED
+    ) {
+      result = true;
     }
-    return result
+    return result;
   }
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-        <AppNavigator
-          // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
-          ref={(navigatorRef) => {
-            NavigationService.setTopLevelNavigator(navigatorRef);
-          }}
-        />
-      </View>
+          <AppNavigator
+            // Initialize the NavigationService (see https://reactnavigation.org/docs/en/navigating-without-navigation-prop.html)
+            ref={navigatorRef => {
+              NavigationService.setTopLevelNavigator(navigatorRef);
+            }}
+          />
+        </View>
       </SafeAreaView>
     );
   }
 }
 
+const mapStateToProps = state => ({});
 
-const mapStateToProps = (state) => ({});
-
-const mapDispatchToProps = (dispatch) => ({
-  startUp: () => dispatch(StartupActions.startUp()),
+const mapDispatchToProps = dispatch => ({
+  startUp: () => dispatch(StartupActions.startUp())
 });
 
 export default connect(

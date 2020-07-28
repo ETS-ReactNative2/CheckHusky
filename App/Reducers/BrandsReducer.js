@@ -1,11 +1,11 @@
-import * as CONST from '../Utils/Constants';
+import * as CONST from "../Utils/Constants";
 
 const initialState = {
   allBrands: null
 };
 
 // This reducer stores the status of email verification.
-export default function (state = initialState, action) {
+export default function(state = initialState, action) {
   switch (action.type) {
     case CONST.GET_ALL_BRANDS:
       return {
@@ -19,7 +19,7 @@ export default function (state = initialState, action) {
       };
     case CONST.GET_ALL_BRANDS_FAILED:
       return {
-        ...state,
+        ...state
       };
     default:
       return state;

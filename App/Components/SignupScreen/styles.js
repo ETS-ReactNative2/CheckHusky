@@ -1,54 +1,54 @@
-import { StyleSheet } from 'react-native';
-import Fonts from '../../Theme/Fonts';
-import ApplicationStyles from '../../Theme/ApplicationStyles';
-import scale, { verticalScale } from '../../Utils/scale';
+import { StyleSheet } from "react-native";
+import Fonts from "../../Theme/Fonts";
+import ApplicationStyles from "../../Theme/ApplicationStyles";
+import scale, { verticalScale } from "../../Utils/scale";
 
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: "center"
   },
   title: {
     ...Fonts.style.h2,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: scale(10)
   },
   subsContainer: {
     height: scale(55),
-    backgroundColor: 'black',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    justifyContent: "center",
     marginTop: scale(22)
   },
   subsText: {
-    color: 'white',
+    color: "white",
     fontSize: scale(16),
-    textAlign: 'center'
+    textAlign: "center"
   },
   emailInput: {
     borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     height: scale(55),
-    borderColor: '#d0d0d0',
+    borderColor: "#d0d0d0",
     fontSize: scale(14),
-    textAlign: 'left',
+    textAlign: "left",
     padding: scale(10),
-    paddingRight: scale(30),
+    paddingRight: scale(30)
   },
   crossIconContainer: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     height: scale(55),
-    position: 'absolute',
+    position: "absolute",
     right: 0,
     top: 0
   },
   crossIcon: {
     padding: scale(10),
     height: scale(55),
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
   },
   backIconContainer: {
     marginTop: scale(15),
@@ -59,64 +59,64 @@ export default StyleSheet.create({
   },
   signInContainers: {
     flex: 1,
-    justifyContent: 'center',
-    paddingHorizontal: scale(26),
+    justifyContent: "center",
+    paddingHorizontal: scale(26)
   },
   appleBtn: {
     height: scale(44),
     width: scale(200)
   },
   appleCont: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginHorizontal: scale(50),
     marginVertical: scale(10)
   },
   signupButtonContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center"
   },
   orTextStyle: {
     fontSize: scale(18),
-    color: 'black'
+    color: "black"
   },
   signupButton: {
     height: scale(42),
-    backgroundColor: '#4285F4',
-    justifyContent: 'center',
-    alignSelf: 'stretch',
+    backgroundColor: "#4285F4",
+    justifyContent: "center",
+    alignSelf: "stretch",
     marginHorizontal: scale(54),
     marginVertical: scale(10),
     borderRadius: scale(2)
   },
   signupText: {
-    color: 'white',
-    fontWeight: 'bold',
+    color: "white",
+    fontWeight: "bold",
     fontSize: scale(20),
-    textAlign: 'center'
+    textAlign: "center"
   },
   genderInput: {
     borderWidth: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     height: scale(55),
-    borderColor: '#d0d0d0',
+    borderColor: "#d0d0d0",
     fontSize: scale(14),
-    textAlign: 'left',
+    textAlign: "left",
     padding: scale(10),
     paddingRight: scale(30)
   },
   genderView: {
     borderWidth: 1,
-    borderColor: '#d0d0d0',
+    borderColor: "#d0d0d0",
     marginTop: 10
   },
   dobContainer: {
     marginTop: 10,
     height: 50,
     borderWidth: 1,
-    borderColor: '#d0d0d0',
-    justifyContent: 'center',
+    borderColor: "#d0d0d0",
+    justifyContent: "center",
     paddingLeft: 10
   }
 });

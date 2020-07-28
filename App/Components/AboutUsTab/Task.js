@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   TouchableOpacity,
   Text,
   StyleSheet,
-  CheckBox,
-} from 'react-native';
+  CheckBox
+} from "react-native";
 
 const Task = props => (
   <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
@@ -21,10 +21,10 @@ const Task = props => (
       >
         <Text
           style={{
-            alignSelf: 'center',
+            alignSelf: "center",
             fontSize: 20,
-            fontWeight: 'bold',
-            marginBottom: 20,
+            fontWeight: "bold",
+            marginBottom: 20
           }}
         >
           DELETE
@@ -38,28 +38,28 @@ export default Task;
 
 const styles = StyleSheet.create({
   taskWrapper: {
-    marginTop: '5%',
-    flexDirection: 'row',
-    borderColor: '#FFFFFF',
+    marginTop: "5%",
+    flexDirection: "row",
+    borderColor: "#FFFFFF",
     borderBottomWidth: 1.5,
-    width: '100%',
-    alignItems: 'stretch',
-    minHeight: 40,
+    width: "100%",
+    alignItems: "stretch",
+    minHeight: 40
   },
   task: {
     paddingBottom: 20,
     paddingLeft: 10,
     marginTop: 6,
     fontSize: 17,
-    fontWeight: 'bold',
-    color: 'black',
+    fontWeight: "bold",
+    color: "black"
   },
   verticalLine: {
-    borderBottomColor: 'white',
+    borderBottomColor: "white",
     borderBottomWidth: 4,
     marginLeft: 10,
-    width: '100%',
-    position: 'absolute',
+    width: "100%",
+    position: "absolute",
     marginTop: 15
   }
 });
