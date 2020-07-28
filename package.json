@@ -18,7 +18,13 @@
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
     "lint-check": "eslint .",
-    "rename": "react-native-rename"
+    "rename": "react-native-rename",
+    "postinstall": "npx jetify",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "prettier": "prettier \"app/**/*.+(js|jsx|ts|tsx|json)\"",
+    "format": "yarn prettier --write",
+    "validate": "yarn prettier --list-different && yarn lint"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
