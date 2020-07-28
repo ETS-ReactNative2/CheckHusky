@@ -87,5 +87,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn validate"
+    }
   }
 }
