@@ -1,4 +1,4 @@
-import * as CONST from "../Utils/Constants";
+import * as CONST from '../Utils/Constants';
 
 export function startUp() {
   return {

@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import ApplicationStyles from "../../Theme/ApplicationStyles";
+import { StyleSheet } from 'react-native';
+import ApplicationStyles from '../../Theme/ApplicationStyles';
 
 export default StyleSheet.create({
   container: {

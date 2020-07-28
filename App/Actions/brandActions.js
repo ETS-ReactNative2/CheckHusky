@@ -1,7 +1,7 @@
-import * as CONST from "../Utils/Constants";
+import * as CONST from '../Utils/Constants';
 
 export function getAllBrands() {
-  console.log("HEre1111111");
+  console.log('HEre1111111');
   return {
     type: CONST.GET_ALL_BRANDS
   };

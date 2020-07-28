@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback } from 'react';
 import {
   ScrollView,
   TextInput,
@@ -9,44 +9,44 @@ import {
   Image,
   ImageBackground,
   Platform
-} from "react-native";
+} from 'react-native';
 
-import analytics from "@react-native-firebase/analytics";
-import { SignInWithAppleButton } from "react-native-apple-authentication";
-import Icons from "react-native-vector-icons/Ionicons";
-import GoogleSignInContainer from "../GoogleAuth/GoogleSignInContainer";
-import FBAuthContainer from "../FBAuth/FBAuthContainer";
-import Validators from "../../Utils/Validators";
-import showToast from "../../Utils/showToast";
-import styles from "./styles";
-import * as CONST from "../../Utils/Constants";
-import I18n from "../../i18n/index";
+import analytics from '@react-native-firebase/analytics';
+import { SignInWithAppleButton } from 'react-native-apple-authentication';
+import Icons from 'react-native-vector-icons/Ionicons';
+import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
+import FBAuthContainer from '../FBAuth/FBAuthContainer';
+import Validators from '../../Utils/Validators';
+import showToast from '../../Utils/showToast';
+import styles from './styles';
+import * as CONST from '../../Utils/Constants';
+import I18n from '../../i18n/index';
 
 const enableGoogle = true;
 const enableFb = true;
-const enableApple = Platform.OS === "ios";
+const enableApple = Platform.OS === 'ios';
 
 export default function LoginScreenComponent({ props, onSignupPressed }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const appleSignIn = result => {
-    console.log("Resssult", result);
+  const appleSignIn = (result) => {
+    console.log('Resssult', result);
   };
 
   const onSubmit = useCallback(() => {
     if (Validators.isEmpty(email)) {
-      showToast("Email is empty");
+      showToast('Email is empty');
     } else if (!Validators.validEmail(email)) {
-      showToast("Email is invalid");
+      showToast('Email is invalid');
     } else if (Validators.isEmpty(password)) {
-      showToast("Password is empty");
+      showToast('Password is empty');
     } else if (!Validators.isValidPassword(password)) {
-      showToast("Password is invalid");
+      showToast('Password is invalid');
     } else {
       const user = { email, password };
-      analytics().logEvent("login_method", {
-        type: "email",
+      analytics().logEvent('login_method', {
+        type: 'email',
         email,
         platform: Validators.platform()
       });
@@ -71,7 +71,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
                 // placeholder="Email"
                 value={email}
                 autoCapitalize="none"
-                onChangeText={email => setEmail(email)}
+                onChangeText={(email) => setEmail(email)}
                 keyboardType="email-address"
                 style={styles.emailInput}
               />
@@ -88,7 +88,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
               value={password}
               autoCapitalize="none"
               secureTextEntry
-              onChangeText={password => setPassword(password)}
+              onChangeText={(password) => setPassword(password)}
               style={styles.emailInput}
             />
           </View>
@@ -120,7 +120,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
           <TouchableOpacity style={styles.fbSocialIcon}>
             <Image source={CONST.FB_ICON} />
           </TouchableOpacity>
-          <View style={{ alignSelf: "center", marginBottom: 10 }}>
+          <View style={{ alignSelf: 'center', marginBottom: 10 }}>
             <GoogleSignInContainer props={props} />
           </View>
           {/* <TouchableOpacity style={styles.googleSocialIcon}>

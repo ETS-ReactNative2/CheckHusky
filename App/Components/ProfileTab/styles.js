@@ -1,64 +1,64 @@
-import { StyleSheet, PixelRatio } from "react-native";
-import Fonts from "../../Theme/Fonts";
-import Colors from "../../Theme/Colors";
-import ApplicationStyles from "../../Theme/ApplicationStyles";
-import scale from "../../Utils/scale";
-import * as CONST from "../../Utils/Constants";
+import { StyleSheet, PixelRatio } from 'react-native';
+import Fonts from '../../Theme/Fonts';
+import Colors from '../../Theme/Colors';
+import ApplicationStyles from '../../Theme/ApplicationStyles';
+import scale from '../../Utils/scale';
+import * as CONST from '../../Utils/Constants';
 
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     flex: 1,
-    justifyContent: "center"
+    justifyContent: 'center'
   },
   title: {
     ...Fonts.style.h2,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: scale(10)
   },
   text: {
     ...Fonts.style.normal,
-    textAlign: "center",
+    textAlign: 'center',
     color: Colors.text
   },
   subsContainer: {
-    position: "absolute",
+    position: 'absolute',
     top: 10,
     right: 10,
     padding: 10,
     // margin: scale(10),
     // height: scale(40),
     backgroundColor: Colors.primary,
-    justifyContent: "center",
+    justifyContent: 'center',
     borderRadius: scale(20)
   },
   editContainer: {
-    position: "absolute",
+    position: 'absolute',
     top: 10,
     left: 10,
     padding: 10,
     // margin: scale(10),
     // height: scale(40),
     backgroundColor: Colors.primary,
-    justifyContent: "center",
+    justifyContent: 'center',
     borderRadius: scale(20)
   },
   subsText: {
     color: Colors.white,
     fontSize: scale(16),
-    textAlign: "center"
+    textAlign: 'center'
   },
   nameContainer: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingVertical: scale(10)
   },
   avatarContainer: {
     borderColor: CONST.PRIMARY_COLOR,
     borderWidth: 1 / PixelRatio.get(),
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center"
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center'
   },
   avatar: {
     borderRadius: scale(48),
@@ -66,7 +66,7 @@ export default StyleSheet.create({
     height: scale(96)
   },
   cameraIcon: {
-    position: "absolute",
+    position: 'absolute',
     right: scale(1),
     bottom: scale(5)
   },
@@ -74,7 +74,7 @@ export default StyleSheet.create({
     flex: 3,
     paddingTop: 30,
     borderWidth: 1,
-    backgroundColor: "#ECE5E3",
+    backgroundColor: '#ECE5E3',
     borderColor: CONST.LIGHT_GREY_BG,
     borderRadius: scale(30),
     margin: scale(20),
@@ -102,13 +102,13 @@ export default StyleSheet.create({
     padding: scale(2)
   },
   itemContaine: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingVertical: scale(5)
   },
   iconContainer: {
     flex: 2,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     padding: 5
   },
   textContainer: {

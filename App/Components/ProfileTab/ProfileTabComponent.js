@@ -1,19 +1,21 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { View, Text, TouchableOpacity, Image, Button } from "react-native";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  View, Text, TouchableOpacity, Image, Button
+} from 'react-native';
 import {
   GoogleSigninButton,
   GoogleSignin,
   statusCodes
-} from "react-native-google-signin";
-import ImagePicker from "react-native-image-picker";
-import Icons from "react-native-vector-icons/AntDesign";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import FontAwesome5Icon from "react-native-vector-icons/FontAwesome5";
-import * as CONST from "../../Utils/Constants";
-import NavigationService from "../../Services/NavigationService";
-import I18n from "../../i18n/index";
-import styles from "./styles";
+} from 'react-native-google-signin';
+import ImagePicker from 'react-native-image-picker';
+import Icons from 'react-native-vector-icons/AntDesign';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import * as CONST from '../../Utils/Constants';
+import NavigationService from '../../Services/NavigationService';
+import I18n from '../../i18n/index';
+import styles from './styles';
 
 class ProfileTabComponent extends Component {
   constructor(props) {
@@ -25,10 +27,10 @@ class ProfileTabComponent extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (
-      this.props !== prevProps &&
-      this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
+      this.props !== prevProps
+      && this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
     ) {
-      NavigationService.navigateAndReset("LoginScreen");
+      NavigationService.navigateAndReset('LoginScreen');
     }
   }
 
@@ -51,24 +53,24 @@ class ProfileTabComponent extends Component {
 
   chooseFile = () => {
     const options = {
-      title: I18n.t("selectImage"),
+      title: I18n.t('selectImage'),
       customButtons: [
-        { name: "customOptionKey", title: I18n.t("choosePhotoText") }
+        { name: 'customOptionKey', title: I18n.t('choosePhotoText') }
       ],
       storageOptions: {
         skipBackup: true,
-        path: "images"
+        path: 'images'
       }
     };
-    ImagePicker.showImagePicker(options, response => {
-      console.log("Response = ", response);
+    ImagePicker.showImagePicker(options, (response) => {
+      console.log('Response = ', response);
 
       if (response.didCancel) {
-        console.log("User cancelled image picker");
+        console.log('User cancelled image picker');
       } else if (response.error) {
-        console.log("ImagePicker Error: ", response.error);
+        console.log('ImagePicker Error: ', response.error);
       } else if (response.customButton) {
-        console.log("User tapped custom button: ", response.customButton);
+        console.log('User tapped custom button: ', response.customButton);
         alert(response.customButton);
       } else {
         const source = response;
@@ -119,7 +121,7 @@ class ProfileTabComponent extends Component {
             <FontAwesome5Icon name="user" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.label}>{I18n.t("name")}</Text>
+            <Text style={styles.label}>{I18n.t('name')}</Text>
             <Text style={styles.labelVal}>Hemant Singh Parihar</Text>
           </View>
         </View>
@@ -128,7 +130,7 @@ class ProfileTabComponent extends Component {
             <Icons name="mobile1" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.label}>{I18n.t("mobile")}</Text>
+            <Text style={styles.label}>{I18n.t('mobile')}</Text>
             <Text style={styles.labelVal}>9179314652</Text>
           </View>
         </View>
@@ -137,7 +139,7 @@ class ProfileTabComponent extends Component {
             <EntypoIcon name="address" size={30} color={CONST.GREY_COLOR} />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.label}>{I18n.t("address")}</Text>
+            <Text style={styles.label}>{I18n.t('address')}</Text>
             <Text numberOfLines={3} style={styles.labelVal}>
               93 yashoda nagar Indore - 452010
             </Text>
@@ -152,7 +154,7 @@ class ProfileTabComponent extends Component {
             />
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.label}>{I18n.t("dob")}</Text>
+            <Text style={styles.label}>{I18n.t('dob')}</Text>
             <Text style={styles.labelVal}>18/11/89</Text>
           </View>
         </View>
@@ -188,7 +190,7 @@ function mapStateToProps(state) {
   return {};
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 

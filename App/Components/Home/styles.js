@@ -1,9 +1,9 @@
-import { StyleSheet, PixelRatio, Platform } from "react-native";
-import Fonts from "../../Theme/Fonts";
-import Colors from "../../Theme/Colors";
-import ApplicationStyles from "../../Theme/ApplicationStyles";
-import scale, { verticalScale } from "../../Utils/scale";
-import * as CONST from "../../Utils/Constants";
+import { StyleSheet, PixelRatio, Platform } from 'react-native';
+import Fonts from '../../Theme/Fonts';
+import Colors from '../../Theme/Colors';
+import ApplicationStyles from '../../Theme/ApplicationStyles';
+import scale, { verticalScale } from '../../Utils/scale';
+import * as CONST from '../../Utils/Constants';
 
 export default StyleSheet.create({
   container: {
@@ -99,7 +99,7 @@ export default StyleSheet.create({
   productDescription: {
     width: scale(200),
     marginTop: 15,
-    textAlign: "justify",
+    textAlign: 'justify',
     color: CONST.GREY_DARK,
     fontSize: scale(15),
     fontFamily: CONST.fontFamily.Josef

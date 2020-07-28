@@ -1,4 +1,4 @@
-import * as CONST from "../Utils/Constants";
+import * as CONST from '../Utils/Constants';
 
 export function userLogin(user) {
   return {
@@ -10,12 +10,12 @@ export function userLoginSuccess(user) {
   user = {
     ...user,
     ...{
-      fname: "Hemant",
-      lname: "Parihar",
-      email: "hemant.parihar18@gmail.com",
-      city: "Indore",
-      state: "MP",
-      country: "India"
+      fname: 'Hemant',
+      lname: 'Parihar',
+      email: 'hemant.parihar18@gmail.com',
+      city: 'Indore',
+      state: 'MP',
+      country: 'India'
     }
   };
   return {

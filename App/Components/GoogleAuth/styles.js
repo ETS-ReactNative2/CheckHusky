@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import scale from "../../Utils/scale";
+import { StyleSheet } from 'react-native';
+import scale from '../../Utils/scale';
 
 export default StyleSheet.create({
   buttonStyle: {

@@ -1,19 +1,19 @@
-import { put, call } from "redux-saga/effects";
-import { statusCodes } from "react-native-google-signin";
-import * as userActions from "../Actions/userActions";
-import { loginWithGoogle, signOut } from "../Services/googleAuth";
-import { CommonFetch } from "../Services/UserService";
-import * as CONST from "../Utils/Constants";
+import { put, call } from 'redux-saga/effects';
+import { statusCodes } from 'react-native-google-signin';
+import * as userActions from '../Actions/userActions';
+import { loginWithGoogle, signOut } from '../Services/googleAuth';
+import { CommonFetch } from '../Services/UserService';
+import * as CONST from '../Utils/Constants';
 
 const opts = {
-  method: "",
+  method: '',
   url: null,
   body: null
 };
 
 export function* userLogin(action) {
   opts.method = CONST.POST_API;
-  opts.url = "v1/auth";
+  opts.url = 'v1/auth';
   try {
     const res = yield call(CommonFetch, action.user, opts);
     if (res !== undefined) {
@@ -28,11 +28,11 @@ export function* userLogin(action) {
 
 export function* userSignup(action) {
   opts.method = CONST.POST_API;
-  opts.url = "v1/users";
+  opts.url = 'v1/users';
   try {
     const res = yield call(CommonFetch, action.user, opts);
     if (res !== undefined) {
-      console.log("response----", res);
+      console.log('response----', res);
       yield put(userActions.userSignupSuccess(res));
     } else {
       yield put(userActions.userSignupFailure(res));

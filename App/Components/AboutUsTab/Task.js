@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   TouchableOpacity,
   Text,
   StyleSheet,
   CheckBox
-} from "react-native";
+} from 'react-native';
 
-const Task = props => (
-  <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+const Task = (props) => (
+  <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
     <View style={styles.taskWrapper}>
       <TouchableOpacity onPress={() => props.setChecked()}>
         <CheckBox />
@@ -17,13 +17,13 @@ const Task = props => (
       <Text style={styles.task}>{props.text}</Text>
       <TouchableOpacity
         onPress={props.delete}
-        style={{ position: "absolute", right: 5, top: 10 }}
+        style={{ position: 'absolute', right: 5, top: 10 }}
       >
         <Text
           style={{
-            alignSelf: "center",
+            alignSelf: 'center',
             fontSize: 20,
-            fontWeight: "bold",
+            fontWeight: 'bold',
             marginBottom: 20
           }}
         >
@@ -38,12 +38,12 @@ export default Task;
 
 const styles = StyleSheet.create({
   taskWrapper: {
-    marginTop: "5%",
-    flexDirection: "row",
-    borderColor: "#FFFFFF",
+    marginTop: '5%',
+    flexDirection: 'row',
+    borderColor: '#FFFFFF',
     borderBottomWidth: 1.5,
-    width: "100%",
-    alignItems: "stretch",
+    width: '100%',
+    alignItems: 'stretch',
     minHeight: 40
   },
   task: {
@@ -51,15 +51,15 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     marginTop: 6,
     fontSize: 17,
-    fontWeight: "bold",
-    color: "black"
+    fontWeight: 'bold',
+    color: 'black'
   },
   verticalLine: {
-    borderBottomColor: "white",
+    borderBottomColor: 'white',
     borderBottomWidth: 4,
     marginLeft: 10,
-    width: "100%",
-    position: "absolute",
+    width: '100%',
+    position: 'absolute',
     marginTop: 15
   }
 });

@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { View, Text, TouchableOpacity, Image, Button } from "react-native";
-import styles from "./styles";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  View, Text, TouchableOpacity, Image, Button
+} from 'react-native';
+import styles from './styles';
 
 class FavoritesTabComponent extends Component {
   constructor(props) {
@@ -25,7 +27,7 @@ function mapStateToProps(state) {
   return {};
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {};
 };
 

@@ -2,13 +2,13 @@
  * @ApiService is the single entry point for all api's calling, Here the Single fetch is written that will serve requests
  */
 
-import { Alert } from "react-native";
-import Config from "../Config";
-import * as CONST from "../Utils/Constants";
+import { Alert } from 'react-native';
+import Config from '../Config';
+import * as CONST from '../Utils/Constants';
 
 export function CommonFetch(params, opt) {
   try {
-    let URL = `${Config.API_URL}` + `${opt.url}`;
+    const URL = `${Config.API_URL}` + `${opt.url}`;
     const Options = {
       method: opt.method,
       URL,
@@ -22,8 +22,8 @@ export function CommonFetch(params, opt) {
       timeout: CONST.API_TIMEOUT
     };
 
-    ReqOptions.headers["Accept"] = "application/json";
-    ReqOptions.headers["Content-Type"] = "application/json";
+    ReqOptions.headers['Accept'] = 'application/json';
+    ReqOptions.headers['Content-Type'] = 'application/json';
 
     if (ReqOptions.method === CONST.GET_API) {
       delete ReqOptions.body;
@@ -34,8 +34,8 @@ export function CommonFetch(params, opt) {
     const apiResponse = {};
 
     try {
-      console.log("Options----", Options);
-      console.log("ReqOptions----", ReqOptions);
+      console.log('Options----', Options);
+      console.log('ReqOptions----', ReqOptions);
 
       return new Promise((Resolve, Reject) => {
         requestTimeoutPromise(
@@ -45,40 +45,40 @@ export function CommonFetch(params, opt) {
           Reject
         );
       })
-        .then(Response => {
-          console.log("Api Response -----", Response);
+        .then((Response) => {
+          console.log('Api Response -----', Response);
           if (Response.status === 200 || Response.status === 201) {
             return Response.json();
           } else if (Response.status === 400) {
             //* Not found OR Something Went Wrong
-            Response.json().then(res => {
-              Alert.alert("Url not found");
+            Response.json().then((res) => {
+              Alert.alert('Url not found');
               return undefined;
             });
           } else if (Response.status === 401) {
             //* Not found OR Something Went Wrong
             try {
-              Response.json().then(res => {
+              Response.json().then((res) => {
                 Alert.alert(res);
                 return undefined;
               });
             } catch (error) {
-              console.log("error-----", error);
+              console.log('error-----', error);
             }
           } else {
-            Alert.alert("SomeThing Went Wrong");
+            Alert.alert('SomeThing Went Wrong');
             return undefined;
           }
         })
-        .catch(error => {
-          console.log("ApiService Error1 ####", error);
+        .catch((error) => {
+          console.log('ApiService Error1 ####', error);
         });
     } catch (error) {
-      console.log("ApiService Error2 ####", error);
+      console.log('ApiService Error2 ####', error);
       return undefined;
     }
   } catch (error) {
-    console.log("ApiService Error3 ####", error);
+    console.log('ApiService Error3 ####', error);
     return undefined;
   }
 }
@@ -93,22 +93,22 @@ function requestTimeoutPromise(
   rejectInternal
 ) {
   const _timeout = setTimeout(() => {
-    rejectInternal("TIMEOUT");
+    rejectInternal('TIMEOUT');
   }, waitingTime);
   try {
     promise.then(
-      res => {
+      (res) => {
         clearTimeout(_timeout);
         resoveInternal(res);
       },
-      resError => {
-        console.log("Timeout Error1 ####", resError);
+      (resError) => {
+        console.log('Timeout Error1 ####', resError);
         clearTimeout(_timeout);
-        rejectInternal("Request Timeout");
+        rejectInternal('Request Timeout');
       }
     );
   } catch (error) {
-    console.log("Timeout Error2 ####", error);
+    console.log('Timeout Error2 ####', error);
   }
 }
 

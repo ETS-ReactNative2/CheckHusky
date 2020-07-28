@@ -1,20 +1,20 @@
-import React from "react";
-import { Image } from "react-native";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import { createBottomTabNavigator } from "react-navigation-tabs";
-import SplashScreen from "../Components/SplashScreen/SplashScreen";
-import LoginScreenContainer from "../Components/LoginScreen/LoginScreenContainer";
-import HomeTabContainer from "../Components/Home/HomeTabContainer";
-import OrderTabContainer from "../Components/Order/OrderTabContainer";
-import FavoritesTabContainer from "../Components/Favorites/FavoritesTabContainer";
-import FeedbackScreenContainer from "../Components/FeedbackScreen/FeedbackContainer";
-import ProfileTabContainer from "../Components/ProfileTab/ProfileTabContainer";
-import AboutUsTabContainer from "../Components/AboutUsTab/AboutUsTabContainer";
-import Ionicons from "react-native-vector-icons/FontAwesome5";
-import * as CONST from "../Utils/Constants";
-import scale, { verticalScale } from "../Utils/scale";
-import SignupScreenContainer from "../Components/SignupScreen/SignupScreenContainer";
+import React from 'react';
+import { Image } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Ionicons from 'react-native-vector-icons/FontAwesome5';
+import SplashScreen from '../Components/SplashScreen/SplashScreen';
+import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer';
+import HomeTabContainer from '../Components/Home/HomeTabContainer';
+import OrderTabContainer from '../Components/Order/OrderTabContainer';
+import FavoritesTabContainer from '../Components/Favorites/FavoritesTabContainer';
+import FeedbackScreenContainer from '../Components/FeedbackScreen/FeedbackContainer';
+import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
+import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
+import * as CONST from '../Utils/Constants';
+import scale, { verticalScale } from '../Utils/scale';
+import SignupScreenContainer from '../Components/SignupScreen/SignupScreenContainer';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -27,15 +27,15 @@ const TabNavigator = createBottomTabNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
-        let IconComponent = Ionicons;
+        const IconComponent = Ionicons;
         let iconName;
-        if (routeName === "HomeTab") {
+        if (routeName === 'HomeTab') {
           iconName = CONST.HOME_TAB_ICON;
-        } else if (routeName === "OrderTab") {
+        } else if (routeName === 'OrderTab') {
           iconName = CONST.ORDERS_TAB_ICON;
-        } else if (routeName === "FavoritesTab") {
+        } else if (routeName === 'FavoritesTab') {
           iconName = CONST.FAVORITES_TAB_ICON;
-        } else if (routeName === "ProfileTab") {
+        } else if (routeName === 'ProfileTab') {
           iconName = CONST.SETTINGS_TAB_ICON;
         }
         // You can return any component that you like here!
@@ -44,7 +44,7 @@ const TabNavigator = createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: CONST.PRIMARY_COLOR,
-      inactiveTintColor: "gray",
+      inactiveTintColor: 'gray',
       labelStyle: {
         fontSize: scale(15),
         fontFamily: CONST.fontFamily.JosefBold
@@ -65,8 +65,8 @@ const StackNavigator = createStackNavigator(
     Signup: { screen: SignupScreenContainer }
   },
   {
-    initialRouteName: "SplashScreen",
-    headerMode: "none"
+    initialRouteName: 'SplashScreen',
+    headerMode: 'none'
   }
 );
 export default createAppContainer(StackNavigator);

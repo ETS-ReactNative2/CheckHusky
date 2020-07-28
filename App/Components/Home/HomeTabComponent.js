@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -6,85 +6,87 @@ import {
   Image,
   TouchableOpacity,
   TextInput
-} from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import I18n from "../../i18n/index";
-import * as CONST from "../../Utils/Constants";
-import styles from "./styles";
+} from 'react-native';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import I18n from '../../i18n/index';
+import * as CONST from '../../Utils/Constants';
+import styles from './styles';
 
 export default class HomeTabComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchText: ""
+      searchText: ''
     };
     this.dummyData = [
       {
         id: 314,
-        name: "BUDWEISER",
-        brand: "BUDWEISER",
-        category: "Hard",
-        price: "$23",
-        quantity: "1000ml",
+        name: 'BUDWEISER',
+        brand: 'BUDWEISER',
+        category: 'Hard',
+        price: '$23',
+        quantity: '1000ml',
         rating: 5,
-        url: ""
+        url: ''
       },
       {
         id: 315,
-        name: "TSINGTAO",
-        brand: "TSINGTAO",
-        category: "Hard",
-        price: "$20",
-        quantity: "1000ml",
+        name: 'TSINGTAO',
+        brand: 'TSINGTAO',
+        category: 'Hard',
+        price: '$20',
+        quantity: '1000ml',
         rating: 4,
-        url: ""
+        url: ''
       },
       {
         id: 316,
-        name: "BUD LIGHT",
-        brand: "BUD LIGHT",
-        category: "Hard",
-        price: "$18",
-        quantity: "1000ml",
+        name: 'BUD LIGHT',
+        brand: 'BUD LIGHT',
+        category: 'Hard',
+        price: '$18',
+        quantity: '1000ml',
         rating: 4,
-        url: ""
+        url: ''
       },
       {
         id: 317,
-        name: "SKOL",
-        brand: "SKOL",
-        category: "Soft",
-        price: "$16",
-        quantity: "1000ml",
+        name: 'SKOL',
+        brand: 'SKOL',
+        category: 'Soft',
+        price: '$16',
+        quantity: '1000ml',
         rating: 3,
-        url: ""
+        url: ''
       },
       {
         id: 318,
-        name: "HEINEKEN",
-        brand: "HEINEKEN",
-        category: "Soft",
-        price: "$13",
-        quantity: "1000ml",
+        name: 'HEINEKEN',
+        brand: 'HEINEKEN',
+        category: 'Soft',
+        price: '$13',
+        quantity: '1000ml',
         rating: 3,
-        url: ""
+        url: ''
       },
       {
         id: 319,
-        name: "CORONA",
-        brand: "CORONA",
-        category: "Light",
-        price: "$10",
-        quantity: "1000ml",
+        name: 'CORONA',
+        brand: 'CORONA',
+        category: 'Light',
+        price: '$10',
+        quantity: '1000ml',
         rating: 1,
-        url: ""
+        url: ''
       }
     ];
   }
 
   renderCell({ item }) {
-    console.log("this.props.allBrands", this.props.allBrands);
-    const { id, name, brand, category, quantity, price, rating } = item;
+    console.log('this.props.allBrands', this.props.allBrands);
+    const {
+      id, name, brand, category, quantity, price, rating
+    } = item;
     const overallRating = [1, 2, 3, 4, 5];
     return (
       <TouchableOpacity activeOpacity={0.5} style={styles.cellContainer}>
@@ -98,13 +100,13 @@ export default class HomeTabComponent extends Component {
           </View>
           <View
             style={{
-              flexDirection: "row",
+              flexDirection: 'row',
               marginTop: 15,
-              justifyContent: "space-between"
+              justifyContent: 'space-between'
             }}
           >
-            <View style={{ flexDirection: "row" }}>
-              {overallRating.map(index => {
+            <View style={{ flexDirection: 'row' }}>
+              {overallRating.map((index) => {
                 return (
                   <View style={{ marginRight: 5 }}>
                     <FontAwesome
@@ -151,7 +153,7 @@ export default class HomeTabComponent extends Component {
             placeholder="Search product"
             value={this.state.searchText}
             autoCapitalize="none"
-            onChangeText={searchText => {
+            onChangeText={(searchText) => {
               this.setState({ searchText });
             }}
             keyboardType="email-address"
@@ -168,7 +170,7 @@ export default class HomeTabComponent extends Component {
           <FlatList
             keyExtractor={(item, index) => index.toString()}
             data={this.dummyData}
-            renderItem={item => this.renderCell(item)}
+            renderItem={(item) => this.renderCell(item)}
             extraData={this.state}
           />
           <Image style={styles.loadMore} source={CONST.LOAD_MORE_ICON} />

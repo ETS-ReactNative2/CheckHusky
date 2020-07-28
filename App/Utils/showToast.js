@@ -1,4 +1,4 @@
-import Toast from "react-native-root-toast";
+import Toast from 'react-native-root-toast';
 
 export default function showToast(msg) {
   Toast.show(`${msg}`, {
