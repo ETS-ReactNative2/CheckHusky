@@ -11,7 +11,7 @@ import {
   Platform
 } from 'react-native';
 
-import firebase from 'react-native-firebase';
+import analytics from '@react-native-firebase/analytics';
 import { SignInWithAppleButton } from 'react-native-apple-authentication';
 import Icons from 'react-native-vector-icons/Ionicons';
 import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
@@ -22,7 +22,6 @@ import styles from './styles';
 import * as CONST from '../../Utils/Constants';
 import I18n from '../../i18n/index';
 
-const Analytics = firebase.analytics();
 const enableGoogle = true;
 const enableFb = true;
 const enableApple = (Platform.OS === 'ios');
@@ -46,7 +45,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
       showToast('Password is invalid');
     } else {
       const user = { email, password };
-      Analytics.logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
+      analytics().logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
       props.userLogin(user);
     }
   }, [email, password, props]);

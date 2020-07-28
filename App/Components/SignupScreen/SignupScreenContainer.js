@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import firebase from 'react-native-firebase';
+import analytics from '@react-native-firebase/analytics';
 import * as userActions from '../../Actions/userActions';
 import * as LanguageActions from '../../Actions/LanguageActions';
 import SignupScreenComponent from './SignupScreenComponent';
 import NavigationService from '../../Services/NavigationService';
 
-
-const Analytics = firebase.analytics();
-
 const SignupScreenContainer = (props) => {
   const { prevProps } = props;
 
   useEffect(() => {
-    Analytics.setAnalyticsCollectionEnabled(true);
-    Analytics.setCurrentScreen('Sign_up', 'Signup');
+    analytics().setAnalyticsCollectionEnabled(true);
+    analytics().setCurrentScreen('Sign_up', 'Signup');
     if (props != prevProps && props.userData) {
       NavigationService.navigateAndReset('HomeTab');
     }

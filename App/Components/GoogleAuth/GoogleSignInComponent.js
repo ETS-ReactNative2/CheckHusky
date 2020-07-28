@@ -3,16 +3,14 @@ import { Image, TouchableOpacity } from 'react-native';
 import {
   GoogleSigninButton, GoogleSignin, statusCodes
 } from 'react-native-google-signin';
-import firebase from 'react-native-firebase';
+import analytics from '@react-native-firebase/analytics';
 import NavigationService from '../../Services/NavigationService';
 import * as CONST from '../../Utils/Constants';
 import styles from './styles';
 
-const Analytics = firebase.analytics();
-
 export default function GoogleSignInComponent({ props }) {
   // const signIn = async () => {
-  //   Analytics.logEvent('login_method', { type: 'google', email: '' });
+  //   analytics().logEvent('login_method', { type: 'google', email: '' });
   //   const user = { name: 'dummy_name', password: 'dummy' };
   //   props.userLogin(user);
   // };

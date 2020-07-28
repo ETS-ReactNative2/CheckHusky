@@ -7,15 +7,13 @@ import {
   View
 } from 'react-native';
 
-import firebase from 'react-native-firebase';
+import analytics from '@react-native-firebase/analytics';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Validators from '../../Utils/Validators';
 import showToast from '../../Utils/showToast';
 import styles from './styles';
 import I18n from '../../i18n/index';
-
-const Analytics = firebase.analytics();
 
 export default function SignupScreenComponent({ props }) {
   const [name, setName] = useState('');
@@ -44,7 +42,7 @@ export default function SignupScreenComponent({ props }) {
       showToast('Password is invalid');
     } else {
       const user = { user: { name, email, password } };
-      Analytics.logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
+      analytics().logEvent('login_method', { type: 'email', email, platform: Validators.platform() });
       props.userSignup(user);
     }
   }, [email, password, props]);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, SafeAreaView, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import * as firebase from 'react-native-firebase';
+import messaging, { firebase } from '@react-native-firebase/messaging'
 
 import NavigationService from '../../Services/NavigationService';
 import AppNavigator from '../../Navigators/AppNavigator';
@@ -15,57 +15,39 @@ class RootScreen extends Component {
     super(props);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     console.log('in did mount=======');
     this.props.startUp();
-    this.getFCMToken();
-    this.checkNotificationPermission();
-    if (Platform.OS === 'android') {
-      this.createAndroidNotificationChannel();
-    }
-    this.onTokenRefresh = firebase.messaging().onTokenRefresh((fcmToken) => {
-      console.log('$$$$$ NEW TOKEN: ', fcmToken);
-      AsyncStorageUtil.setAsyncStorage('DEVICE_TOKEN', fcmToken);
-    });
-
-    this.messageListener = firebase.messaging().onMessage((message) => {
-      console.log('$$$$$ Remote message:', message);
-      const notification = new firebase.notifications.Notification()
-        .setNotificationId(message.messageId)
-        .setTitle(message.data.title)
-        .setBody(message.data.body)
-        .android.setChannelId('boilerplate Notifications')
-        .android.setSmallIcon('ic_stat_ic_notification')
-        .android.setPriority(firebase.notifications.Android.Priority.Max)
-        .setSound('default');
-      firebase.notifications().displayNotification(notification);
-    });
-
-    this.notificationListener = firebase.notifications().onNotification((notification) => {
-      console.log('onNotification======', notification);
-      notification.setData(notification.data).setSound('default') // set sound in notification in order to get heads up notification on devices 7.1 and lower
-        .android.setPriority(firebase.notifications.Android.Priority.Max)
-        .android.setSmallIcon('ic_stat_ic_notification')
-        .android.setChannelId('boilerplate Notifications');
-      firebase.notifications().displayNotification(notification);
-    });
-
-    this.noificationOpened = firebase.notifications().onNotificationOpened((notification) => {
-      console.log('onNotification====== opened====', notification);
-    });
+    await this.getFCMToken();
+    await this.checkNotificationPermission();
+    await this._registerMessageHandlers();
   }
 
-  createAndroidNotificationChannel() {
-    const channel = new firebase.notifications.Android.Channel(
-      'boilerplate Notifications',
-      'boilerplate Notifications',
-      firebase.notifications.Android.Importance.High
-    ).setDescription('A natural description of the channel');
-    firebase.notifications().android.createChannel(channel);
+  _registerMessageHandlers () {
+    // Assume a message-notification contains a "type" property in the data payload of the screen to open
+    this.noificationOpened = messaging().onNotificationOpenedApp(remoteMessage => {
+        console.warn('*** Notification caused app to open from background state:', remoteMessage.notification)
+    })
+
+    // Invokes when the app is in foreground.
+    this.messageListener = messaging().onMessage((remoteMessage) => {
+      console.warn('*** Notification on message', remoteMessage)
+    }) 
+
+    messaging().setBackgroundMessageHandler(async (remoteMessage) => {
+      console.warn('*** Message handled in the background!', remoteMessage)
+    })
+
+    // Check whether an initial notification is available
+    this.getInitialNotification = messaging().getInitialNotification().then(remoteMessage => {
+      if (remoteMessage) {
+        console.warn('*** Notification caused app to open from quit state:', remoteMessage.notification)
+      }
+    })
   }
 
-  getFCMToken = () => {
-    firebase.messaging().getToken()
+  getFCMToken = async () => {
+    await messaging().getToken()
       .then((fcmToken) => {
         if (fcmToken) {
           console.log('$$$$$ DEVICE TOKEN:', fcmToken);
@@ -76,20 +58,33 @@ class RootScreen extends Component {
       });
   }
 
-  checkNotificationPermission = () => {
-    firebase.messaging().hasPermission().then((enabled) => {
-      if (!enabled) {
-        this.promptForNotificationPermission();
+  async checkNotificationPermission () {
+    const permissionStatus = await messaging().hasPermission()
+    let result = false
+    if (permissionStatus === firebase.messaging.AuthorizationStatus.NOT_DETERMINED) {
+      try {
+        const newStatus = await messaging().requestPermission()
+        switch (newStatus) {
+          case firebase.messaging.AuthorizationStatus.DENIED:
+            alert('You will not receive push notifications.')
+            result = false
+            break
+          case firebase.messaging.AuthorizationStatus.AUTHORIZED:
+            result = true
+            break
+          case firebase.messaging.AuthorizationStatus.PROVISIONAL:
+            alert('You will receive notifications silently.')
+            result = true
+            break
+        }
+      } catch (error) {
+        console.error('Error while requesting notification permissions', error)
+        result = false
       }
-    });
-  }
-
-  promptForNotificationPermission = () => {
-    firebase.messaging().requestPermission().then(() => {
-      console.log('Permission granted.');
-    }).catch(() => {
-      console.log('Permission rejected.');
-    });
+    } else if (permissionStatus === firebase.messaging.AuthorizationStatus.AUTHORIZED) {
+      result = true
+    }
+    return result
   }
 
   render() {

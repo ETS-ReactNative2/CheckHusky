@@ -9,11 +9,9 @@ import {
   GraphRequest,
   GraphRequestManager,
 } from 'react-native-fbsdk';
-import firebase from 'react-native-firebase';
+import analytics from '@react-native-firebase/analytics';
 import styles from './styles';
 import NavigationService from '../../Services/NavigationService';
-
-const Analytics = firebase.analytics();
 
 export default function FBAuthComponent({ props }) {
   const get_Response_Info = (error, result) => {
@@ -37,7 +35,7 @@ export default function FBAuthComponent({ props }) {
     } else {
       NavigationService.navigate('HomeTab');
       AccessToken.getCurrentAccessToken().then((data) => {
-        Analytics.logEvent('login_method', { type: 'fb', email: '' });
+        analytics().logEvent('login_method', { type: 'fb', email: '' });
         console.log('## FB access token : ', data.accessToken.toString());
         const processRequest = new GraphRequest(
           '/me?fields=name,picture.type(large)',
