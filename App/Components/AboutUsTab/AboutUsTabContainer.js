@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AboutUsTabComponent from './AboutUsTabComponent';
+import * as userActions from '../../Actions/userActions';
 
 class AboutUsTabContainer extends Component {
   static navigationOptions = {
@@ -8,7 +9,8 @@ class AboutUsTabContainer extends Component {
   };
 
   render() {
-    return <AboutUsTabComponent {...this.props} />;
+    const { message, userData, userLogout } = this.props;
+    return <AboutUsTabComponent message={message} userData={userData} userLogout={userLogout} />;
   }
 }
 

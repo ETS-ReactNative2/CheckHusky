@@ -12,12 +12,12 @@ const LoginScreenContainer = (props) => {
   useEffect(() => {
     analytics().setAnalyticsCollectionEnabled(true);
     analytics().setCurrentScreen('Log_In', 'Login');
-    if (props != prevProps && props.userData) {
+    if (props !== prevProps && props.userData) {
       NavigationService.navigateAndReset('HomeTab');
     }
   }, [prevProps, props]);
 
-  onSignupPressed = () => {
+  const onSignupPressed = () => {
     NavigationService.navigate('Signup');
   };
 

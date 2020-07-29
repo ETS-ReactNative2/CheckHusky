@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Alert } from 'react-native';
 import {
   LoginManager,
   LoginButton,
@@ -14,7 +14,7 @@ import NavigationService from '../../Services/NavigationService';
 export default function FBAuthComponent({ props }) {
   const get_Response_Info = (error, result) => {
     if (error) {
-      alert(`Error fetching FB data: ${error.toString()}`);
+      Alert.alert(`Error fetching FB data: ${error.toString()}`);
     } else {
       console.log('## FB response : ', JSON.stringify(result));
       const user = { name: 'dummy_name', password: 'dummy' };
@@ -23,13 +23,14 @@ export default function FBAuthComponent({ props }) {
     }
   };
 
+  // eslint-disable-next-line no-unused-vars
   const onLoginFinished = (error, result) => {
     console.log('@@@ result===========', result);
     if (error) {
       console.log('Error', error);
-      alert(`login has error: ${result.error}`);
+      Alert.alert(`login has error: ${result.error}`);
     } else if (result.isCancelled) {
-      alert('login is cancelled.');
+      Alert.alert('login is cancelled.');
     } else {
       NavigationService.navigate('HomeTab');
       AccessToken.getCurrentAccessToken().then((data) => {

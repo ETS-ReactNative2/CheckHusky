@@ -1,4 +1,4 @@
-import { StyleSheet, PixelRatio } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import Colors from '../../Theme/Colors';
 import ApplicationStyles from '../../Theme/ApplicationStyles';

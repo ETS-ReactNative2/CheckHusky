@@ -1,6 +1,6 @@
 import * as CONST from '../Utils/Constants';
 
-export function startUp() {
+export default function startUp() {
   return {
     type: CONST.START_UP
   };

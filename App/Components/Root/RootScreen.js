@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, SafeAreaView, Platform } from 'react-native';
+import { View, SafeAreaView, Alert } from 'react-native';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import messaging, { firebase } from '@react-native-firebase/messaging';
 
 import NavigationService from '../../Services/NavigationService';
@@ -11,12 +10,7 @@ import * as StartupActions from '../../Actions/startUpActions';
 import AsyncStorageUtil from '../../Utils/asyncStorage';
 
 class RootScreen extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   async componentDidMount() {
-    console.log('in did mount=======');
     this.props.startUp();
     await this.getFCMToken();
     await this.checkNotificationPermission();
@@ -65,8 +59,8 @@ class RootScreen extends Component {
           AsyncStorageUtil.setAsyncStorage('DEVICE_TOKEN', fcmToken);
         }
       })
-      .catch(() => {
-        console.error('$$$$$ DEVICE TOKEN ERROR:', fcmToken);
+      .catch((error) => {
+        console.error('$$$$$ DEVICE TOKEN ERROR:', error);
       });
   };
 
@@ -80,15 +74,17 @@ class RootScreen extends Component {
         const newStatus = await messaging().requestPermission();
         switch (newStatus) {
           case firebase.messaging.AuthorizationStatus.DENIED:
-            alert('You will not receive push notifications.');
+            Alert.alert('You will not receive push notifications.');
             result = false;
             break;
           case firebase.messaging.AuthorizationStatus.AUTHORIZED:
             result = true;
             break;
           case firebase.messaging.AuthorizationStatus.PROVISIONAL:
-            alert('You will receive notifications silently.');
+            Alert.alert('You will receive notifications silently.');
             result = true;
+            break;
+          default:
             break;
         }
       } catch (error) {
@@ -119,7 +115,7 @@ class RootScreen extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   startUp: () => dispatch(StartupActions.startUp())

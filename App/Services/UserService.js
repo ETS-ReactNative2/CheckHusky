@@ -8,7 +8,7 @@ import * as CONST from '../Utils/Constants';
 
 export function CommonFetch(params, opt) {
   try {
-    const URL = `${Config.API_URL}` + `${opt.url}`;
+    const URL = `${Config.API_URL}${opt.url}`;
     const Options = {
       method: opt.method,
       URL,
@@ -31,10 +31,9 @@ export function CommonFetch(params, opt) {
       ReqOptions.body = JSON.stringify(Options.body);
     }
 
-    const apiResponse = {};
 
     try {
-      console.log('Options----', Options);
+      ('Options----', Options);
       console.log('ReqOptions----', ReqOptions);
 
       return new Promise((Resolve, Reject) => {
@@ -51,7 +50,7 @@ export function CommonFetch(params, opt) {
             return Response.json();
           } else if (Response.status === 400) {
             //* Not found OR Something Went Wrong
-            Response.json().then((res) => {
+            Response.json().then(() => {
               Alert.alert('Url not found');
               return undefined;
             });
@@ -64,14 +63,17 @@ export function CommonFetch(params, opt) {
               });
             } catch (error) {
               console.log('error-----', error);
+              return undefined;
             }
           } else {
             Alert.alert('SomeThing Went Wrong');
             return undefined;
           }
+          return undefined;
         })
         .catch((error) => {
           console.log('ApiService Error1 ####', error);
+          return undefined;
         });
     } catch (error) {
       console.log('ApiService Error2 ####', error);
@@ -112,4 +114,4 @@ function requestTimeoutPromise(
   }
 }
 
-// export default CommonFetch;
+export default CommonFetch;

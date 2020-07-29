@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
-import scale, { verticalScale } from '../../Utils/scale';
+import scale from '../../Utils/scale';
 
 export default StyleSheet.create({
   container: {

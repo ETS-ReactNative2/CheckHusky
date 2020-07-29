@@ -1,38 +1,25 @@
 import React, { useState, useCallback } from 'react';
 import {
-  ScrollView,
   TextInput,
   TouchableOpacity,
   KeyboardAvoidingView,
   Text,
   View,
   Image,
-  ImageBackground,
-  Platform
+  ImageBackground
 } from 'react-native';
 
 import analytics from '@react-native-firebase/analytics';
-import { SignInWithAppleButton } from 'react-native-apple-authentication';
 import Icons from 'react-native-vector-icons/Ionicons';
 import GoogleSignInContainer from '../GoogleAuth/GoogleSignInContainer';
-import FBAuthContainer from '../FBAuth/FBAuthContainer';
 import Validators from '../../Utils/Validators';
 import showToast from '../../Utils/showToast';
 import styles from './styles';
 import * as CONST from '../../Utils/Constants';
-import I18n from '../../i18n/index';
-
-const enableGoogle = true;
-const enableFb = true;
-const enableApple = Platform.OS === 'ios';
 
 export default function LoginScreenComponent({ props, onSignupPressed }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const appleSignIn = (result) => {
-    console.log('Resssult', result);
-  };
 
   const onSubmit = useCallback(() => {
     if (Validators.isEmpty(email)) {
@@ -71,7 +58,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
                 // placeholder="Email"
                 value={email}
                 autoCapitalize="none"
-                onChangeText={(email) => setEmail(email)}
+                onChangeText={(text) => setEmail(text)}
                 keyboardType="email-address"
                 style={styles.emailInput}
               />
@@ -88,7 +75,7 @@ export default function LoginScreenComponent({ props, onSignupPressed }) {
               value={password}
               autoCapitalize="none"
               secureTextEntry
-              onChangeText={(password) => setPassword(password)}
+              onChangeText={(text) => setPassword(text)}
               style={styles.emailInput}
             />
           </View>

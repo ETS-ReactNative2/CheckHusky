@@ -19,18 +19,9 @@ export default function SignupScreenComponent({ props }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [address, setAddress] = useState('');
   const [showPicker, togglePicker] = useState(false);
   const [dob, setDOB] = useState('');
 
-  const homePlace = {
-    description: 'Home',
-    geometry: { location: { lat: 48.8152937, lng: 2.4597668 } }
-  };
-  const workPlace = {
-    description: 'Work',
-    geometry: { location: { lat: 48.8496818, lng: 2.2940881 } }
-  };
   const MaxDate = new Date();
   const pastYears = MaxDate.getFullYear() - 21;
   MaxDate.setFullYear(pastYears);
@@ -69,6 +60,7 @@ export default function SignupScreenComponent({ props }) {
         const year = d.getFullYear();
         const _date = [month, day, year].join('-');
         setDOB(_date);
+        return _date;
       }
     },
     [email, password, props]
@@ -87,7 +79,7 @@ export default function SignupScreenComponent({ props }) {
               placeholderTextColor="gray"
               value={name}
               autoCapitalize="none"
-              onChangeText={(name) => setName(name)}
+              onChangeText={(text) => setName(text)}
               keyboardType="default"
               style={styles.emailInput}
             />
@@ -114,7 +106,7 @@ export default function SignupScreenComponent({ props }) {
               placeholderTextColor="gray"
               value={email}
               autoCapitalize="none"
-              onChangeText={(email) => setEmail(email)}
+              onChangeText={(text) => setEmail(text)}
               keyboardType="email-address"
               style={styles.emailInput}
             />
@@ -142,7 +134,7 @@ export default function SignupScreenComponent({ props }) {
               value={password}
               autoCapitalize="none"
               secureTextEntry
-              onChangeText={(password) => setPassword(password)}
+              onChangeText={(text) => setPassword(text)}
               style={styles.emailInput}
             />
           </View>
@@ -173,8 +165,8 @@ export default function SignupScreenComponent({ props }) {
           style={styles.dobContainer}
           onPress={() => togglePicker(true)}
         >
-          <Text style={{ color: dob == '' ? 'gray' : 'black' }}>
-            {dob == '' ? I18n.t('Select_Date') : dob}
+          <Text style={{ color: dob === '' ? 'gray' : 'black' }}>
+            {dob === '' ? I18n.t('Select_Date') : dob}
           </Text>
         </TouchableOpacity>
         <View style={{ height: 100, marginTop: 10 }}>

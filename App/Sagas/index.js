@@ -1,7 +1,7 @@
 import { takeLatest, all } from 'redux-saga/effects';
-// import { startup } from './StartupSaga';
+// import startup from './StartupSaga';
 import { userLogin, userLogout, userSignup } from './UserLoginSaga';
-import { getAllBrands } from './BrandSaga';
+import getAllBrands from './BrandSaga';
 import * as CONST from '../Utils/Constants';
 
 export default function* root() {

@@ -7,25 +7,23 @@ export function userLogin(user) {
   };
 }
 export function userLoginSuccess(user) {
-  user = {
+  const _user = {
     ...user,
-    ...{
-      fname: 'Hemant',
-      lname: 'Parihar',
-      email: 'hemant.parihar18@gmail.com',
-      city: 'Indore',
-      state: 'MP',
-      country: 'India'
-    }
+    fname: 'Hemant',
+    lname: 'Parihar',
+    email: 'hemant.parihar18@gmail.com',
+    city: 'Indore',
+    state: 'MP',
+    country: 'India'
   };
   return {
     type: CONST.USER_LOGIN_SUCCESS,
     payload: {
-      user
+      user: _user
     }
   };
 }
-export function userLoginFailure(error) {
+export function userLoginFailure() {
   return {
     type: CONST.USER_LOGIN_FAILURE
   };
@@ -67,7 +65,7 @@ export function userSignupSuccess(user) {
     }
   };
 }
-export function userSignupFailure(error) {
+export function userSignupFailure() {
   return {
     type: CONST.USER_SIGNUP_FAILURE
   };

@@ -7,7 +7,7 @@ const { height, width } = Dimensions.get('window');
  * Function to scale a value based on the size of the screen size and the original
  * size used on the design.
  */
-export default function (units = 1) {
+export default function scale(units = 1) {
   return (width / CONST.SCREEN_WIDTH) * units;
 }
 

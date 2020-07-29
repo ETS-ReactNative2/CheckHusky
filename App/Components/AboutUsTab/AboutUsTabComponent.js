@@ -13,25 +13,32 @@ const AboutUsTabComponent = () => {
   const [value, setValue] = useState('');
   const [todos, setTodos] = useState([]);
 
-  handleAddTodo = () => {
+  const handleAddTodo = () => {
     if (value.length > 0) {
       setTodos([...todos, { text: value, key: Date.now(), checked: false }]);
       setValue('');
     }
   };
 
-  handleDeleteTodo = (id) => {
+  const handleDeleteTodo = (id) => {
     setTodos(
       todos.filter((todo) => {
-        if (todo.key !== id) return true;
+        if (todo.key !== id) {
+          return true;
+        } else {
+          return false;
+        }
       })
     );
   };
 
-  handleChecked = (id) => {
+  const handleChecked = (id) => {
     setTodos(
       todos.map((todo) => {
-        if (todo.key === id) todo.checked = !todo.checked;
+        const _todo = {};
+        if (todo.key === id) {
+          _todo.checked = !_todo.checked;
+        }
         return todo;
       })
     );
@@ -46,7 +53,7 @@ const AboutUsTabComponent = () => {
           <TextInput
             style={styles.textInput}
             multiline
-            onChangeText={(value) => setValue(value)}
+            onChangeText={(text) => setValue(text)}
             placeholder="Do it now!"
             placeholderTextColor="black"
             value={value}

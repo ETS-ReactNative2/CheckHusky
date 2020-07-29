@@ -10,11 +10,8 @@ Sentry.config(
 ).install();
 const { store, persistor } = createStore();
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Provider store={store}>

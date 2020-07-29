@@ -9,7 +9,7 @@ const opts = {
   body: null
 };
 
-export function* getAllBrands(action) {
+export default function* getAllBrands(action) {
   opts.method = CONST.GET_API;
   opts.url = 'v1/brands';
   try {

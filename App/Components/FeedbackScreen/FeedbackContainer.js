@@ -9,7 +9,8 @@ class FeedbackContainer extends Component {
   };
 
   render() {
-    return <FeedbackComponent {...this.props} />;
+    const { message, userData, userLogout } = this.props;
+    return <FeedbackComponent message={message} userData={userData} userLogout={userLogout} />;
   }
 }
 

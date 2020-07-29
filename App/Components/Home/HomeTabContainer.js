@@ -15,7 +15,10 @@ class HomeTabContainer extends Component {
   }
 
   render() {
-    return <HomeTabComponent {...this.props} />;
+    const {
+      message, userData, allBrands, userLogout, getAllBrands
+    } = this.props;
+    return <HomeTabComponent message={message} userData={userData} allBrands={allBrands} getAllBrands={getAllBrands} userLogout={userLogout} />;
   }
 }
 

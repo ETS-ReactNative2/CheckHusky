@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Text, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import styles from './SplashScreenStyle';
 import NavigationService from '../../Services/NavigationService';

@@ -1,15 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import FBAuthComponent from './FBAuthComponent';
 import * as userActions from '../../Actions/userActions';
 
 const FBAuthContainer = (props) => {
   return <FBAuthComponent props={props} />;
-};
-
-FBAuthContainer.propTypes = {
-  userData: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

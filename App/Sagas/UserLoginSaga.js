@@ -1,7 +1,6 @@
 import { put, call } from 'redux-saga/effects';
-import { statusCodes } from 'react-native-google-signin';
 import * as userActions from '../Actions/userActions';
-import { loginWithGoogle, signOut } from '../Services/googleAuth';
+import { signOut } from '../Services/googleAuth';
 import { CommonFetch } from '../Services/UserService';
 import * as CONST from '../Utils/Constants';
 

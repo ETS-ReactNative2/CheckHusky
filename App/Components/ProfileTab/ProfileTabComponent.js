@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  View, Text, TouchableOpacity, Image, Button
+  View, Text, TouchableOpacity, Image, Alert
 } from 'react-native';
 import {
-  GoogleSigninButton,
-  GoogleSignin,
-  statusCodes
+  GoogleSignin
 } from 'react-native-google-signin';
 import ImagePicker from 'react-native-image-picker';
 import Icons from 'react-native-vector-icons/AntDesign';
@@ -25,7 +23,7 @@ class ProfileTabComponent extends Component {
     };
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (
       this.props !== prevProps
       && this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
@@ -71,7 +69,7 @@ class ProfileTabComponent extends Component {
         console.log('ImagePicker Error: ', response.error);
       } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
-        alert(response.customButton);
+        Alert.alert(response.customButton);
       } else {
         const source = response;
         // You can also display the image using data:
@@ -99,7 +97,7 @@ class ProfileTabComponent extends Component {
             name="camerao"
             style={styles.cameraIcon}
             size={20}
-            onPress={this.chooseFile.bind(this)}
+            onPress={() => this.chooseFile()}
             color={CONST.PRIMARY_COLOR}
           />
         </View>
@@ -185,12 +183,11 @@ class ProfileTabComponent extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const {} = state;
+function mapStateToProps() {
   return {};
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
   return {};
 };
 

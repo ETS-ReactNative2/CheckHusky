@@ -1,15 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
 import GoogleSignInComponent from './GoogleSignInComponent';
 import * as userActions from '../../Actions/userActions';
 
 const GoogleSignInContainer = (props) => {
   return <GoogleSignInComponent props={props} />;
-};
-
-GoogleSignInContainer.propTypes = {
-  userData: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

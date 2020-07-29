@@ -5,7 +5,7 @@ const initialState = {
 };
 
 // This reducer stores the status of email verification.
-export default function (state = initialState, action) {
+export default function BrandsReducer(state = initialState, action) {
   switch (action.type) {
     case CONST.GET_ALL_BRANDS:
       return {

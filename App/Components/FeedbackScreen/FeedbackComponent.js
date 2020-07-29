@@ -4,13 +4,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image,
-  Button,
   TextInput
 } from 'react-native';
 import * as reactNativeRatings from 'react-native-ratings';
 import I18n from '../../i18n/index';
-import * as CONST from '../../Utils/Constants';
 import styles from './styles';
 
 class FeedbackComponent extends Component {
@@ -20,8 +17,6 @@ class FeedbackComponent extends Component {
       feedbackText: ''
     };
   }
-
-  componentDidUpdate(prevProps, prevState) {}
 
   ratingCompleted(rating) {
     console.log(`Rating is: ${rating}`);
@@ -69,12 +64,11 @@ class FeedbackComponent extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const {} = state;
+function mapStateToProps() {
   return {};
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
   return {};
 };
 

@@ -1,11 +1,11 @@
-import { StyleSheet, PixelRatio, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Fonts from '../../Theme/Fonts';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
 import scale from '../../Utils/scale';
 import Colors from '../../Theme/Colors';
 import * as CONST from '../../Utils/Constants';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {

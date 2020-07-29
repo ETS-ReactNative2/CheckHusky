@@ -12,7 +12,7 @@ export function getAllBrandsSuccess(res) {
     payload: res
   };
 }
-export function getAllBrandsFailure(error) {
+export function getAllBrandsFailure() {
   return {
     type: CONST.GET_ALL_BRANDS_FAILURE
   };

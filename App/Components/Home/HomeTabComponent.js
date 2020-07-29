@@ -8,7 +8,6 @@ import {
   TextInput
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import I18n from '../../i18n/index';
 import * as CONST from '../../Utils/Constants';
 import styles from './styles';
 
@@ -85,7 +84,7 @@ export default class HomeTabComponent extends Component {
   renderCell({ item }) {
     console.log('this.props.allBrands', this.props.allBrands);
     const {
-      id, name, brand, category, quantity, price, rating
+      rating
     } = item;
     const overallRating = [1, 2, 3, 4, 5];
     return (

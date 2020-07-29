@@ -3,7 +3,6 @@ import { Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import Ionicons from 'react-native-vector-icons/FontAwesome5';
 import SplashScreen from '../Components/SplashScreen/SplashScreen';
 import LoginScreenContainer from '../Components/LoginScreen/LoginScreenContainer';
 import HomeTabContainer from '../Components/Home/HomeTabContainer';
@@ -11,9 +10,8 @@ import OrderTabContainer from '../Components/Order/OrderTabContainer';
 import FavoritesTabContainer from '../Components/Favorites/FavoritesTabContainer';
 import FeedbackScreenContainer from '../Components/FeedbackScreen/FeedbackContainer';
 import ProfileTabContainer from '../Components/ProfileTab/ProfileTabContainer';
-import AboutUsTabContainer from '../Components/AboutUsTab/AboutUsTabContainer';
 import * as CONST from '../Utils/Constants';
-import scale, { verticalScale } from '../Utils/scale';
+import scale from '../Utils/scale';
 import SignupScreenContainer from '../Components/SignupScreen/SignupScreenContainer';
 
 const TabNavigator = createBottomTabNavigator(
@@ -25,9 +23,8 @@ const TabNavigator = createBottomTabNavigator(
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      tabBarIcon: () => {
         const { routeName } = navigation.state;
-        const IconComponent = Ionicons;
         let iconName;
         if (routeName === 'HomeTab') {
           iconName = CONST.HOME_TAB_ICON;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  View, Text, TouchableOpacity, Image, Button
+  View, Text
 } from 'react-native';
 import styles from './styles';
 
@@ -22,12 +22,11 @@ class FavoritesTabComponent extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const {} = state;
+function mapStateToProps() {
   return {};
 }
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
   return {};
 };
 

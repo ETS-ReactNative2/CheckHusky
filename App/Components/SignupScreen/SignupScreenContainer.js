@@ -12,7 +12,7 @@ const SignupScreenContainer = (props) => {
   useEffect(() => {
     analytics().setAnalyticsCollectionEnabled(true);
     analytics().setCurrentScreen('Sign_up', 'Signup');
-    if (props != prevProps && props.userData) {
+    if (props !== prevProps && props.userData) {
       NavigationService.navigateAndReset('HomeTab');
     }
   }, [prevProps, props]);

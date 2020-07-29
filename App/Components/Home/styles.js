@@ -1,8 +1,6 @@
-import { StyleSheet, PixelRatio, Platform } from 'react-native';
-import Fonts from '../../Theme/Fonts';
-import Colors from '../../Theme/Colors';
+import { StyleSheet } from 'react-native';
 import ApplicationStyles from '../../Theme/ApplicationStyles';
-import scale, { verticalScale } from '../../Utils/scale';
+import scale from '../../Utils/scale';
 import * as CONST from '../../Utils/Constants';
 
 export default StyleSheet.create({

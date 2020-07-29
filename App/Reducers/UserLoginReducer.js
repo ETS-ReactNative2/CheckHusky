@@ -6,7 +6,7 @@ const initialState = {
 };
 
 // This reducer stores the status of email verification.
-export default function (state = initialState, action) {
+export default function UserLoginReducer(state = initialState, action) {
   switch (action.type) {
     case CONST.USER_LOGIN:
       return {
