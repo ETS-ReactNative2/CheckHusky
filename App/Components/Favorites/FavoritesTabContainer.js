@@ -11,7 +11,11 @@ class FavoritesTabContainer extends Component {
   render() {
     const { message, userData, userLogout } = this.props;
     return (
-      <FeedbackComponent message={message} userData={userData} userLogout={userLogout} />
+      <FeedbackComponent
+        message={message}
+        userData={userData}
+        userLogout={userLogout}
+      />
       // <FavoritesTabComponent {...this.props} />
     );
   }

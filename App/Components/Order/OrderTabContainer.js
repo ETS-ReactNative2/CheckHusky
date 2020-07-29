@@ -10,7 +10,13 @@ class OrderTabContainer extends Component {
 
   render() {
     const { message, userData, userLogout } = this.props;
-    return <OrderTabComponent message={message} userData={userData} userLogout={userLogout} />;
+    return (
+      <OrderTabComponent
+        message={message}
+        userData={userData}
+        userLogout={userLogout}
+      />
+    );
   }
 }
 

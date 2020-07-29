@@ -83,9 +83,7 @@ export default class HomeTabComponent extends Component {
 
   renderCell({ item }) {
     console.log('this.props.allBrands', this.props.allBrands);
-    const {
-      rating
-    } = item;
+    const { rating } = item;
     const overallRating = [1, 2, 3, 4, 5];
     return (
       <TouchableOpacity activeOpacity={0.5} style={styles.cellContainer}>

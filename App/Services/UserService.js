@@ -31,9 +31,7 @@ export function CommonFetch(params, opt) {
       ReqOptions.body = JSON.stringify(Options.body);
     }
 
-
     try {
-      ('Options----', Options);
       console.log('ReqOptions----', ReqOptions);
 
       return new Promise((Resolve, Reject) => {

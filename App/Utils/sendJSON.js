@@ -30,7 +30,9 @@ export function securePost(path, body) {
 }
 
 export function securePut(path, body) {
-  return fetch(`${API.BASE}/${path}`, secureFetch('PUT', body)).then((res) => res.json());
+  return fetch(`${API.BASE}/${path}`, secureFetch('PUT', body)).then((res) =>
+    res.json()
+  );
 }
 
 export function secureGet(path) {
@@ -40,5 +42,7 @@ export function secureGet(path) {
 }
 
 export function secureDelete(path) {
-  return fetch(`${API.BASE}/${path}`, secureFetch('DELETE')).then((res) => res.json());
+  return fetch(`${API.BASE}/${path}`, secureFetch('DELETE')).then((res) =>
+    res.json()
+  );
 }

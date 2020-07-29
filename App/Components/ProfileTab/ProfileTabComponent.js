@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  View, Text, TouchableOpacity, Image, Alert
-} from 'react-native';
-import {
-  GoogleSignin
-} from 'react-native-google-signin';
+import { View, Text, TouchableOpacity, Image, Alert } from 'react-native';
+import { GoogleSignin } from 'react-native-google-signin';
 import ImagePicker from 'react-native-image-picker';
 import Icons from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
@@ -25,8 +21,8 @@ class ProfileTabComponent extends Component {
 
   componentDidUpdate(prevProps) {
     if (
-      this.props !== prevProps
-      && this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
+      this.props !== prevProps &&
+      this.props.message === CONST.USER_LOGGED_OUT_SUCCESSFULLY
     ) {
       NavigationService.navigateAndReset('LoginScreen');
     }

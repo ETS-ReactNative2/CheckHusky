@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput
-} from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import * as reactNativeRatings from 'react-native-ratings';
 import I18n from '../../i18n/index';
 import styles from './styles';

@@ -10,7 +10,13 @@ class ProfileTabContainer extends Component {
 
   render() {
     const { message, userData, userLogout } = this.props;
-    return <ProfileTabComponent message={message} userData={userData} userLogout={userLogout} />;
+    return (
+      <ProfileTabComponent
+        message={message}
+        userData={userData}
+        userLogout={userLogout}
+      />
+    );
   }
 }
 

@@ -10,7 +10,13 @@ class AboutUsTabContainer extends Component {
 
   render() {
     const { message, userData, userLogout } = this.props;
-    return <AboutUsTabComponent message={message} userData={userData} userLogout={userLogout} />;
+    return (
+      <AboutUsTabComponent
+        message={message}
+        userData={userData}
+        userLogout={userLogout}
+      />
+    );
   }
 }
 

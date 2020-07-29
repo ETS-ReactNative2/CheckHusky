@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  View, Text
-} from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './styles';
 
 class FavoritesTabComponent extends Component {
